@@ -1,6 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
 
+// default breakpoints
+// {
+//   smallPhone: 320;
+//   phone: 375;
+//   tablet: 768;
+//   desktop: 1024;
+//   largeDesktop: 1440;
+// }
+
 export const GlobalStyle = createGlobalStyle`
+
 .light-theme {
   --background: 255,255,255;
   --text: 10,18,30;
@@ -15,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 
 :root {
   --font: 'Barlow', sans-serif;
+  --shadow-md: 0px 16px 24px rgb(4 15 31 / 6%), 0px 2px 6px rgb(4 15 31 / 4%), 0px 0px 1px rgb(4 15 31 / 4%);
 }
 
 /* Box sizing rules */
