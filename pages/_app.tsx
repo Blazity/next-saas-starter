@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import { GlobalStyle } from 'components/GlobalStyles'
+import Navbar from 'components/Navbar'
 
 const navItems = [
   { title: 'Home', href: '/' },
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* <script async src="https://www.google-analytics.com/analytics.js"></script> */}
       </Head>
       <GlobalStyle />
+      <Navbar />
       {/* <NavigationDrawer items={navItems}> */}
       {/* <Navbar items={navItems} /> */}
       {/* </NavigationDrawer> */}

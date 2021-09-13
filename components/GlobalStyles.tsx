@@ -2,15 +2,19 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 .light-theme {
-  --background: 228, 100%, 99%;
-  --text: ;
-  --primary: ;
+  --background: 255,255,255;
+  --text: 10,18,30;
+  --textSecondary: 255,255,255;
+  --primary: 22,115,255;
+  --secondary: 10,18,30;
+  --tertiary: 231,241,251;
 }
 
 .dark-theme {
-  --background: 220, 26%, 14%;
-  --text: ;
-  --primary: ;
+}
+
+:root {
+  --font: 'Barlow', sans-serif;
 }
 
 /* Box sizing rules */
@@ -51,6 +55,7 @@ html {
   touch-action: manipulation;
   text-rendering: optimizelegibility;
   text-size-adjust: 100%;
+  font-size: 62.5%;
 }
 
 /* Set core body defaults */
@@ -58,14 +63,14 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Barlow', sans-serif;
-  color: var(--text);
-  background: var(--background);
+  font-family: var(--font);
+  color: rgb(var(--text));
+  background: rgb(var(--background));
   font-feature-settings: "kern";
 }
 
 svg {
-  color: var(--text);
+  color: rgb(var(--text));
 }
 
 /* A elements that don't have a class get default styles */
