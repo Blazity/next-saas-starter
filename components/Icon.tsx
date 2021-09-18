@@ -11,5 +11,5 @@ export default function Icon({ _ref, ...rest }: any) {
 const IconWrapper = styled.button`
   border: none;
   background-color: transparent;
-  width: 40px;
+  width: 4rem;
 `

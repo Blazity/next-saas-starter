@@ -6,7 +6,6 @@ import { PropsWithChildren, useEffect, useRef } from 'react'
 import ClientOnly from './ClientOnly'
 import { useRouter } from 'next/router'
 import { NavItems } from 'types'
-import { Container } from './Container'
 
 type NavigationDrawerProps = PropsWithChildren<{ items: NavItems }>
 
@@ -67,7 +66,7 @@ const Wrapper = styled.div`
   .my-drawer {
     width: 100%;
     height: 100%;
-    z-index: var(--z-navbar);
+    z-index: var(--z-drawer);
     background: rgb(var(--background));
     transition: margin-left 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895);
     overflow: hidden;

@@ -32,15 +32,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* <script async src="https://www.google-analytics.com/analytics.js"></script> */}
       </Head>
       <GlobalStyle />
-      <div style={{ height: '300vh' }}>
-        <NavigationDrawer items={navItems}>
-          <Navbar items={navItems} />
-        </NavigationDrawer>
-      </div>
+      <NavigationDrawer items={navItems}>
+        <Navbar items={navItems} />
+      </NavigationDrawer>
       {/* <NavigationDrawer items={navItems}> */}
       {/* <Navbar items={navItems} /> */}
       {/* </NavigationDrawer> */}
       {standaloneMarkup}
+      <div style={{ height: '300vh' }} />
     </>
   )
 }

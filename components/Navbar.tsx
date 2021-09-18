@@ -92,13 +92,13 @@ const NavItemList = styled.div`
   display: flex;
   list-style: none;
 
-  ${media('<tablet')} {
+  ${media('<desktop')} {
     display: none;
   }
 `
 
 const HamburgerMenuWrapper = styled.div`
-  ${media('>=tablet')} {
+  ${media('>=desktop')} {
     display: none;
   }
 `
@@ -124,7 +124,7 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
     color: ${(p) => (p.outlined ? 'rgb(var(--textSecondary))' : 'rgb(var(--text), 0.75)')};
     letter-spacing: 0.025em;
     text-decoration: none;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-weight: 700;
   }
 
@@ -140,9 +140,10 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   padding: 1.5rem 0;
   width: 100%;
   height: 8rem;
+  z-index: var(--z-navbar);
 
   box-shadow: ${(p) => (p.transparent ? 'none' : 'var(--shadow-md)')};
-  background-color: ${(p) => (p.transparent ? 'transparent' : 'var(--background)')};
+  background-color: rgb(var(--background));
   visibility: ${(p) => (p.hidden ? 'hidden' : 'visible')};
   transform: ${(p) => (p.hidden ? `translateY(-8rem) translateZ(0) scale(1)` : 'translateY(0) translateZ(0) scale(1)')};
 
