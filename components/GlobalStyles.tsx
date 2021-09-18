@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   --background: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255;
+  --primary: 22,115,255; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
 }
@@ -24,11 +24,12 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 :root {
-  --font: 'Barlow', sans-serif;
+  --font: 'Inter', sans-serif;
   
   --shadow-md: 0px 16px 24px rgb(4 15 31 / 6%), 0px 2px 6px rgb(4 15 31 / 4%), 0px 0px 1px rgb(4 15 31 / 4%);
 
-  --z-navbar: 9999;
+  --z-navbar: 8888;
+  --z-drawer: 9999;
 }
 
 /* Box sizing rules */
