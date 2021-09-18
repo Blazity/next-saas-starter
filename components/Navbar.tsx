@@ -19,7 +19,7 @@ export default function Navbar() {
   const lastRoute = useRef('')
   const stepSize = useRef(50)
 
-  // TODO: hidden with intersection observer 
+  // TODO: hidden with intersection observer
 
   useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50)
 
@@ -37,7 +37,7 @@ export default function Navbar() {
     const isScrollingUp = currentScrollY > lastScrollY.current
     const scrollDifference = Math.abs(lastScrollY.current - currentScrollY)
     const hasScrolledWholeStep = scrollDifference >= stepSize.current
-    const isInNonCollapsibleArea = lastScrollY.current > -200
+    const isInNonCollapsibleArea = lastScrollY.current > -50
 
     if (isInNonCollapsibleArea) {
       setScrollingDirection('none')
