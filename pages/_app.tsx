@@ -2,11 +2,14 @@ import Head from 'next/head'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import { GlobalStyle } from 'components/GlobalStyles'
 import Navbar from 'components/Navbar'
+import { NavItems } from 'types'
+import NavigationDrawer from 'components/NavigationDrawer'
 
-const navItems = [
-  { title: 'Home', href: '/' },
-  { title: 'Snippets', href: '/snippets' },
-  { title: 'Links', href: '/links' },
+const navItems: NavItems = [
+  { title: 'Why logoipsum', href: '/' },
+  { title: 'Logoipsum features', href: '/features' },
+  { title: 'Help Center', href: '/help' },
+  { title: 'Contact', href: '/contact', outlined: true },
 ]
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -18,7 +21,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet" />
         {/* <link rel="alternate" type="application/rss+xml" href={EnvVars.URL + 'rss'} title="RSS 2.0" /> */}
         {/* <script
           dangerouslySetInnerHTML={{
@@ -31,7 +33,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyle />
       <div style={{ height: '300vh' }}>
-        <Navbar />
+        <NavigationDrawer items={navItems}>
+          <Navbar items={navItems} />
+        </NavigationDrawer>
       </div>
       {/* <NavigationDrawer items={navItems}> */}
       {/* <Navbar items={navItems} /> */}

@@ -3,23 +3,25 @@ import Logo from './Logo'
 import NextLink from 'next/link'
 import React, { useRef, useState } from 'react'
 import { Container } from './Container'
-import media from 'css-in-js-media'
+import Drawer from './Drawer'
 import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition'
 import { useRouter } from 'next/router'
+import { NavItems, SingleNavItem } from 'types'
+import { HamburgerIcon } from './HamburgerIcon'
+import { media } from 'utils/media'
 
+type NavbarProps = { items: NavItems }
 type ScrollingDirections = 'up' | 'down' | 'none'
-type NavItemProps = React.PropsWithChildren<{ href: string; outlined?: boolean }>
 type NavbarContainerProps = { hidden: boolean; transparent: boolean }
 
-export default function Navbar() {
+export default function Navbar({ items }: NavbarProps) {
   const router = useRouter()
+  const { toggle } = Drawer.useDrawer()
   const [scrollingDirection, setScrollingDirection] = useState<ScrollingDirections>('none')
 
   let lastScrollY = useRef(0)
   const lastRoute = useRef('')
   const stepSize = useRef(50)
-
-  // TODO: hidden with intersection observer
 
   useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50)
 
@@ -64,23 +66,23 @@ export default function Navbar() {
           <Logo />
         </LogoWrapper>
         <NavItemList>
-          <NavItem href="#why-us">Why Logoipsum</NavItem>
-          <NavItem href="/features">Logoipsum Features</NavItem>
-          <NavItem href="/help">Help Center</NavItem>
-          <NavItem href="/contact" outlined>
-            Contact Us
-          </NavItem>
+          {items.map((singleItem) => (
+            <NavItem key={singleItem.href} {...singleItem} />
+          ))}
         </NavItemList>
+        <HamburgerMenuWrapper>
+          <HamburgerIcon onClick={toggle} />
+        </HamburgerMenuWrapper>
       </Content>
     </NavbarContainer>
   )
 }
 
-function NavItem({ href, children, outlined, ...rest }: NavItemProps) {
+function NavItem({ href, title, outlined }: SingleNavItem) {
   return (
     <NavItemWrapper outlined={outlined}>
-      <NextLink href={href} passHref {...rest}>
-        <a>{children}</a>
+      <NextLink href={href} passHref>
+        <a>{title}</a>
       </NextLink>
     </NavItemWrapper>
   )
@@ -89,13 +91,23 @@ function NavItem({ href, children, outlined, ...rest }: NavItemProps) {
 const NavItemList = styled.div`
   display: flex;
   list-style: none;
+
+  ${media('<tablet')} {
+    display: none;
+  }
+`
+
+const HamburgerMenuWrapper = styled.div`
+  ${media('>=tablet')} {
+    display: none;
+  }
 `
 
 const LogoWrapper = styled.div`
   margin-right: auto;
 `
 
-const NavItemWrapper = styled.li<Partial<NavItemProps>>`
+const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
   background-color: ${(p) => (p.outlined ? 'rgb(var(--primary))' : 'transparent')};
   border-radius: 0.5rem;
   font-size: 1.3rem;
@@ -125,7 +137,7 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   display: flex;
   position: sticky;
   top: 0;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   width: 100%;
   height: 8rem;
 
