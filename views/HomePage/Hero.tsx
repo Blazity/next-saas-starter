@@ -1,7 +1,9 @@
+import Button from 'components/Button'
 import { Container } from 'components/Container'
 import HeroIllustration from 'components/HeroIllustation'
 import styled from 'styled-components'
 import { media } from 'utils/media'
+import NextLink from 'next/link'
 
 export default function Hero() {
   return (
@@ -13,6 +15,18 @@ export default function Hero() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
           repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
         </Description>
+        <ButtonGroup>
+          <NextLink href="#early-access" passHref>
+            <Button>
+              Request early access <span>&rarr;</span>
+            </Button>
+          </NextLink>
+          <NextLink href="#whitepaper" passHref>
+            <Button transparent>
+              Whitepaper <span>&rarr;</span>
+            </Button>
+          </NextLink>
+        </ButtonGroup>
       </Contents>
       <ImageContainer>
         <HeroIllustration />
@@ -38,6 +52,26 @@ const Contents = styled.div`
 
   ${media('<=desktop')} {
     max-width: 100%;
+  }
+`
+
+const ButtonGroup = styled.div`
+  display: flex;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+
+  & > *:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  ${media('<=tablet')} {
+    & > * {
+      width: 100%;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 0rem;
+    }
   }
 `
 
