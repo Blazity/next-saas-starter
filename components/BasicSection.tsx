@@ -70,6 +70,48 @@ const Content = styled.div`
   opacity: 0.8;
   line-height: 1.6;
 
+  ol,
+  ul {
+    list-style: none;
+    padding: 0rem;
+
+    li {
+      padding-left: 2rem;
+      position: relative;
+
+      & > * {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      &::before {
+        position: absolute;
+        content: 'L';
+        left: 0;
+        top: 0;
+        text-align: center;
+        color: rgb(var(--primary));
+        font-family: arial;
+        transform: scaleX(-1) rotate(-35deg);
+      }
+    }
+  }
+
+  /* li {
+    &::before {
+      position: absolute;
+      content: 'L';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      text-align: center;
+      color: rgb(var(--text));
+      font-family: arial;
+      transform: scaleX(-1) rotate(-35deg);
+    }
+  } */
+
   ${media('<=desktop')} {
     font-size: 1.5rem;
   }
