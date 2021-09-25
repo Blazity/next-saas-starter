@@ -1,63 +1,63 @@
-import styled from 'styled-components'
-import Logo from './Logo'
-import NextLink from 'next/link'
-import React, { useRef, useState } from 'react'
-import { Container } from './Container'
-import Drawer from './Drawer'
-import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition'
-import { useRouter } from 'next/router'
-import { NavItems, SingleNavItem } from 'types'
-import { HamburgerIcon } from './HamburgerIcon'
-import { media } from 'utils/media'
+import styled from 'styled-components';
+import Logo from './Logo';
+import NextLink from 'next/link';
+import React, { useRef, useState } from 'react';
+import { Container } from './Container';
+import Drawer from './Drawer';
+import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
+import { useRouter } from 'next/router';
+import { NavItems, SingleNavItem } from 'types';
+import { HamburgerIcon } from './HamburgerIcon';
+import { media } from 'utils/media';
 
-type NavbarProps = { items: NavItems }
-type ScrollingDirections = 'up' | 'down' | 'none'
-type NavbarContainerProps = { hidden: boolean; transparent: boolean }
+type NavbarProps = { items: NavItems };
+type ScrollingDirections = 'up' | 'down' | 'none';
+type NavbarContainerProps = { hidden: boolean; transparent: boolean };
 
 export default function Navbar({ items }: NavbarProps) {
-  const router = useRouter()
-  const { toggle } = Drawer.useDrawer()
-  const [scrollingDirection, setScrollingDirection] = useState<ScrollingDirections>('none')
+  const router = useRouter();
+  const { toggle } = Drawer.useDrawer();
+  const [scrollingDirection, setScrollingDirection] = useState<ScrollingDirections>('none');
 
-  let lastScrollY = useRef(0)
-  const lastRoute = useRef('')
-  const stepSize = useRef(50)
+  let lastScrollY = useRef(0);
+  const lastRoute = useRef('');
+  const stepSize = useRef(50);
 
-  useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50)
+  useScrollPosition(scrollPositionCallback, [router.asPath], undefined, undefined, 50);
 
   function scrollPositionCallback({ currPos }: ScrollPositionEffectProps) {
-    const routerPath = router.asPath
-    const hasRouteChanged = routerPath !== lastRoute.current
+    const routerPath = router.asPath;
+    const hasRouteChanged = routerPath !== lastRoute.current;
 
     if (hasRouteChanged) {
-      lastRoute.current = routerPath
-      setScrollingDirection('none')
-      return
+      lastRoute.current = routerPath;
+      setScrollingDirection('none');
+      return;
     }
 
-    const currentScrollY = currPos.y
-    const isScrollingUp = currentScrollY > lastScrollY.current
-    const scrollDifference = Math.abs(lastScrollY.current - currentScrollY)
-    const hasScrolledWholeStep = scrollDifference >= stepSize.current
-    const isInNonCollapsibleArea = lastScrollY.current > -50
+    const currentScrollY = currPos.y;
+    const isScrollingUp = currentScrollY > lastScrollY.current;
+    const scrollDifference = Math.abs(lastScrollY.current - currentScrollY);
+    const hasScrolledWholeStep = scrollDifference >= stepSize.current;
+    const isInNonCollapsibleArea = lastScrollY.current > -50;
 
     if (isInNonCollapsibleArea) {
-      setScrollingDirection('none')
-      lastScrollY.current = currentScrollY
-      return
+      setScrollingDirection('none');
+      lastScrollY.current = currentScrollY;
+      return;
     }
 
     if (!hasScrolledWholeStep) {
-      lastScrollY.current = currentScrollY
-      return
+      lastScrollY.current = currentScrollY;
+      return;
     }
 
-    setScrollingDirection(isScrollingUp ? 'up' : 'down')
-    lastScrollY.current = currentScrollY
+    setScrollingDirection(isScrollingUp ? 'up' : 'down');
+    lastScrollY.current = currentScrollY;
   }
 
-  const isNavbarHidden = scrollingDirection === 'down'
-  const isTransparent = scrollingDirection === 'none'
+  const isNavbarHidden = scrollingDirection === 'down';
+  const isTransparent = scrollingDirection === 'none';
 
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
@@ -75,7 +75,7 @@ export default function Navbar({ items }: NavbarProps) {
         </HamburgerMenuWrapper>
       </Content>
     </NavbarContainer>
-  )
+  );
 }
 
 function NavItem({ href, title, outlined }: SingleNavItem) {
@@ -85,7 +85,7 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
         <a>{title}</a>
       </NextLink>
     </NavItemWrapper>
-  )
+  );
 }
 
 const NavItemList = styled.div`
@@ -95,17 +95,17 @@ const NavItemList = styled.div`
   ${media('<desktop')} {
     display: none;
   }
-`
+`;
 
 const HamburgerMenuWrapper = styled.div`
   ${media('>=desktop')} {
     display: none;
   }
-`
+`;
 
 const LogoWrapper = styled.div`
   margin-right: auto;
-`
+`;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
   background-color: ${(p) => (p.outlined ? 'rgb(var(--primary))' : 'transparent')};
@@ -131,7 +131,7 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
   &:not(:last-child) {
     margin-right: 2rem;
   }
-`
+`;
 
 const NavbarContainer = styled.div<NavbarContainerProps>`
   display: flex;
@@ -142,21 +142,19 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   height: 8rem;
   z-index: var(--z-navbar);
 
-  box-shadow: ${(p) => (p.transparent ? 'none' : 'var(--shadow-md)')};
-  background-color: rgb(var(--background));
+  background-color: rgba(var(--background), 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
   visibility: ${(p) => (p.hidden ? 'hidden' : 'visible')};
   transform: ${(p) => (p.hidden ? `translateY(-8rem) translateZ(0) scale(1)` : 'translateY(0) translateZ(0) scale(1)')};
 
   transition-property: transform, visibility, height, box-shadow, background-color;
   transition-duration: 0.15s;
   transition-timing-function: ease-in-out;
-
-  /* ${media('<=desktop')} {
-  } */
-`
+`;
 
 const Content = styled(Container)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-`
+`;

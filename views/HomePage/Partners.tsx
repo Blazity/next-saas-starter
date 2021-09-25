@@ -64,6 +64,7 @@ const PartnersWrapper = styled(Container)`
     will-change: transform;
     transition-timing-function: linear;
     margin-top: 0.5rem;
+    user-select: none;
   }
 
   .swiper-slide {
