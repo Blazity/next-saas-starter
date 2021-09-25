@@ -10,8 +10,8 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the most private, non-custodial ethereum wallet</CustomOverTitle>
-        <Heading>Reclaim privacy on your Thereum transfers</Heading>
+        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
+        <Heading>Make your life easier with our SaaS</Heading>
         <Description>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
           repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
@@ -19,12 +19,12 @@ export default function Hero() {
         <ButtonGroup>
           <NextLink href="#early-access" passHref>
             <Button>
-              Request early access <span>&rarr;</span>
+              Subscribe to the newsletter <span>&rarr;</span>
             </Button>
           </NextLink>
           <NextLink href="#whitepaper" passHref>
             <Button transparent>
-              Whitepaper <span>&rarr;</span>
+              Features <span>&rarr;</span>
             </Button>
           </NextLink>
         </ButtonGroup>
