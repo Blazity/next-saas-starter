@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import NextImage from 'next/image'
-import SwiperCore, { Autoplay } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Container } from 'components/Container'
-import { media } from 'utils/media'
+import React from 'react';
+import styled from 'styled-components';
+import NextImage from 'next/image';
+import SwiperCore, { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Container } from 'components/Container';
+import { media } from 'utils/media';
 
-SwiperCore.use([Autoplay])
+SwiperCore.use([Autoplay]);
 
 const PARTNER_LOGOS = [
   'logoipsum-logo-1.svg',
@@ -16,7 +16,7 @@ const PARTNER_LOGOS = [
   'logoipsum-logo-5.svg',
   'logoipsum-logo-6.svg',
   'logoipsum-logo-7.svg',
-]
+];
 
 export default function Partners() {
   return (
@@ -42,7 +42,7 @@ export default function Partners() {
         ))}
       </Swiper>
     </PartnersWrapper>
-  )
+  );
 }
 
 const Title = styled.h3`
@@ -57,7 +57,7 @@ const Title = styled.h3`
   ${media('<=desktop')} {
     line-height: 1.5;
   }
-`
+`;
 
 const PartnersWrapper = styled(Container)`
   .swiper-wrapper {
@@ -67,11 +67,11 @@ const PartnersWrapper = styled(Container)`
   }
 
   .swiper-slide {
-    opacity: 0.7;
+    opacity: 0.8;
     transition: opacity 0.2s;
 
     &:hover {
       opacity: 1;
     }
   }
-`
+`;

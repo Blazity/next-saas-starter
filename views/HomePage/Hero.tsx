@@ -1,9 +1,9 @@
-import Button from 'components/Button'
-import { Container } from 'components/Container'
-import HeroIllustration from 'components/HeroIllustation'
-import styled from 'styled-components'
-import { media } from 'utils/media'
-import NextLink from 'next/link'
+import Button from 'components/Button';
+import { Container } from 'components/Container';
+import HeroIllustration from 'components/HeroIllustation';
+import styled from 'styled-components';
+import { media } from 'utils/media';
+import NextLink from 'next/link';
 
 export default function Hero() {
   return (
@@ -32,7 +32,7 @@ export default function Hero() {
         <HeroIllustration />
       </ImageContainer>
     </HeroWrapper>
-  )
+  );
 }
 
 const HeroWrapper = styled(Container)`
@@ -40,11 +40,11 @@ const HeroWrapper = styled(Container)`
   margin-top: 5rem;
 
   ${media('<=desktop')} {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
     flex-direction: column;
     align-items: center;
   }
-`
+`;
 
 const Contents = styled.div`
   flex: 1;
@@ -53,7 +53,7 @@ const Contents = styled.div`
   ${media('<=desktop')} {
     max-width: 100%;
   }
-`
+`;
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -73,7 +73,7 @@ const ButtonGroup = styled.div`
       margin-right: 0rem;
     }
   }
-`
+`;
 
 const ImageContainer = styled.div`
   display: flex;
@@ -92,7 +92,7 @@ const ImageContainer = styled.div`
       max-width: 80%;
     }
   }
-`
+`;
 
 const Description = styled.p`
   font-size: 1.8rem;
@@ -102,7 +102,7 @@ const Description = styled.p`
   ${media('<=desktop')} {
     font-size: 1.5rem;
   }
-`
+`;
 
 const OverTitle = styled.h2`
   &::before {
@@ -121,12 +121,13 @@ const OverTitle = styled.h2`
   letter-spacing: 0.02em;
   line-height: 0;
   text-transform: uppercase;
+  font-weight: bold;
   margin-bottom: 2rem;
 
   ${media('<=desktop')} {
     line-height: 1.5;
   }
-`
+`;
 
 const Heading = styled.h1`
   font-size: 7.2rem;
@@ -139,4 +140,4 @@ const Heading = styled.h1`
     font-size: 4.6rem;
     margin-bottom: 2rem;
   }
-`
+`;
