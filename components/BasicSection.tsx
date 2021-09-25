@@ -4,6 +4,7 @@ import NextImage from 'next/image';
 import { media } from 'utils/media';
 import { Container } from './Container';
 import RichText from './RichText';
+import OverTitle from './OverTitle';
 
 export interface BasicSectionProps {
   imageUrl: string;
@@ -19,7 +20,7 @@ export default function BasicSection({ imageUrl, title, overTitle, reversed, chi
         <NextImage src={imageUrl} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ContentContainer>
-        <OverTitle>{overTitle}</OverTitle>
+        <CustomOverTitle>{overTitle}</CustomOverTitle>
         <Title>{title}</Title>
         <RichText>{children}</RichText>
       </ContentContainer>
@@ -40,30 +41,8 @@ const Title = styled.h1`
   }
 `;
 
-// TODO: wet
-const OverTitle = styled.div`
-  &::before {
-    position: relative;
-    bottom: -0.1em;
-    content: '';
-    display: inline-block;
-    width: 0.9em;
-    height: 0.9em;
-    background-color: rgb(var(--primary));
-    line-height: 0;
-    margin-right: 1em;
-  }
-
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
-  font-weight: bold;
-  line-height: 0;
-  text-transform: uppercase;
+const CustomOverTitle = styled(OverTitle)`
   margin-bottom: 2rem;
-
-  ${media('<=desktop')} {
-    line-height: 1.5;
-  }
 `;
 
 const ImageContainer = styled.div`

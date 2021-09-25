@@ -4,12 +4,13 @@ import HeroIllustration from 'components/HeroIllustation';
 import styled from 'styled-components';
 import { media } from 'utils/media';
 import NextLink from 'next/link';
+import OverTitle from 'components/OverTitle';
 
 export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <OverTitle>the most private, non-custodial ethereum wallet</OverTitle>
+        <CustomOverTitle>the most private, non-custodial ethereum wallet</CustomOverTitle>
         <Heading>Reclaim privacy on your Thereum transfers</Heading>
         <Description>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
@@ -104,29 +105,8 @@ const Description = styled.p`
   }
 `;
 
-const OverTitle = styled.h2`
-  &::before {
-    position: relative;
-    bottom: -0.1em;
-    content: '';
-    display: inline-block;
-    width: 0.9em;
-    height: 0.9em;
-    background-color: rgb(var(--primary));
-    line-height: 0;
-    margin-right: 1em;
-  }
-
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
-  line-height: 0;
-  text-transform: uppercase;
-  font-weight: bold;
+const CustomOverTitle = styled(OverTitle)`
   margin-bottom: 2rem;
-
-  ${media('<=desktop')} {
-    line-height: 1.5;
-  }
 `;
 
 const Heading = styled.h1`
