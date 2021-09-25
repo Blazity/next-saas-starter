@@ -1,3 +1,5 @@
+import 'swiper/css/bundle'
+
 import Head from 'next/head'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import { GlobalStyle } from 'components/GlobalStyles'
