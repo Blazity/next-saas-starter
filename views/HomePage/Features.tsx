@@ -5,82 +5,74 @@ import AutofitGrid from 'components/AutofitGrid';
 import { Container } from 'components/Container';
 import { media } from 'utils/media';
 
+const FEATURES = [
+  {
+    imageUrl: '/grid-icons/asset-1.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-2.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-3.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-4.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-5.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-6.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-7.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-8.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+  {
+    imageUrl: '/grid-icons/asset-9.svg',
+    title: 'Lorem ipsum dolor sit amet.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
+  },
+];
+
 export default function Features() {
   return (
     <Container>
       <CustomAutofitGrid>
-        <Card>
-          <NextImage src="/grid-icons/asset-1.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-2.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-3.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-4.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-5.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-6.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-7.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-8.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
-        <Card>
-          <NextImage src="/grid-icons/asset-9.svg" width={128} height={128} />
-          <Title>Lorem ipsum dolor sit amet.</Title>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos
-            doloribus voluptate?
-          </Description>
-        </Card>
+        {FEATURES.map((singleFeature, idx) => (
+          <Card key={idx}>
+            <NextImage src={singleFeature.imageUrl} width={128} height={128} />
+            <Title>{singleFeature.title}</Title>
+            <Description>{singleFeature.description}</Description>
+          </Card>
+        ))}
       </CustomAutofitGrid>
     </Container>
   );
