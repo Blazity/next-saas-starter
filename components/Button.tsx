@@ -1,13 +1,9 @@
-import { PropsWithChildren } from 'react'
-import styled from 'styled-components'
+import { PropsWithChildren } from 'react';
+import styled from 'styled-components';
 
-type ButtonProps = PropsWithChildren<{ transparent?: boolean }>
+type ButtonProps = PropsWithChildren<{ transparent?: boolean }>;
 
-export default function Button(props: ButtonProps) {
-  return <ButtonWrapper {...props} />
-}
-
-const ButtonWrapper = styled.a<ButtonProps>`
+const Button = styled.a<ButtonProps>`
   border: none;
   background: none;
   display: inline-block;
@@ -34,4 +30,6 @@ const ButtonWrapper = styled.a<ButtonProps>`
   &:hover {
     transform: scale(1.025);
   }
-`
+`;
+
+export default Button;

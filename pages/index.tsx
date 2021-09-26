@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
+import Cta from 'views/HomePage/Cta';
 
 export default function Homepage() {
   return (
@@ -30,6 +31,7 @@ export default function Homepage() {
           <li>Professional feature 3</li>
         </ul>
       </BasicSection>
+      <Cta />
     </HomepageWrapper>
   );
 }
