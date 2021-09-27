@@ -1,12 +1,14 @@
-import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
 import styled from 'styled-components';
+
+import Link from 'components/Link';
+import BasicSection from 'components/BasicSection';
 
 import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
 import Cta from 'views/HomePage/Cta';
 import Features from 'views/HomePage/Features';
 import Testimonials from 'views/HomePage/Testimonials';
+import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 
 export default function Homepage() {
   return (
@@ -36,6 +38,7 @@ export default function Homepage() {
       <Cta />
       <Features />
       <Testimonials />
+      <FeaturesGallery />
     </HomepageWrapper>
   );
 }
