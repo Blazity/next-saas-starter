@@ -1,21 +1,24 @@
-import 'swiper/css/bundle'
+import 'swiper/css/bundle';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
-import Head from 'next/head'
-import { AppProps } from 'next/dist/shared/lib/router/router'
-import { GlobalStyle } from 'components/GlobalStyles'
-import Navbar from 'components/Navbar'
-import { NavItems } from 'types'
-import NavigationDrawer from 'components/NavigationDrawer'
+import Head from 'next/head';
+import { AppProps } from 'next/dist/shared/lib/router/router';
+import { GlobalStyle } from 'components/GlobalStyles';
+import Navbar from 'components/Navbar';
+import { NavItems } from 'types';
+import NavigationDrawer from 'components/NavigationDrawer';
 
 const navItems: NavItems = [
   { title: 'Why logoipsum', href: '/' },
   { title: 'Logoipsum features', href: '/features' },
   { title: 'Help Center', href: '/help' },
   { title: 'Contact', href: '/contact', outlined: true },
-]
+];
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const standaloneMarkup = <Component {...pageProps} />
+  const standaloneMarkup = <Component {...pageProps} />;
 
   return (
     <>
@@ -43,7 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       {standaloneMarkup}
       <div style={{ height: '300vh' }} />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

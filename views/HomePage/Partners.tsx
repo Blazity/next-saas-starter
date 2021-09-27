@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import NextImage from 'next/image';
-import SwiperCore, { Autoplay } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Container } from 'components/Container';
 import { media } from 'utils/media';
-
-SwiperCore.use([Autoplay]);
 
 const PARTNER_LOGOS = [
   'logoipsum-logo-1.svg',
@@ -23,6 +21,7 @@ export default function Partners() {
     <PartnersWrapper>
       <Title>official partners with</Title>
       <Swiper
+        modules={[Autoplay]}
         slidesPerView={6}
         spaceBetween={30}
         loop={true}

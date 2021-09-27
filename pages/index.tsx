@@ -6,6 +6,7 @@ import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
 import Cta from 'views/HomePage/Cta';
 import Features from 'views/HomePage/Features';
+import Testimonials from 'views/HomePage/Testimonials';
 
 export default function Homepage() {
   return (
@@ -34,6 +35,7 @@ export default function Homepage() {
       </BasicSection>
       <Cta />
       <Features />
+      <Testimonials />
     </HomepageWrapper>
   );
 }
