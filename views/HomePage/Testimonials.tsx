@@ -4,11 +4,9 @@ import styled from 'styled-components';
 import NextImage from 'next/image';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay, A11y } from 'swiper';
+import { Navigation, Autoplay, A11y } from 'swiper';
 import Separator from 'components/Separator';
 import { media } from 'utils/media';
-
-SwiperCore.use([Navigation]);
 
 const TESTIMONIALS = [
   {
