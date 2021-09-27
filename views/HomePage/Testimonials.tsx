@@ -70,16 +70,11 @@ export default function Testimonials() {
 
 const TestimonialsWrapper = styled(Container)`
   position: relative;
-  max-width: 80%;
   --swiper-navigation-color: red;
 
   .swiper-button-prev:after,
   .swiper-button-next:after {
     /* // TODO: figure out a way to style prev/next signs */
-  }
-
-  ${media('<=desktop')} {
-    max-width: 100%;
   }
 `;
 
