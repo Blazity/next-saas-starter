@@ -17,14 +17,14 @@ export default function Footer () {
                 <ListItem>ipsum</ListItem>
                 <ListItem>ipsum</ListItem>
                 <ListItem>ipsum</ListItem>
-                </List>
+            </List>
             <List>
                 <ListHeader>lorem</ListHeader>
                 <ListItem>ipsum</ListItem>
                 <ListItem>ipsum</ListItem>
                 <ListItem>ipsum</ListItem>
                 <ListItem>ipsum</ListItem>
-             </List>
+            </List>
             <List>
                 <ListHeader>lorem</ListHeader>
                 <ListItem>ipsum</ListItem>
@@ -46,10 +46,10 @@ export default function Footer () {
 const ListContainer = styled.div`
     display: flex;    
     flex-direction: row;
+    justify-content: space-evenly;
 `
 
 const List = styled.ul`
-    flex-basis: 20%;
     list-style-type: none;
 `
 
