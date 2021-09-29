@@ -9,6 +9,7 @@ import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
 import { NavItems } from 'types';
 import NavigationDrawer from 'components/NavigationDrawer';
+import Footer from 'components/Footer';
 
 const navItems: NavItems = [
   { title: 'Why logoipsum', href: '/' },
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       {/* </NavigationDrawer> */}
       {standaloneMarkup}
       <div style={{ height: '300vh' }} />
+      <Footer />
     </>
   );
 }
