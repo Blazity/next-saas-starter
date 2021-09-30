@@ -64,6 +64,8 @@ const ListHeader = styled.li`
 `
 const ListItem = styled.li`
     font-size: 1.3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
 `
 const FooterBar = styled.div`
     padding: 1.5rem;
