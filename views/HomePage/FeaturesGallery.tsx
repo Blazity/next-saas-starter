@@ -4,37 +4,32 @@ import NextImage from 'next/image';
 import { Container } from 'components/Container';
 import { media } from 'utils/media';
 import Collapse from 'components/Collapse';
+import ThreeLayersCircle from 'components/ThreeLayersCircle';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts',
+    title: 'Find relevant media contacts - multiline title',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.',
+      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
     imageUrl: '/demo-illustration-3.png',
+    baseColor: '249,82,120',
+    secondColor: '221,9,57',
   },
   {
     title: 'Find relevant media contacts2',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.',
+      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
     imageUrl: '/demo-illustration-4.png',
+    baseColor: '57,148,224',
+    secondColor: '99,172,232',
   },
   {
     title: 'Find relevant media contacts3',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.',
+      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
     imageUrl: '/demo-illustration-5.png',
-  },
-  {
-    title: 'Find relevant media contacts4',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.',
-    imageUrl: '/demo-illustration-6.png',
-  },
-  {
-    title: 'Find relevant media contacts5',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.',
-    imageUrl: '/demo-illustration-7.png',
+    baseColor: '88,193,132',
+    secondColor: '124,207,158',
   },
 ];
 
@@ -47,7 +42,7 @@ export default function FeaturesGallery() {
 
     return (
       <ImageContainer key={singleTab.title} isActive={isActive}>
-        <NextImage src={singleTab.imageUrl} layout="fill" objectFit="cover" priority={isFirst} />
+        <NextImage src={singleTab.imageUrl} layout="fill" objectFit="contain" priority={isFirst} />
       </ImageContainer>
     );
   });
@@ -56,11 +51,17 @@ export default function FeaturesGallery() {
     const isActive = singleTab.title === currentTab.title;
 
     return (
-      <Tab key={idx} onClick={() => handleTabClick(idx)}>
-        {singleTab.title}
+      <Tab isActive={isActive} key={idx} onClick={() => handleTabClick(idx)}>
+        <TabTitleContainer>
+          <CircleContainer>
+            <ThreeLayersCircle baseColor={isActive ? 'transparent' : singleTab.baseColor} secondColor={singleTab.secondColor} />
+          </CircleContainer>
+          <h3>{singleTab.title}</h3>
+        </TabTitleContainer>
         <Collapse isOpen={isActive} duration={300}>
-          <h1>Your content goes here</h1>
-          <p>Put as many React or HTML components here.</p>
+          <TabContent>
+            <div dangerouslySetInnerHTML={{ __html: singleTab.description }}></div>
+          </TabContent>
         </Collapse>
       </Tab>
     );
@@ -104,8 +105,8 @@ const TabsContainer = styled.div`
 
 const ImageContainer = styled.div<{ isActive: boolean }>`
   position: relative;
-  height: 50rem;
-  border-radius: 0.6rem;
+  overflow: hidden;
+  border-radius: 0.8rem;
   flex: ${(p) => (p.isActive ? '2' : '0')};
   box-shadow: var(--shadow-md);
 
@@ -129,19 +130,54 @@ const ImageContainer = styled.div<{ isActive: boolean }>`
   }
 `;
 
-const Tab = styled.div`
+const Tab = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   background: rgba(var(--secondary), 0.025);
-  opacity: 0.9;
+  opacity: ${(p) => (p.isActive ? 1 : 0.6)};
   cursor: pointer;
   border-radius: 0.6rem;
+  transition: opacity 0.2s;
 
   font-size: 1.6rem;
   font-weight: bold;
 
   ${media('<=desktop')} {
     width: 100%;
+  }
+`;
+
+const TabTitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  h3 {
+    flex: 1;
+  }
+`;
+
+const TabContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  padding-left: calc(5rem + 1.5rem);
+
+  ${media('<=tablet')} {
+    padding-left: calc(4rem + 1.25rem);
+  }
+
+  p {
+    font-weight: normal;
+  }
+`;
+
+const CircleContainer = styled.div`
+  flex: 0 calc(5rem + 1.5rem);
+
+  ${media('<=tablet')} {
+    flex: 0 calc(4rem + 1.25rem);
   }
 `;

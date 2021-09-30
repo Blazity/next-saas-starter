@@ -36,9 +36,9 @@ export default function Homepage() {
         </ul>
       </BasicSection>
       <Cta />
+      <FeaturesGallery />
       <Features />
       <Testimonials />
-      <FeaturesGallery />
     </HomepageWrapper>
   );
 }
