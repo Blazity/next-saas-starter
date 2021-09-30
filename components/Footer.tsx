@@ -3,43 +3,48 @@ import styled from 'styled-components';
 
 export default function Footer () {
     return (
-        <ListContainer>
-            <List>
-                <ListHeader>lorem</ListHeader>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-            </List>
-            <List>
-                <ListHeader>lorem</ListHeader>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-            </List>
-            <List>
-                <ListHeader>lorem</ListHeader>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-            </List>
-            <List>
-                <ListHeader>lorem</ListHeader>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-            </List>
-            <List>
-                <ListHeader>lorem</ListHeader>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-                <ListItem>ipsum</ListItem>
-            </List>
-        </ListContainer>
+        <div>
+            <ListContainer>
+                <List>
+                    <ListHeader>lorem</ListHeader>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                </List>
+                <List>
+                    <ListHeader>lorem</ListHeader>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                </List>
+                <List>
+                    <ListHeader>lorem</ListHeader>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                </List>
+                <List>
+                    <ListHeader>lorem</ListHeader>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                </List>
+                <List>
+                    <ListHeader>lorem</ListHeader>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                    <ListItem>ipsum</ListItem>
+                </List>
+            </ListContainer>
+            <FooterBar>
+                <p>&copy; Copyright 2021</p>
+            </FooterBar>
+        </div>
     )
 }
 
@@ -59,4 +64,7 @@ const ListHeader = styled.li`
 `
 const ListItem = styled.li`
     font-size: 1.3rem;
+`
+const FooterBar = styled.div`
+    padding: 1.5rem;
 `
