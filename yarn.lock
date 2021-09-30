@@ -3690,10 +3690,10 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-swiper@^7.0.6:
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-7.0.6.tgz#a7271ed5cb05bb6681f7ed855e9a6bcb6d49f9a9"
-  integrity sha512-bd+Ax/VU6tBrOLaGsit/rkkkKDGSK2llP9yxEeUE9ZpJjRFwgBEqoDXhk+ZpJhubC25busq+GQmtHiASfNOApw==
+swiper@7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-7.0.7.tgz#c837684527838359870485477155e790b8c4ef76"
+  integrity sha512-oCpbG0zdBUFKMGlVlcRjtIQCJhAh5Y1+yX9wSYkhC6W92OExETtLXuWdNUiBnXQbWCx3n7nfFD7mxaCnWWDjPA==
   dependencies:
     dom7 "^4.0.0"
     ssr-window "^4.0.0"

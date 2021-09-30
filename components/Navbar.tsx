@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { NavItems, SingleNavItem } from 'types';
 import { HamburgerIcon } from './HamburgerIcon';
 import { media } from 'utils/media';
+import Button from './Button';
 
 type NavbarProps = { items: NavItems };
 type ScrollingDirections = 'up' | 'down' | 'none';
@@ -79,6 +80,14 @@ export default function Navbar({ items }: NavbarProps) {
 }
 
 function NavItem({ href, title, outlined }: SingleNavItem) {
+  if (outlined) {
+    return (
+      <NextLink href="#early-access" passHref>
+        <CustomButton>{title}</CustomButton>
+      </NextLink>
+    );
+  }
+
   return (
     <NavItemWrapper outlined={outlined}>
       <NextLink href={href} passHref>
@@ -87,6 +96,11 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
     </NavItemWrapper>
   );
 }
+
+const CustomButton = styled(Button)`
+  padding: 0.75rem 1.5rem;
+  line-height: 1.8;
+`;
 
 const NavItemList = styled.div`
   display: flex;
