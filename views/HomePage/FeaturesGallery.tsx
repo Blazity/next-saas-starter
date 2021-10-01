@@ -75,8 +75,10 @@ export default function FeaturesGallery() {
 
   return (
     <FeaturesGalleryWrapper>
-      <OverTitle>features</OverTitle>
-      <SectionTitle>What are you signing in for?</SectionTitle>
+      <Content>
+        <OverTitle>features</OverTitle>
+        <SectionTitle>What are you signing in for?</SectionTitle>
+      </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>
         {imagesMarkup}
@@ -100,6 +102,13 @@ const GalleryWrapper = styled.div`
   ${media('<=desktop')} {
     flex-direction: column;
   }
+`;
+
+const Content = styled.div`
+  & > *:not(:first-child) {
+    margin-top: 1rem;
+  }
+  text-align: center;
 `;
 
 const TabsContainer = styled.div`

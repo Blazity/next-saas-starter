@@ -98,18 +98,24 @@ const Content = styled.div`
   align-items: center;
 
   & > *:last-child {
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
 `;
 
 const Section = styled.section`
+  display: flex;
+  flex-direction: column;
   & > *:not(:first-child) {
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
 `;
 
 const SwiperContainer = styled(Container)`
   max-width: 130em;
+
+  & > *:first-child {
+    margin-top: 4rem;
+  }
 
   ${media('<=largeDesktop')} {
     max-width: 100%;
