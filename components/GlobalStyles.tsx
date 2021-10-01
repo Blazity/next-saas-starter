@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --inputBackground: 255,255,255;
+  --navbarBackground: 255,255,255;
 }
 
 .dark-theme {
