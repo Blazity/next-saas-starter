@@ -63,9 +63,11 @@ export default function Navbar({ items }: NavbarProps) {
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
+        <NextLink href="/" passHref>
+          <LogoWrapper>
+            <Logo />
+          </LogoWrapper>
+        </NextLink>
         <NavItemList>
           {items.map((singleItem) => (
             <NavItem key={singleItem.href} {...singleItem} />

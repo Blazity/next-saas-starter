@@ -13,8 +13,8 @@ import NavigationDrawer from 'components/NavigationDrawer';
 const navItems: NavItems = [
   { title: 'Why logoipsum', href: '/' },
   { title: 'Logoipsum features', href: '/features' },
-  { title: 'Help Center', href: '/help' },
-  { title: 'Contact', href: '/contact', outlined: true },
+  { title: 'Contact', href: '/contact' },
+  { title: 'Sign up', href: '/sign-up', outlined: true },
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -44,7 +44,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       {/* <Navbar items={navItems} /> */}
       {/* </NavigationDrawer> */}
       {standaloneMarkup}
-      <div style={{ height: '300vh' }} />
     </>
   );
 }
