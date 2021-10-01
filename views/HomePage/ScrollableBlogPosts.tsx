@@ -28,6 +28,7 @@ export default function ScrollableBlogPosts() {
             768: { slidesPerView: 2.5 },
             1024: { slidesPerView: 3 },
             1300: { slidesPerView: 4, centeredSlides: true },
+            1500: { slidesPerView: 6, centeredSlides: true },
           }}
         >
           <SwiperSlide className="first-slide">
@@ -111,7 +112,7 @@ const Section = styled.section`
 `;
 
 const SwiperContainer = styled(Container)`
-  max-width: 130em;
+  max-width: 250em;
 
   & > *:first-child {
     margin-top: 4rem;
