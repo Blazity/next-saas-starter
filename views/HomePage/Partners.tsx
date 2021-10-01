@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import NextImage from 'next/image';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Container } from 'components/Container';
+import Container from 'components/Container';
 import { media } from 'utils/media';
 
 const PARTNER_LOGOS = [

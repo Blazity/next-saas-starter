@@ -9,6 +9,7 @@ import Cta from 'views/HomePage/Cta';
 import Features from 'views/HomePage/Features';
 import Testimonials from 'views/HomePage/Testimonials';
 import FeaturesGallery from 'views/HomePage/FeaturesGallery';
+import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 
 export default function Homepage() {
   return (
@@ -39,6 +40,7 @@ export default function Homepage() {
       <FeaturesGallery />
       <Features />
       <Testimonials />
+      <ScrollableBlogPosts />
     </HomepageWrapper>
   );
 }

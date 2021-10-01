@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import NextLink from 'next/link';
 import React, { useRef, useState } from 'react';
-import { Container } from './Container';
+import Container from './Container';
 import Drawer from './Drawer';
 import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
 import { useRouter } from 'next/router';

@@ -1,4 +1,4 @@
-import { Container } from 'components/Container';
+import Container from 'components/Container';
 import React from 'react';
 import styled from 'styled-components';
 import NextImage from 'next/image';
@@ -70,9 +70,6 @@ export default function Testimonials() {
 
 const TestimonialsWrapper = styled(Container)`
   position: relative;
-  :root {
-    --swiper-theme-color: #000;
-  }
 
   .swiper-button-prev,
   .swiper-button-next {

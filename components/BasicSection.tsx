@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import NextImage from 'next/image';
 import { media } from 'utils/media';
-import { Container } from './Container';
+import Container from './Container';
 import RichText from './RichText';
 import OverTitle from './OverTitle';
 

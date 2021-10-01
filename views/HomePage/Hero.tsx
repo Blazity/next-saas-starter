@@ -1,5 +1,5 @@
 import Button from 'components/Button';
-import { Container } from 'components/Container';
+import Container from 'components/Container';
 import HeroIllustration from 'components/HeroIllustation';
 import styled from 'styled-components';
 import { media } from 'utils/media';

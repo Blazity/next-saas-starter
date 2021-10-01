@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import NextImage from 'next/image';
-import { Container } from 'components/Container';
+import Container from 'components/Container';
 import { media } from 'utils/media';
 import Collapse from 'components/Collapse';
 import ThreeLayersCircle from 'components/ThreeLayersCircle';
+import OverTitle from 'components/OverTitle';
+import SectionTitle from 'components/SectionTitle';
 
 const TABS = [
   {
@@ -16,7 +18,7 @@ const TABS = [
     secondColor: '221,9,57',
   },
   {
-    title: 'Find relevant media contacts2',
+    title: 'Another amazing feature',
     description:
       '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
     imageUrl: '/demo-illustration-4.png',
@@ -24,7 +26,7 @@ const TABS = [
     secondColor: '99,172,232',
   },
   {
-    title: 'Find relevant media contacts3',
+    title: 'And yet... another truly fascinating feature',
     description:
       '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
     imageUrl: '/demo-illustration-5.png',
@@ -73,8 +75,12 @@ export default function FeaturesGallery() {
 
   return (
     <FeaturesGalleryWrapper>
-      <TabsContainer>{tabsMarkup}</TabsContainer>
-      {imagesMarkup}
+      <OverTitle>features</OverTitle>
+      <SectionTitle>What are you signing in for?</SectionTitle>
+      <GalleryWrapper>
+        <TabsContainer>{tabsMarkup}</TabsContainer>
+        {imagesMarkup}
+      </GalleryWrapper>
     </FeaturesGalleryWrapper>
   );
 }
@@ -82,6 +88,14 @@ export default function FeaturesGallery() {
 const FeaturesGalleryWrapper = styled(Container)`
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const GalleryWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
 
   ${media('<=desktop')} {
     flex-direction: column;
