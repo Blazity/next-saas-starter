@@ -102,7 +102,7 @@ const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  opacity: 0.8;
+  opacity: 0.6;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
 `;
