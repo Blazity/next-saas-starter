@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FooterItems, SingleFooterList, SingleFooterListItem } from 'types';
 import NextLink from 'next/link';
-
+import { media } from 'utils/media';
 
 export default function Footer () {
     const footerItems: FooterItems = [
@@ -81,10 +81,10 @@ const ListContainer = styled.div`
     display: flex;    
     flex-direction: row;
     justify-content: space-evenly;
-    @media (max-width: 768px) {
+    ${media('<desktop')} {
         flex-direction: column;
         padding: 2.5rem;
-      }
+    }
 `
 
 const ListHeader = styled.p`
@@ -98,7 +98,7 @@ const ListItemWrapper = styled.p`
     
     a {
         text-decoration: none;
-        color: #696969;
+        color: rgba(var(--text), 0.75);
     }
 `
 const FooterBar = styled.div`
