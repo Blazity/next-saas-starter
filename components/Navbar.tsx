@@ -10,6 +10,7 @@ import { NavItems, SingleNavItem } from 'types';
 import { HamburgerIcon } from './HamburgerIcon';
 import { media } from 'utils/media';
 import Button from './Button';
+import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 
 type NavbarProps = { items: NavItems };
 type ScrollingDirections = 'up' | 'down' | 'none';
@@ -82,12 +83,14 @@ export default function Navbar({ items }: NavbarProps) {
 }
 
 function NavItem({ href, title, outlined }: SingleNavItem) {
+  const { setIsModalOpened } = useNewsletterModalContext();
+
+  function showNewsletterModal() {
+    setIsModalOpened(true);
+  }
+
   if (outlined) {
-    return (
-      <NextLink href="#early-access" passHref>
-        <CustomButton>{title}</CustomButton>
-      </NextLink>
-    );
+    return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
   }
 
   return (
