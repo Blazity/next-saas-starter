@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import NextLink from 'next/link';
 import { media } from 'utils/media';
+import {TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon, LinkedinShareButton, LinkedinIcon} from 'react-share' 
 
 type SingleFooterListItem = { title: string; href: string; }
 type FooterListItems = SingleFooterListItem[]
@@ -52,6 +53,17 @@ export default function Footer () {
                 <FooterList key={singleItem.title} {...singleItem} />
             ))}
             </ListContainer>
+            <ShareBar>
+                <TwitterShareButton url={'https://www.youtube.com/watch?v=T78nq62aQgM'}>
+                    <TwitterIcon size={32} round={true}/>
+                </TwitterShareButton>
+                <FacebookShareButton url={'https://www.youtube.com/watch?v=T78nq62aQgM'}>
+                    <FacebookIcon size={32} round={true}/>
+                </FacebookShareButton>
+                <LinkedinShareButton url={'https://www.youtube.com/watch?v=T78nq62aQgM'}>
+                    <LinkedinIcon size={32} round={true}/>
+                </LinkedinShareButton>
+            </ShareBar>
             <FooterBar>
                 <p>&copy; Copyright 2021</p>
             </FooterBar>
@@ -95,6 +107,7 @@ const ListHeader = styled.p`
     font-weight: bold;
     font-size: 2rem;
 `
+
 const ListItemWrapper = styled.p`
     font-size: 1.5rem;
     padding-top: 0.5rem;
@@ -105,6 +118,10 @@ const ListItemWrapper = styled.p`
         color: rgba(var(--text), 0.75);
     }
 `
+const ShareBar = styled.div`
+    padding-left: 2.5rem;
+`
+
 const FooterBar = styled.div`
-    padding: 1.5rem;
+    padding: 2.5rem;
 `
