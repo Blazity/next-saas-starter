@@ -1,0 +1,173 @@
+---
+title: NextJS custom image loader with WebP support and polyfill
+description: Using next/image component with custom loader that supports both webp and jpeg polyfill in Safari. Three possible solutions and example with Contentful API.
+date: '2021-07-31'
+tags: next.js,next/image,image-optimization,webp safari
+---
+
+## Table of Contents
+
+## Case
+
+I wanted to reduce Vercel's bandwidth usage by serving images directly from CMS. But there were also a few requirements:
+
+- sticking to the original **_next/image_** implementation
+- serving assets in **_.webp_** whenever it's possible with a fallback to .jpeg format
+- make it as self-manageable as possible
+
+I am using Contentful Images API here as an example, but I bet your CMS uses something similar! (Most of them use [Filestack](https://www.filestack.com/) under the hood)
+
+## Problem
+
+In next.js, there's no official way to check whether the browser supports webp format or not while using custom image loader feature. This could be fixed through a custom server, but Vercel does not support this.[^2]
+
+## Solutions
+
+### Using Next.js redirects
+
+If you're using a recent Next.js version (greater than v10.2.0), this might be a great solution. It adds a little overhead to each request, but it is hard to make them stack up to a degree that causes problems.
+
+<Code
+  code={`# next.config.js 
+module.exports = { 
+  async redirects() {
+    return [
+      {
+        /* If accept header contains image/webp string, serve webp image */
+        source: "/cdn-images/:path*",
+        has: [
+          {
+            type: "header",
+            key: "Accept",
+            value: "(?<bogus>.*.image/webp.*)",
+          },
+        ],
+        /* 
+        Question mark is not a query params initializer.
+        It is a marker for optional param from path-to-regexp library.
+        */
+        destination: "https://images.ctfassets.net/:path*?fm=webp",
+        permanent: true,
+      },
+      {
+        /* If accept header does not contain image/webp string, serve jpg image */
+        source: "/cdn-images/:path*",
+        has: [
+          {
+            type: "header",
+            key: "Accept",
+            value: "(?<bogus>.*.(?!image/webp).*)",
+          },
+        ],
+        destination: "https://images.ctfassets.net/:path*?fm=jpg",
+        permanent: true,
+      }
+    ]
+  }
+}`}
+/>
+
+<Code
+  code={`const COMPATIBLE_WIDTHS = [320, 375, 425, 550, 640, 750, 828, 1080, 1200]; 
+const CONTENTFUL_IMAGES_API_URL = "images.ctfassets.net";  
+  
+const customLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  const isSizeSupported = COMPATIBLE_WIDTHS.includes(width);
+  const isContentfulHosted = src.includes(CONTENTFUL_IMAGES_API_URL);
+    
+  if (isSizeSupported && isContentfulHosted) {
+    const url = new URL(src);  
+    const srcWithoutHost = url.pathname; 
+    // Do not delete that \`&\` at the end, it is required to make it work with path-to-regexp library  
+    return \`/cdn-images\${srcWithoutHost}?w=\${width}&q=\${quality || 75}&\`;  
+  };  
+  
+  return src;
+};
+  
+  
+<Image loader={customLoader} {...imageProps} />`}
+  language="jsx"
+/>
+
+**Pros:**
+
+- Serverless (and so, easy to scale)
+- No need to maintain in any way
+- 99.99% Uptime guaranteed
+- Easy and quick to use (but coding this wasn't fun!)
+- Server-side solution, so it will work with JavaScript disabled
+- Works everywhere
+
+**Cons:**
+
+- Won't work on older Next.js versions (greater than v10.2.0 required)
+- Extremely hacky Regex-like syntax [path-to-regexp](https://github.com/pillarjs/path-to-regexp)
+- Increases network overhead (redirects). In my case, it adds a minor 30-60ms delay to each request
+
+### Client-side solution
+
+This one should work in theory, but I have never tested it myself. I like keeping important libraries up-to-date, and this solution makes it a little bit harder, so I had to pass on it. You could use this script to check if your browser supports webp images, and assign its result to a global variable. Then, based on its value replace the src attribute with the appropriate format's extension[^1].
+
+<Code
+  code={`// check_webp_feature:
+//   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
+//   'callback(feature, result)' will be passed back the detection result (in an asynchronous way!)
+function check_webp_feature(feature, callback) {
+    var kTestImages = {
+        lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
+        lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
+        alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
+        animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
+    };
+    var img = new Image();
+    img.onload = function () {
+        var result = (img.width > 0) && (img.height > 0);
+        callback(feature, result);
+    };
+    img.onerror = function () {
+        callback(feature, false);
+    };
+    img.src = "data:image/webp;base64," + kTestImages[feature];
+}`}
+  caption="Source: https://developers.google.com/speed/webp/faq#how_can_i_detect_browser_support_for_webp"
+/>
+
+Keep in mind that the script needs to be blocking (takes ~1ms so don't worry) and loaded before any next.js chunk. To preserve these changes on every install you can use [patch-package](https://github.com/ds300/patch-package#readme).
+
+**Pros:**
+
+- 99.99% Uptime guaranteed
+
+- No network overhead at all
+
+- No scalability issues
+
+- No maintenance's needed
+
+**Cons:**
+
+- Client-side only, but it won't affect anything important (like SEO)
+
+- Patching next.js (makes it harder to update)
+
+- Might not work in sketchy browsers
+
+### Using a proxy
+
+You could use existing products like Nginx or even code a custom one. The idea stays the same, redirect to a correct format based on Accept header. But numerous cons make this (at least) not an ideal solution.
+
+**Pros:**
+
+- Quick & easy to setup
+
+**Cons:**
+
+- Not quick & not so easy to maintain
+- Not serverless
+- You might encounter scalability issues in big-scale projects
+- Increase in network overhead
+- Images are not served directly from CMS so you would have to pay more
+
+[^1]: https://github.com/vercel/next.js/blob/9065cdf83657455b091bfb2f85ae8231dfe50d9d/packages/next/client/image.tsx#L220
+[^2]: https://github.com/vercel/next.js/issues/20967

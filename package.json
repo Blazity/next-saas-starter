@@ -12,16 +12,22 @@
     "@accessible/drawer": "^3.0.2",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "css-in-js-media": "^2.0.1",
+    "date-fns": "^2.24.0",
+    "gray-matter": "^4.0.3",
     "next": "11.1.2",
     "polished": "^4.1.3",
+    "prism-react-renderer": "^1.2.1",
     "react": "17.0.2",
     "react-animate-height": "^2.0.23",
     "react-dom": "17.0.2",
+    "reading-time": "^1.5.0",
     "styled-components": "^5.3.1",
-    "swiper": "7.0.7"
+    "swiper": "7.0.7",
+    "use-clipboard-copy": "^0.2.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
+    "@fec/remark-a11y-emoji": "^3.1.0",
     "@next/bundle-analyzer": "^11.1.2",
     "@types/react": "^17.0.20",
     "@types/styled-components": "^5.1.14",
@@ -38,6 +44,14 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "next-mdx-remote": "^3.0.5",
+    "remark-breaks": "^3.0.1",
+    "remark-external-links": "^9.0.1",
+    "remark-footnotes": "^4.0.1",
+    "remark-gfm": "^3.0.0",
+    "remark-sectionize": "^1.1.1",
+    "remark-slug": "^7.0.0",
+    "remark-toc": "^8.0.0",
     "typescript": "4.4.2"
   }
 }
