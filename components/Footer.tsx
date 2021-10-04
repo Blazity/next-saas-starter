@@ -4,21 +4,21 @@ import { media } from 'utils/media';
 
 type SingleFooterListItem = { title: string; href: string; }
 type FooterListItems = SingleFooterListItem[]
-type SingleFooterList = { header: string; listItem: FooterListItems; }
+type SingleFooterList = { title: string; items: FooterListItems; }
 type FooterItems = SingleFooterList[]
 
 export default function Footer () {
     const footerItems: FooterItems = [
         {
-            header: 'Company',
-            listItem: [
+            title: 'Company',
+            items: [
                 {title: 'About' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'News' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'}
             ]
         },
         {
-            header: 'Product',
-            listItem: [
+            title: 'Product',
+            items: [
                 {title: 'Media Database' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'Press Release Creator' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'Online Newsroom' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
@@ -26,16 +26,16 @@ export default function Footer () {
             ]
         },
         {
-            header: 'Knowledge',
-            listItem: [
+            title: 'Knowledge',
+            items: [
                 {title: 'Product Updates' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'Blog' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'Help Center' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'}
             ]
         },
         {
-            header: 'Legal',
-            listItem: [
+            title: 'Legal',
+            items: [
                 {title: 'Privacy Policy' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'Terms of Service' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
                 {title: 'Billing Policy' , href: 'https://www.youtube.com/watch?v=T78nq62aQgM'},
@@ -49,7 +49,7 @@ export default function Footer () {
         <div>
             <ListContainer>
             {footerItems.map((singleItem) => (
-                <FooterList key={singleItem.header} {...singleItem} />
+                <FooterList key={singleItem.title} {...singleItem} />
             ))}
             </ListContainer>
             <FooterBar>
@@ -60,11 +60,11 @@ export default function Footer () {
 }
 
 
-function FooterList({header, listItem}: SingleFooterList){
+function FooterList({title, items}: SingleFooterList){
     return(
         <div>
-            <ListHeader>{header}</ListHeader>
-            {listItem.map((singleItem) => (
+            <ListHeader>{title}</ListHeader>
+            {items.map((singleItem) => (
                 <ListItem key={singleItem.href} {...singleItem} />
           ))}
         </div>
