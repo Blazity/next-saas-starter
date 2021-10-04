@@ -1,7 +1,11 @@
 import styled from 'styled-components';
-import { FooterItems, SingleFooterList, SingleFooterListItem } from 'types';
 import NextLink from 'next/link';
 import { media } from 'utils/media';
+
+type SingleFooterListItem = { title: string; href: string; }
+type FooterListItems = SingleFooterListItem[]
+type SingleFooterList = { header: string; listItem: FooterListItems; }
+type FooterItems = SingleFooterList[]
 
 export default function Footer () {
     const footerItems: FooterItems = [
