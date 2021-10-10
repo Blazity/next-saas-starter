@@ -96,9 +96,9 @@ const Break = styled.br`
 const TextHighlight = styled.code`
   display: inline-block;
   padding: 0 0.6rem;
-  color: rgb(var(--primary));
+  color: rgb(var(--textSecondary));
   border-radius: 0.4rem;
-  background-color: rgb(var(--text));
+  background-color: rgba(var(--primary), 0.8);
   font-size: 1.6rem;
   font-family: inherit;
 `;
@@ -113,4 +113,5 @@ const components = {
   a: Link,
   Code,
   Quote,
+  ArticleImage,
 };

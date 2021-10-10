@@ -3,171 +3,69 @@ title: NextJS custom image loader with WebP support and polyfill
 description: Using next/image component with custom loader that supports both webp and jpeg polyfill in Safari. Three possible solutions and example with Contentful API.
 date: '2021-07-31'
 tags: next.js,next/image,image-optimization,webp safari
-imageUrl: '/demo-illustration-4.png'
+imageUrl: '/posts/test-article/example-image-1.jpeg'
 ---
 
-## Case
+## HISTORY, PURPOSE AND USAGE
 
-I wanted to reduce Vercel's bandwidth usage by serving images directly from CMS. But there were also a few requirements:
+Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:
 
-- sticking to the original **_next/image_** implementation
-- serving assets in **_.webp_** whenever it's possible with a fallback to .jpeg format
-- make it as self-manageable as possible
-
-I am using Contentful Images API here as an example, but I bet your CMS uses something similar! (Most of them use [Filestack](https://www.filestack.com/) under the hood)
-
-## Problem
-
-In next.js, there's no official way to check whether the browser supports webp format or not while using custom image loader feature. This could be fixed through a custom server, but Vercel does not support this.[^2]
-
-## Solutions
-
-### Using Next.js redirects
-
-If you're using a recent Next.js version (greater than v10.2.0), this might be a great solution. It adds a little overhead to each request, but it is hard to make them stack up to a degree that causes problems.
-
-<Code
-  code={`# next.config.js 
-module.exports = { 
-  async redirects() {
-    return [
-      {
-        /* If accept header contains image/webp string, serve webp image */
-        source: "/cdn-images/:path*",
-        has: [
-          {
-            type: "header",
-            key: "Accept",
-            value: "(?<bogus>.*.image/webp.*)",
-          },
-        ],
-        /* 
-        Question mark is not a query params initializer.
-        It is a marker for optional param from path-to-regexp library.
-        */
-        destination: "https://images.ctfassets.net/:path*?fm=webp",
-        permanent: true,
-      },
-      {
-        /* If accept header does not contain image/webp string, serve jpg image */
-        source: "/cdn-images/:path*",
-        has: [
-          {
-            type: "header",
-            key: "Accept",
-            value: "(?<bogus>.*.(?!image/webp).*)",
-          },
-        ],
-        destination: "https://images.ctfassets.net/:path*?fm=jpg",
-        permanent: true,
-      }
-    ]
-  }
-}`}
+<Quote
+  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  author="Cicero"
+  cite="https://loremipsum.io/"
 />
 
-<Code
-  code={`const COMPATIBLE_WIDTHS = [320, 375, 425, 550, 640, 750, 828, 1080, 1200]; 
-const CONTENTFUL_IMAGES_API_URL = "images.ctfassets.net";  
-  
-const customLoader = ({ src, width, quality }: ImageLoaderProps) => {
-  const isSizeSupported = COMPATIBLE_WIDTHS.includes(width);
-  const isContentfulHosted = src.includes(CONTENTFUL_IMAGES_API_URL);
-    
-  if (isSizeSupported && isContentfulHosted) {
-    const url = new URL(src);  
-    const srcWithoutHost = url.pathname; 
-    // Do not delete that \`&\` at the end, it is required to make it work with path-to-regexp library  
-    return \`/cdn-images\${srcWithoutHost}?w=\${width}&q=\${quality || 75}&\`;  
-  };  
-  
-  return src;
-};
-  
-  
-<Image loader={customLoader} {...imageProps} />`}
-  language="jsx"
-/>
+## HEDONIST ROOTS
 
-**Pros:**
+Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin, though it looks like it, and it actually says nothing,” Before & After magazine [answered a curious reader](https://www.straightdope.com/columns/read/2290/what-does-the-filler-text-lorem-ipsum-mean/), “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.”
 
-- Serverless (and so, easy to scale)
-- No need to maintain in any way
-- 99.99% Uptime guaranteed
-- Easy and quick to use (but coding this wasn't fun!)
-- Server-side solution, so it will work with JavaScript disabled
-- Works everywhere
+**As Cicero would put it, “Um, not so fast.”**
 
-**Cons:**
+The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin.
 
-- Won't work on older Next.js versions (greater than v10.2.0 required)
-- Extremely hacky Regex-like syntax [path-to-regexp](https://github.com/pillarjs/path-to-regexp)
-- Increases network overhead (redirects). In my case, it adds a minor 30-60ms delay to each request
+Richard McClintock, a Latin scholar from **Hampden-Sydney College**, is credited with discovering the source behind the ubiquitous filler text. In seeing a sample of lorem ipsum, his interest was piqued by consectetur—a genuine, albeit rare, Latin word. Consulting a Latin dictionary led McClintock to a passage from De Finibus Bonorum et Malorum (“On the Extremes of Good and Evil”), a first-century B.C. text from the Roman philosopher Cicero.
 
-### Client-side solution
+In particular, the garbled words of lorem ipsum bear an unmistakable resemblance to sections `1.10.32–33` of Cicero's work, with the most notable passage excerpted below:
 
-This one should work in theory, but I have never tested it myself. I like keeping important libraries up-to-date, and this solution makes it a little bit harder, so I had to pass on it. You could use this script to check if your browser supports webp images, and assign its result to a global variable. Then, based on its value replace the src attribute with the appropriate format's extension[^1].
+<Quote content="Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem." />
+
+McClintock's eye for detail certainly helped narrow the whereabouts of lorem ipsum's origin, however, the “how and when” still remain something of a mystery, with competing theories and timelines.
+
+## Creation timelines for the standard lorem ipsum passage vary, with some citing the 15th century and others the 20th.
+
+So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.
+
+It's difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn't relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.
+
+And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supply houses were hiring classics scholars in the 1960s?” Perhaps. But it seems reasonable to imagine that there was a version in use far before the age of Letraset.
+
+McClintock wrote to Before & After to explain his discovery;
+
+<ArticleImage src="/posts/test-article/example-image-2.png" />
+
+It's difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn't relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.
+
+And anyways, as Cecil Adams reasoned, “[Do you really] think graphic arts supply houses were hiring classics scholars in the 1960s?” Perhaps. But it seems reasonable to imagine that there was a version in use far before the age of Letraset.
 
 <Code
-  code={`// check_webp_feature:
-//   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
-//   'callback(feature, result)' will be passed back the detection result (in an asynchronous way!)
-function check_webp_feature(feature, callback) {
-    var kTestImages = {
-        lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
-        lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
-        alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
-        animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
-    };
-    var img = new Image();
-    img.onload = function () {
-        var result = (img.width > 0) && (img.height > 0);
-        callback(feature, result);
-    };
-    img.onerror = function () {
-        callback(feature, false);
-    };
-    img.src = "data:image/webp;base64," + kTestImages[feature];
-}`}
-  withLineNumbers
-  caption="Source: https://developers.google.com/speed/webp/faq#how_can_i_detect_browser_support_for_webp"
+  code={`process.stdin.resume();  
+process.stdin.setEncoding('utf-8');  
+  
+let inputString = '';  
+let currentLine = 0;  
+  
+process.stdin.on('data', inputStdin => {  
+    inputString += inputStdin;  
+});  
+  
+process.stdin.on('end', _ => {  
+    inputString = inputString.trim().split('\n').map(string => {  
+        return string.trim();  
+    });  
+      
+    main();      
+});  
+`}
+  language="js"
 />
-
-Keep in mind that the script needs to be blocking (takes ~1ms so don't worry) and loaded before any next.js chunk. To preserve these changes on every install you can use [patch-package](https://github.com/ds300/patch-package#readme).
-
-**Pros:**
-
-- 99.99% Uptime guaranteed
-
-- No network overhead at all
-
-- No scalability issues
-
-- No maintenance's needed
-
-**Cons:**
-
-- Client-side only, but it won't affect anything important (like SEO)
-
-- Patching next.js (makes it harder to update)
-
-- Might not work in sketchy browsers
-
-### Using a proxy
-
-You could use existing products like Nginx or even code a custom one. The idea stays the same, redirect to a correct format based on Accept header. But numerous cons make this (at least) not an ideal solution.
-
-**Pros:**
-
-- Quick & easy to setup
-
-**Cons:**
-
-- Not quick & not so easy to maintain
-- Not serverless
-- You might encounter scalability issues in big-scale projects
-- Increase in network overhead
-- Images are not served directly from CMS so you would have to pay more
-
-[^1]: https://github.com/vercel/next.js/blob/9065cdf83657455b091bfb2f85ae8231dfe50d9d/packages/next/client/image.tsx#L220
-[^2]: https://github.com/vercel/next.js/issues/20967
