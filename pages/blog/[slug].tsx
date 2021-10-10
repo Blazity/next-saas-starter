@@ -10,28 +10,33 @@ import Head from 'next/head';
 import { getAllPostsSlugs, getSinglePost } from 'utils/postsFetcher';
 import React, { useEffect } from 'react';
 import { getReadTime } from 'utils/readTime';
-import Spacer from 'components/Spacer';
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import Container from 'components/Container';
 // import AuthorInfo from 'components/AuthorInfo';
 
-export default function SingleArticlePage(props) {
+export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, content, meta, readTime } = props;
   const { title, description, date } = meta;
 
   const formattedDate = formatDate(new Date(date));
 
   useEffect(() => {
-    const prismThemeLinkEl = document.querySelector('link[data-id="prism-theme"]');
+    lazyLoadPrismTheme();
 
-    if (!prismThemeLinkEl) {
-      const headEl = document.querySelector('head');
-      if (headEl) {
-        const newEl = document.createElement('link');
-        newEl.setAttribute('data-id', 'prism-theme');
-        newEl.setAttribute('rel', 'stylesheet');
-        newEl.setAttribute('href', '/prism-theme.css');
-        newEl.setAttribute('media', 'print');
-        newEl.setAttribute('onload', "this.media='all'; this.onload=null;");
-        headEl.appendChild(newEl);
+    function lazyLoadPrismTheme() {
+      const prismThemeLinkEl = document.querySelector('link[data-id="prism-theme"]');
+
+      if (!prismThemeLinkEl) {
+        const headEl = document.querySelector('head');
+        if (headEl) {
+          const newEl = document.createElement('link');
+          newEl.setAttribute('data-id', 'prism-theme');
+          newEl.setAttribute('rel', 'stylesheet');
+          newEl.setAttribute('href', '/prism-theme.css');
+          newEl.setAttribute('media', 'print');
+          newEl.setAttribute('onload', "this.media='all'; this.onload=null;");
+          headEl.appendChild(newEl);
+        }
       }
     }
   }, []);
@@ -46,11 +51,11 @@ export default function SingleArticlePage(props) {
       {/* <OpenGraphHead slug={slug} {...meta} /> */}
       {/* <StructuredDataHead slug={slug} {...meta} /> */}
       {/* <MetadataHead {...meta} /> */}
-      <Container id="content">
+      <CustomContainer id="content">
         {/* <Header title={title} formattedDate={formattedDate} readTime={readTime} /> */}
         <MDXRichText {...content} />
         {/* <AuthorInfo /> */}
-      </Container>
+      </CustomContainer>
     </>
   );
 }
@@ -63,17 +68,20 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const { slug, content, meta } = await getSinglePost(params.slug);
-  const serializedContent = await serializeContent(content, meta);
-  return { props: { slug, content: serializedContent, meta, readTime: getReadTime(content) } };
+export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
+  if (params) {
+    const { slug, content, meta } = await getSinglePost(params.slug);
+    const serializedContent = await serializeContent(content, meta);
+    return { props: { slug, content: serializedContent, meta, readTime: getReadTime(content) } };
+  }
 
-  async function serializeContent(content, meta) {
+  async function serializeContent(content: string, meta: Record<string, unknown>) {
     const { serialize } = await import('next-mdx-remote/serialize');
     return serialize(content, {
       scope: meta,
       mdxOptions: {
         remarkPlugins: [
+          // @ts-ignore
           await import('@fec/remark-a11y-emoji'),
           await import('remark-breaks'),
           await import('remark-gfm'),
@@ -81,6 +89,7 @@ export async function getStaticProps({ params }) {
           await import('remark-external-links'),
           [await import('remark-toc'), { ordered: true, tight: true, maxDepth: 3 }],
           await import('remark-slug'),
+          // @ts-ignore
           await import('remark-sectionize'),
         ],
         rehypePlugins: [],
@@ -89,12 +98,6 @@ export async function getStaticProps({ params }) {
   }
 }
 
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const CustomContainer = styled(Container)`
   max-width: 90rem;
-  padding: 0 1.2rem;
-  margin: 0 auto;
-  margin-bottom: 3.8rem;
 `;

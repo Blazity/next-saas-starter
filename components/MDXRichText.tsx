@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Code from './Code';
 import Quote from './Quote';
 import Link from './Link';
 import ArticleImage from './ArticleImage';
+import { media } from 'utils/media';
 
-export default function RichText(props) {
+export default function RichText(props: MDXRemoteSerializeResult) {
   return (
     <Container>
       <MDXRemote {...props} components={components} />
@@ -28,12 +29,12 @@ const Container = styled.div`
     word-break: break-word;
   }
 
-  /* @media (max-width: ${(p) => p.theme.breakpoints.md}) {
+  ${media('<=desktop')} {
     .remark-highlight {
       width: 100%;
       overflow-x: auto;
     }
-  } */
+  }
 
   & > section,
   .footnotes {
@@ -42,8 +43,8 @@ const Container = styled.div`
 
   ol,
   ul {
-    font-size: 2.2rem;
-    line-height: 3rem;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
     margin: 0;
     padding-left: 2.4rem;
     li {
@@ -53,18 +54,18 @@ const Container = styled.div`
     }
 
     &:not(:last-child) {
-      margin-bottom: 3rem;
+      margin-bottom: 2.7rem;
     }
   }
 `;
 
 const Paragraph = styled.p`
-  font-size: 2.2rem;
-  line-height: 3rem;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
   hanging-punctuation: first;
 
   &:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2.7rem;
   }
 
   & + ul,
@@ -74,13 +75,13 @@ const Paragraph = styled.p`
 `;
 
 const SecondHeading = styled.h2`
-  font-size: 3rem;
-  line-height: 3.8rem;
-  margin-bottom: 3.8rem;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
+  margin-bottom: 3.75rem;
 `;
 
 const ThirdHeading = styled.h3`
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 3.4rem;
   margin-bottom: 3.4rem;
 `;
@@ -98,7 +99,7 @@ const TextHighlight = styled.code`
   color: rgb(var(--primary));
   border-radius: 0.4rem;
   background-color: rgb(var(--text));
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: inherit;
 `;
 
