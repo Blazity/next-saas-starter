@@ -21,6 +21,7 @@
     "react-animate-height": "^2.0.23",
     "react-dom": "17.0.2",
     "react-schemaorg": "^2.0.0",
+    "react-share": "^4.4.0",
     "reading-time": "^1.5.0",
     "schema-dts": "^1.0.0",
     "styled-components": "^5.3.1",

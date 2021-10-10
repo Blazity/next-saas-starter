@@ -15,10 +15,12 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import Header from 'views/SingleArticlePage/Header';
+import ShareWidget from 'views/SingleArticlePage/ShareWidget';
+import { media } from 'utils/media';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, content, meta, readTime } = props;
-  const { title, description, date, imageUrl } = meta;
+  const { title, date, imageUrl } = meta;
 
   const formattedDate = formatDate(new Date(date));
 
@@ -54,9 +56,9 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       <StructuredDataHead slug={slug} {...meta} />
       <MetadataHead {...meta} />
       <CustomContainer id="content">
+        <ShareWidget title={title} slug={slug} />
         <Header title={title} formattedDate={formattedDate} imageUrl={imageUrl} readTime={readTime} />
         <MDXRichText {...content} />
-        {/* <AuthorInfo /> */}
       </CustomContainer>
     </>
   );
@@ -100,6 +102,11 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
 }
 
 const CustomContainer = styled(Container)`
+  position: relative;
   max-width: 90rem;
   margin: 10rem auto;
+
+  ${media('<=tablet')} {
+    margin: 5rem auto;
+  }
 `;

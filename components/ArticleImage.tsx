@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 interface ArticleImageProps extends ImageProps {
   src: string;
-  caption: string;
+  caption?: string;
 }
 
 export default function ArticleImage({ src, caption, ...rest }: ArticleImageProps) {
