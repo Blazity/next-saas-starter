@@ -7,11 +7,10 @@ export interface ArticleCardProps {
   title: string;
   slug: string;
   imageUrl: string;
-  readTime: string;
   description: string;
 }
 
-export default function ArticleCard({ title, slug, imageUrl, readTime, description }: ArticleCardProps) {
+export default function ArticleCard({ title, slug, imageUrl, description }: ArticleCardProps) {
   return (
     <NextLink href={'/blog/' + slug} passHref>
       <ArticleCardWrapper>

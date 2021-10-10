@@ -1,5 +1,7 @@
+import { InferGetStaticPropsType } from 'next';
 import styled from 'styled-components';
 
+import { getAllPosts } from 'utils/postsFetcher';
 import Link from 'components/Link';
 import BasicSection from 'components/BasicSection';
 
@@ -11,7 +13,7 @@ import Testimonials from 'views/HomePage/Testimonials';
 import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 
-export default function Homepage() {
+export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <HomepageWrapper>
       <Hero />
@@ -40,7 +42,7 @@ export default function Homepage() {
       <FeaturesGallery />
       <Features />
       <Testimonials />
-      <ScrollableBlogPosts />
+      <ScrollableBlogPosts posts={posts} />
     </HomepageWrapper>
   );
 }
@@ -50,3 +52,11 @@ const HomepageWrapper = styled.div`
     margin-top: 15rem;
   }
 `;
+
+export async function getStaticProps() {
+  return {
+    props: {
+      posts: await getAllPosts(),
+    },
+  };
+}

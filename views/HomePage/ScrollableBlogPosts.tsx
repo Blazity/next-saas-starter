@@ -6,8 +6,13 @@ import SectionTitle from 'components/SectionTitle';
 import OverTitle from 'components/OverTitle';
 import styled from 'styled-components';
 import { media } from 'utils/media';
+import { SingleArticle } from 'types';
 
-export default function ScrollableBlogPosts() {
+interface ScrollableBlogPostsProps {
+  posts: SingleArticle[];
+}
+
+export default function ScrollableBlogPosts({ posts }: ScrollableBlogPostsProps) {
   return (
     <Section>
       <Container>
@@ -31,60 +36,16 @@ export default function ScrollableBlogPosts() {
             1500: { slidesPerView: 6, centeredSlides: true },
           }}
         >
-          <SwiperSlide className="first-slide">
-            <ArticleCard
-              title="An analysis on developer-security researcher interactions in the vulnerability disclosure process"
-              description="This blog post is a special report providing insights into developers’ interactions with security researchers through the vulnerability disclosure process and their views and perspectives on the security research community. The analysis is brought to you from the GitHub Security Lab."
-              readTime="10"
-              imageUrl="https://github.blog/wp-content/uploads/2020/12/102393310-07478b80-3f8d-11eb-84eb-392d555ebd29.png?w=1200"
-              slug="test-article"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ArticleCard
-              title="An analysis on developer-security researcher interactions in the vulnerability disclosure process"
-              description="This blog post is a special report providing insights into developers’ interactions with security researchers through the vulnerability disclosure process and their views and perspectives on the security research community. The analysis is brought to you from the GitHub Security Lab."
-              readTime="10"
-              imageUrl="https://github.blog/wp-content/uploads/2020/12/102393310-07478b80-3f8d-11eb-84eb-392d555ebd29.png?w=1200"
-              slug="test-article"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ArticleCard
-              title="An analysis on developer-security researcher interactions in the vulnerability disclosure process"
-              description="This blog post is a special report providing insights into developers’ interactions with security researchers through the vulnerability disclosure process and their views and perspectives on the security research community. The analysis is brought to you from the GitHub Security Lab."
-              readTime="10"
-              imageUrl="https://github.blog/wp-content/uploads/2020/12/102393310-07478b80-3f8d-11eb-84eb-392d555ebd29.png?w=1200"
-              slug="test-article"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ArticleCard
-              title="An analysis on developer-security researcher interactions in the vulnerability disclosure process"
-              description="This blog post is a special report providing insights into developers’ interactions with security researchers through the vulnerability disclosure process and their views and perspectives on the security research community. The analysis is brought to you from the GitHub Security Lab."
-              readTime="10"
-              imageUrl="https://github.blog/wp-content/uploads/2020/12/102393310-07478b80-3f8d-11eb-84eb-392d555ebd29.png?w=1200"
-              slug="test-article"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ArticleCard
-              title="An analysis on developer-security researcher interactions in the vulnerability disclosure process"
-              description="This blog post is a special report providing insights into developers’ interactions with security researchers through the vulnerability disclosure process and their views and perspectives on the security research community. The analysis is brought to you from the GitHub Security Lab."
-              readTime="10"
-              imageUrl="https://github.blog/wp-content/uploads/2020/12/102393310-07478b80-3f8d-11eb-84eb-392d555ebd29.png?w=1200"
-              slug="test-article"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ArticleCard
-              title="An analysis on developer-security researcher interactions in the vulnerability disclosure process"
-              description="This blog post is a special report providing insights into developers’ interactions with security researchers through the vulnerability disclosure process and their views and perspectives on the security research community. The analysis is brought to you from the GitHub Security Lab."
-              readTime="10"
-              imageUrl="https://github.blog/wp-content/uploads/2020/12/102393310-07478b80-3f8d-11eb-84eb-392d555ebd29.png?w=1200"
-              slug="test-article"
-            />
-          </SwiperSlide>
+          {posts.map((singlePost, idx) => (
+            <SwiperSlide className={idx === 0 ? 'first-slide' : undefined} key={singlePost.meta.title}>
+              <ArticleCard
+                title={singlePost.meta.title}
+                description={singlePost.meta.description}
+                imageUrl={singlePost.meta.imageUrl}
+                slug={singlePost.slug}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </SwiperContainer>
     </Section>

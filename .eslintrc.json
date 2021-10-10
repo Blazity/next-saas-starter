@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": ["react-app", "prettier", "plugin:react/recommended", "next/core-web-vitals"],
   "env": {
     "es6": true
