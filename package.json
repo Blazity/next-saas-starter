@@ -20,7 +20,9 @@
     "react": "17.0.2",
     "react-animate-height": "^2.0.23",
     "react-dom": "17.0.2",
+    "react-schemaorg": "^2.0.0",
     "reading-time": "^1.5.0",
+    "schema-dts": "^1.0.0",
     "styled-components": "^5.3.1",
     "swiper": "7.0.7",
     "use-clipboard-copy": "^0.2.0"
@@ -51,7 +53,6 @@
     "remark-gfm": "^3.0.0",
     "remark-sectionize": "^1.1.1",
     "remark-slug": "^7.0.0",
-    "remark-toc": "^8.0.0",
     "typescript": "4.4.2"
   }
 }

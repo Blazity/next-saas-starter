@@ -5,18 +5,20 @@ import MDXRichText from 'components/MDXRichText';
 import Head from 'next/head';
 // import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 // import MetadataHead from 'views/SingleArticlePage/MetadataHead';
-// import Header from 'views/SingleArticlePage/Header';
 // import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
 import { getAllPostsSlugs, getSinglePost } from 'utils/postsFetcher';
 import React, { useEffect } from 'react';
 import { getReadTime } from 'utils/readTime';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Container from 'components/Container';
-// import AuthorInfo from 'components/AuthorInfo';
+import MetadataHead from 'views/SingleArticlePage/MetadataHead';
+import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
+import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
+import Header from 'views/SingleArticlePage/Header';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, content, meta, readTime } = props;
-  const { title, description, date } = meta;
+  const { title, description, date, imageUrl } = meta;
 
   const formattedDate = formatDate(new Date(date));
 
@@ -48,11 +50,11 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
           <link rel="stylesheet" href="/prism-theme.css" />
         </noscript>
       </Head>
-      {/* <OpenGraphHead slug={slug} {...meta} /> */}
-      {/* <StructuredDataHead slug={slug} {...meta} /> */}
-      {/* <MetadataHead {...meta} /> */}
+      <OpenGraphHead slug={slug} {...meta} />
+      <StructuredDataHead slug={slug} {...meta} />
+      <MetadataHead {...meta} />
       <CustomContainer id="content">
-        {/* <Header title={title} formattedDate={formattedDate} readTime={readTime} /> */}
+        <Header title={title} formattedDate={formattedDate} imageUrl={imageUrl} readTime={readTime} />
         <MDXRichText {...content} />
         {/* <AuthorInfo /> */}
       </CustomContainer>
@@ -87,7 +89,6 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
           await import('remark-gfm'),
           await import('remark-footnotes'),
           await import('remark-external-links'),
-          [await import('remark-toc'), { ordered: true, tight: true, maxDepth: 3 }],
           await import('remark-slug'),
           // @ts-ignore
           await import('remark-sectionize'),
@@ -100,4 +101,5 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
 
 const CustomContainer = styled(Container)`
   max-width: 90rem;
+  margin: 10rem auto;
 `;

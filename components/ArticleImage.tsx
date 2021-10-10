@@ -28,6 +28,8 @@ export default function ArticleImage({ src, caption, ...rest }: ArticleImageProp
 const ImageWrapper = styled.div`
   position: relative;
   max-width: 90rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
 
   &::before {
     float: left;
@@ -56,5 +58,5 @@ const Caption = styled.small`
   display: block;
   font-size: 1.4rem;
   text-align: center;
-  margin-bottom: 1.6rem;
+  margin-top: 1rem;
 `;
