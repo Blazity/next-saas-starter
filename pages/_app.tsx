@@ -10,6 +10,7 @@ import Navbar from 'components/Navbar';
 import { NavItems } from 'types';
 import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
+import Footer from 'components/Footer';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { PropsWithChildren } from 'react';
 
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Modals />
         <Navbar items={navItems} />
         {standaloneMarkup}
+        <Footer />
       </Providers>
     </>
   );
