@@ -13,7 +13,7 @@ export interface ArticleCardProps {
 export default function ArticleCard({ title, slug, imageUrl, description }: ArticleCardProps) {
   return (
     <NextLink href={'/blog/' + slug} passHref>
-      <ArticleCardWrapper>
+      <ArticleCardWrapper className="article-card-wrapper">
         <HoverEffectContainer>
           <ImageContainer>
             <NextImage src={imageUrl} layout="fill" objectFit="cover" />

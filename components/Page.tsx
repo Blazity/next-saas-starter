@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { media } from 'utils/media';
 import Container from './Container';
@@ -8,14 +9,19 @@ export interface PageProps {
   description?: string;
 }
 
-export default function Page({ title, description }: PageProps) {
+export default function Page({ title, description, children }: PropsWithChildren<PageProps>) {
   return (
-    <Wrapper>
+    <>
+      <Wrapper>
+        <Container>
+          <Title>{title}</Title>
+          {description && <Description>{description}</Description>}
+        </Container>
+      </Wrapper>
       <Container>
-        <Title>{title}</Title>
-        {description && <Description>{description}</Description>}
+        <ChildrenWrapper>{children}</ChildrenWrapper>
       </Container>
-    </Wrapper>
+    </>
   );
 }
 
@@ -42,4 +48,9 @@ const Description = styled.div`
   ${media('<=tablet')} {
     max-width: 100%;
   }
+`;
+
+const ChildrenWrapper = styled.div`
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 `;

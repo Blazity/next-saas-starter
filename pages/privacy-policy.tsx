@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import Container from 'components/Container';
 import Page from 'components/Page';
 import RichText from 'components/RichText';
 
 export default function ContactPage() {
   return (
-    <div>
-      <Page title="Privacy policy" />
+    <Page title="Privacy policy">
       <PrivacyPolicyContainer>
         <RichText>
           <p>
@@ -114,12 +112,12 @@ export default function ContactPage() {
           </table>
         </RichText>
       </PrivacyPolicyContainer>
-    </div>
+    </Page>
   );
 }
 
-const PrivacyPolicyContainer = styled(Container)`
-  margin: 10rem auto;
+const PrivacyPolicyContainer = styled.div`
   max-width: 90rem;
+  margin: auto;
   overflow-x: auto;
 `;

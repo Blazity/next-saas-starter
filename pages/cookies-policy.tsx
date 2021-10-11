@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import Container from 'components/Container';
 import Page from 'components/Page';
 import RichText from 'components/RichText';
 
 export default function ContactPage() {
   return (
-    <div>
-      <Page title="Cookies policy" />
+    <Page title="Cookies policy">
       <CookiesPolicyContainer>
         <RichText>
           <p>
@@ -114,12 +112,12 @@ export default function ContactPage() {
           </table>
         </RichText>
       </CookiesPolicyContainer>
-    </div>
+    </Page>
   );
 }
 
-const CookiesPolicyContainer = styled(Container)`
-  margin: 10rem auto;
+const CookiesPolicyContainer = styled.div`
   max-width: 90rem;
+  margin: auto;
   overflow-x: auto;
 `;
