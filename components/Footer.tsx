@@ -13,35 +13,34 @@ const footerItems: FooterItems = [
   {
     title: 'Company',
     items: [
-      { title: 'About', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'News', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
+      { title: 'Privacy Policy', href: '/privacy-policy' },
+      { title: 'Cookies Policy', href: '/cookies-policy' },
     ],
   },
   {
     title: 'Product',
     items: [
-      { title: 'Media Database', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Press Release Creator', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Online Newsroom', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Pricing', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
+      { title: 'Features', href: '/features' },
+      { title: 'Something', href: '/something' },
+      { title: 'Something else', href: '/something-else' },
+      { title: 'And something else', href: '/and-something-else' },
     ],
   },
   {
     title: 'Knowledge',
     items: [
-      { title: 'Product Updates', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Blog', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Help Center', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
+      { title: 'Contact', href: '/contact' },
+      { title: 'FAQ', href: '/faq' },
+      { title: 'Help Center', href: '/help-center' },
     ],
   },
   {
-    title: 'Legal',
+    title: 'Something',
     items: [
-      { title: 'Privacy Policy', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Terms of Service', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Billing Policy', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Data Procesing Clause', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
-      { title: 'Brand Policy', href: 'https://www.youtube.com/watch?v=T78nq62aQgM' },
+      { title: 'Features2', href: '/features2' },
+      { title: 'Something2', href: '/something2' },
+      { title: 'Something else2', href: '/something-else2' },
+      { title: 'And something else2', href: '/and-something-else2' },
     ],
   },
 ];
