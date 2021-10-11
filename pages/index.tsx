@@ -51,6 +51,10 @@ const HomepageWrapper = styled.div`
   & > *:not(:first-child) {
     margin-top: 15rem;
   }
+
+  & > :last-child {
+    margin-bottom: 15rem;
+  }
 `;
 
 export async function getStaticProps() {

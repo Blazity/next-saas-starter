@@ -5,7 +5,6 @@ import { media } from 'utils/media';
 
 import FormSection from 'views/ContactPage/FormSection';
 import InformationSection from 'views/ContactPage/InformationSection';
-import Cta from 'views/ContactPage/Cta';
 
 export default function ContactPage() {
   return (
@@ -18,7 +17,6 @@ export default function ContactPage() {
         <InformationSection />
         <FormSection />
       </ContactContainer>
-      <Cta />
     </div>
   );
 }

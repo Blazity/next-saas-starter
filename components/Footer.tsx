@@ -103,7 +103,6 @@ function ListItem({ title, href }: SingleFooterListItem) {
 }
 
 const FooterWrapper = styled.div`
-  margin-top: 10rem;
   padding-top: 10rem;
   padding-bottom: 4rem;
   background: rgb(var(--secondary));
@@ -128,6 +127,7 @@ const ListWrapper = styled.div`
   flex-direction: column;
   margin-bottom: 5rem;
   margin-right: 5rem;
+
   & > *:not(:first-child) {
     margin-top: 1rem;
   }
@@ -167,6 +167,7 @@ const BottomBar = styled.div`
   margin-top: 6rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   ${media('<=tablet')} {
     flex-direction: column;
