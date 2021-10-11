@@ -81,12 +81,13 @@ export default function Features() {
 const Card = styled.div`
   display: flex;
   padding: 2.5rem;
+  background: rgb(var(--cardBackground));
+  box-shadow: var(--shadow-md);
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 100%;
-  background: rgba(var(--secondary), 0.025);
   border-radius: 0.6rem;
   color: rgb(var(--text));
   font-size: 1.6rem;

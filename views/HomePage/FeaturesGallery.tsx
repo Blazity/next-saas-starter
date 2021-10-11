@@ -157,7 +157,8 @@ const Tab = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   padding: 2rem 1.5rem;
-  background: rgba(var(--secondary), 0.025);
+  background: rgb(var(--cardBackground));
+  box-shadow: var(--shadow-md);
   opacity: ${(p) => (p.isActive ? 1 : 0.6)};
   cursor: pointer;
   border-radius: 0.6rem;

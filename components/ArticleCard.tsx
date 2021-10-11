@@ -36,7 +36,7 @@ const ArticleCardWrapper = styled.a`
   overflow: hidden;
   text-decoration: none;
   border-radius: 0.6rem;
-  background: rgba(var(--secondary), 0.025);
+  background: rgb(var(--cardBackground));
   cursor: pointer;
   color: rgb(var(--text));
 `;

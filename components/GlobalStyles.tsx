@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   --primary: 22,115,255; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
+  --cardBackground: 255,255,255;
   --inputBackground: 255,255,255;
   --navbarBackground: 255,255,255;
   --modalBackground: 251,251,253;

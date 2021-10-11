@@ -1,4 +1,5 @@
 export const EnvVars = {
-  OG_IMAGES_URL: 'https://bstefanski.com/og-images/',
-  URL: 'https://bstefanski.com/',
+  SITE_NAME: 'My SaaS Startup',
+  OG_IMAGES_URL: 'https://next-saas-starter-ashy.vercel.app/og-images/',
+  URL: 'https://next-saas-starter-ashy.vercel.app/',
 };
