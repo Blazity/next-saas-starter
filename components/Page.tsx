@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle';
 
 export interface PageProps {
   title: string;
-  description: string;
+  description?: string;
 }
 
 export default function Page({ title, description }: PageProps) {
@@ -13,7 +13,7 @@ export default function Page({ title, description }: PageProps) {
     <Wrapper>
       <Container>
         <Title>{title}</Title>
-        <Description>{description}</Description>
+        {description && <Description>{description}</Description>}
       </Container>
     </Wrapper>
   );
