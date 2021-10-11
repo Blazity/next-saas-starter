@@ -1,10 +1,10 @@
-import styled from 'styled-components';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import Code from './Code';
-import Quote from './Quote';
-import Link from './Link';
-import ArticleImage from './ArticleImage';
+import styled from 'styled-components';
 import { media } from 'utils/media';
+import ArticleImage from './ArticleImage';
+import Code from './Code';
+import Link from './Link';
+import Quote from './Quote';
 
 export default function RichText(props: MDXRemoteSerializeResult) {
   return (

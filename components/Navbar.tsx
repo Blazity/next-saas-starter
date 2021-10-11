@@ -1,16 +1,16 @@
-import styled from 'styled-components';
-import Logo from './Logo';
 import NextLink from 'next/link';
-import React, { useRef, useState } from 'react';
-import Container from './Container';
-import Drawer from './Drawer';
-import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
 import { useRouter } from 'next/router';
+import React, { useRef, useState } from 'react';
+import styled from 'styled-components';
+import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
+import { ScrollPositionEffectProps, useScrollPosition } from 'hooks/useScrollPosition';
 import { NavItems, SingleNavItem } from 'types';
-import { HamburgerIcon } from './HamburgerIcon';
 import { media } from 'utils/media';
 import Button from './Button';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
+import Container from './Container';
+import Drawer from './Drawer';
+import { HamburgerIcon } from './HamburgerIcon';
+import Logo from './Logo';
 
 type NavbarProps = { items: NavItems };
 type ScrollingDirections = 'up' | 'down' | 'none';

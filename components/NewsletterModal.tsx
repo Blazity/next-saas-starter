@@ -1,5 +1,5 @@
-import useEscClose from 'hooks/useEscKey';
 import styled from 'styled-components';
+import useEscClose from 'hooks/useEscKey';
 import { media } from 'utils/media';
 import Button from './Button';
 import CloseIcon from './CloseIcon';

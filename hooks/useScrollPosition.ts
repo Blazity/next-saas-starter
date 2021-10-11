@@ -1,9 +1,9 @@
-import { useScrollPosition as originalUseScrollPosition } from '@n8tb1t/use-scroll-position'
+import { useScrollPosition as originalUseScrollPosition } from '@n8tb1t/use-scroll-position';
 
-declare type ElementRef = React.MutableRefObject<HTMLElement | undefined>
+declare type ElementRef = React.MutableRefObject<HTMLElement | undefined>;
 
-type Axis = { x: number; y: number }
-export type ScrollPositionEffectProps = { prevPos: Axis; currPos: Axis }
+type Axis = { x: number; y: number };
+export type ScrollPositionEffectProps = { prevPos: Axis; currPos: Axis };
 
 export function useScrollPosition(
   effect: (props: ScrollPositionEffectProps) => void,
@@ -13,5 +13,5 @@ export function useScrollPosition(
   wait?: number | undefined,
   boundingElement?: ElementRef | undefined,
 ) {
-  return originalUseScrollPosition(effect, deps, element, useWindow, wait, boundingElement)
+  return originalUseScrollPosition(effect, deps, element, useWindow, wait, boundingElement);
 }

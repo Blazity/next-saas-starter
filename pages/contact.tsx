@@ -1,8 +1,7 @@
+import styled from 'styled-components';
 import Container from 'components/Container';
 import Page from 'components/Page';
-import styled from 'styled-components';
 import { media } from 'utils/media';
-
 import FormSection from 'views/ContactPage/FormSection';
 import InformationSection from 'views/ContactPage/InformationSection';
 

@@ -1,11 +1,11 @@
-import styled from 'styled-components'
-import OriginalDrawer from './Drawer'
-import CloseIcon from './CloseIcon'
 import NextLink from 'next/link'
-import { PropsWithChildren, useEffect, useRef } from 'react'
-import ClientOnly from './ClientOnly'
 import { useRouter } from 'next/router'
+import { PropsWithChildren, useEffect, useRef } from 'react'
+import styled from 'styled-components'
 import { NavItems } from 'types'
+import ClientOnly from './ClientOnly'
+import CloseIcon from './CloseIcon'
+import OriginalDrawer from './Drawer'
 
 type NavigationDrawerProps = PropsWithChildren<{ items: NavItems }>
 

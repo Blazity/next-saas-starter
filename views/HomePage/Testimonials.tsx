@@ -1,10 +1,10 @@
-import Container from 'components/Container';
+import NextImage from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-import NextImage from 'next/image';
 
+import { A11y, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay, A11y } from 'swiper';
+import Container from 'components/Container';
 import Separator from 'components/Separator';
 import { media } from 'utils/media';
 

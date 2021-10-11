@@ -1,12 +1,12 @@
+import NextImage from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import NextImage from 'next/image';
-import Container from 'components/Container';
-import { media } from 'utils/media';
 import Collapse from 'components/Collapse';
-import ThreeLayersCircle from 'components/ThreeLayersCircle';
+import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
+import ThreeLayersCircle from 'components/ThreeLayersCircle';
+import { media } from 'utils/media';
 
 const TABS = [
   {

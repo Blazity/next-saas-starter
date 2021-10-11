@@ -3,17 +3,18 @@ import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-import Head from 'next/head';
+
 import { AppProps } from 'next/dist/shared/lib/router/router';
+import Head from 'next/head';
+import { PropsWithChildren } from 'react';
+import Footer from 'components/Footer';
 import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
-import { NavItems } from 'types';
 import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
-import Footer from 'components/Footer';
 import WaveCta from 'components/WaveCta';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
-import { PropsWithChildren } from 'react';
+import { NavItems } from 'types';
 
 const navItems: NavItems = [
   { title: 'Why logoipsum', href: '/' },

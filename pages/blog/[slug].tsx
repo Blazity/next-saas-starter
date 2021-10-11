@@ -1,22 +1,18 @@
-import styled from 'styled-components';
-import { formatDate } from 'utils/formatDate';
-import MDXRichText from 'components/MDXRichText';
-
-import Head from 'next/head';
-// import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
-// import MetadataHead from 'views/SingleArticlePage/MetadataHead';
-// import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { getAllPostsSlugs, getSinglePost } from 'utils/postsFetcher';
-import React, { useEffect } from 'react';
-import { getReadTime } from 'utils/readTime';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import Container from 'components/Container';
-import MetadataHead from 'views/SingleArticlePage/MetadataHead';
-import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
-import Header from 'views/SingleArticlePage/Header';
-import ShareWidget from 'views/SingleArticlePage/ShareWidget';
+import MDXRichText from 'components/MDXRichText';
+import { formatDate } from 'utils/formatDate';
 import { media } from 'utils/media';
+import { getAllPostsSlugs, getSinglePost } from 'utils/postsFetcher';
+import { getReadTime } from 'utils/readTime';
+import Header from 'views/SingleArticlePage/Header';
+import MetadataHead from 'views/SingleArticlePage/MetadataHead';
+import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
+import ShareWidget from 'views/SingleArticlePage/ShareWidget';
+import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, content, meta, readTime } = props;

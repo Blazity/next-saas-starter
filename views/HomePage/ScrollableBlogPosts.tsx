@@ -1,12 +1,12 @@
-import Container from 'components/Container';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y } from 'swiper';
-import ArticleCard from 'components/ArticleCard';
-import SectionTitle from 'components/SectionTitle';
-import OverTitle from 'components/OverTitle';
 import styled from 'styled-components';
-import { media } from 'utils/media';
+import { A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import ArticleCard from 'components/ArticleCard';
+import Container from 'components/Container';
+import OverTitle from 'components/OverTitle';
+import SectionTitle from 'components/SectionTitle';
 import { SingleArticle } from 'types';
+import { media } from 'utils/media';
 
 interface ScrollableBlogPostsProps {
   posts: SingleArticle[];

@@ -1,5 +1,5 @@
-import React from 'react';
 import NextImage, { ImageProps } from 'next/image';
+import React from 'react';
 import styled from 'styled-components';
 
 interface ArticleImageProps extends ImageProps {

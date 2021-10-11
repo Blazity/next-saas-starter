@@ -1,9 +1,9 @@
 import NextLink from 'next/link';
+import styled from 'styled-components';
+import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
-import Button from 'components/Button';
-import styled from 'styled-components';
 import { media } from 'utils/media';
 
 export default function WaveCta() {

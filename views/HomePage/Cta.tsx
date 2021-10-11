@@ -1,12 +1,12 @@
+import NextLink from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import NextLink from 'next/link';
 import Button from 'components/Button';
+import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
-import ButtonGroup from 'components/ButtonGroup';
-import { media } from 'utils/media';
 import SectionTitle from 'components/SectionTitle';
+import { media } from 'utils/media';
 
 export default function Cta() {
   return (

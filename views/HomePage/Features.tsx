@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import React from 'react';
 import NextImage from 'next/image';
+import React from 'react';
+import styled from 'styled-components';
 import AutofitGrid from 'components/AutofitGrid';
 import Container from 'components/Container';
 import { media } from 'utils/media';
