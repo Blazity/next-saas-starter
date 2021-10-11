@@ -6,7 +6,9 @@ export default function NotFoundPage() {
   return (
     <Wrapper>
       <Container>
-        <NotFoundIllustration />
+        <ImageContainer>
+          <NotFoundIllustration />
+        </ImageContainer>
         <Title>404</Title>
         <Description>Oh, that&apos;s unfortunate! Page not found 😔</Description>
       </Container>
@@ -29,4 +31,9 @@ const Description = styled.div`
   font-size: 3rem;
   opacity: 0.8;
   margin-top: 2.5rem;
+`;
+
+const ImageContainer = styled.div`
+  width: 25rem;
+  margin: auto;
 `;

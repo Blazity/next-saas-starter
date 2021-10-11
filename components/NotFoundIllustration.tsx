@@ -5,9 +5,8 @@ export default function NotFoundIllustration() {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="344.08"
-      height="277.54"
       viewBox="0 0 1032.24 832.63"
+      preserveAspectRatio="none"
     >
       <defs>
         <linearGradient
