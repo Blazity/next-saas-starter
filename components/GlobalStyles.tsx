@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
 .light-theme {
   --background: 251,251,253;
+  --secondBackground: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
@@ -99,7 +100,6 @@ body {
   line-height: 1.5;
   font-family: var(--font);
   color: rgb(var(--text));
-  background: rgb(var(--background));
   font-feature-settings: "kern";
 }
 
