@@ -100,6 +100,7 @@ body {
   line-height: 1.5;
   font-family: var(--font);
   color: rgb(var(--text));
+  background: rgb(var(--background));
   font-feature-settings: "kern";
 }
 

@@ -11,21 +11,25 @@ export interface PageProps {
 
 export default function Page({ title, description, children }: PropsWithChildren<PageProps>) {
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <HeaderContainer>
         <Container>
           <Title>{title}</Title>
           {description && <Description>{description}</Description>}
         </Container>
-      </Wrapper>
+      </HeaderContainer>
       <Container>
         <ChildrenWrapper>{children}</ChildrenWrapper>
       </Container>
-    </>
+    </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
+  background: rgb(var(--background));
+`;
+
+const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -58,13 +58,17 @@ const HomepageWrapper = styled.div`
 const DarkerBackgroundContainer = styled.div`
   background: rgb(var(--background));
 
-  & > * {
+  & > *:not(:first-child) {
     margin-top: 15rem;
   }
 `;
 
 const WhiteBackgroundContainer = styled.div`
   background: rgb(var(--secondBackground));
+
+  & > :last-child {
+    padding-bottom: 15rem;
+  }
 
   & > *:not(:first-child) {
     margin-top: 15rem;

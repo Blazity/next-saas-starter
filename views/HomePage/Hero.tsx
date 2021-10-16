@@ -40,7 +40,7 @@ export default function Hero() {
 
 const HeroWrapper = styled(Container)`
   display: flex;
-  margin-top: 5rem;
+  padding-top: 5rem;
 
   ${media('<=desktop')} {
     margin-top: 1rem;
