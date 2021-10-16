@@ -16,6 +16,13 @@ module.exports = withBundleAnalyzer({
     if (!dev) {
       config.plugins.push(new CopyPlugin({ patterns: [{ from: 'posts', to: 'posts' }] }));
     }
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: {
+        and: [/\.(js|ts)x?$/],
+      },
+      use: [{ loader: '@svgr/webpack' }, { loader: 'url-loader' }],
+    });
 
     return config;
   },
