@@ -126,6 +126,8 @@ const LogoWrapper = styled.a`
   display: flex;
   margin-right: auto;
   text-decoration: none;
+
+  color: rgb(var(--logoColor));
 `;
 
 const NavItemWrapper = styled.li<Partial<SingleNavItem>>`

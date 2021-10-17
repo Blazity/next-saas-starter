@@ -39,14 +39,14 @@ export default function Cta() {
 
 const Description = styled.div`
   font-size: 1.8rem;
-  color: rgba(var(--background), 0.8);
+  color: rgba(var(--textSecondary), 0.8);
 `;
 
 const Stack = styled.div`
   display: flex;
   flex-direction: column;
   padding: 12.5rem 0;
-  color: rgb(var(--background));
+  color: rgb(var(--textSecondary));
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -67,8 +67,8 @@ const Stack = styled.div`
 `;
 
 const OutlinedButton = styled(Button)`
-  border: 1px solid rgb(var(--background));
-  color: rgb(var(--background));
+  border: 1px solid rgb(var(--backgroundSecondary));
+  color: rgb(var(--backgroundSecondary));
 `;
 
 const CtaWrapper = styled.div`

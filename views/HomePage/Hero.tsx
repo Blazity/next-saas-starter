@@ -43,7 +43,7 @@ const HeroWrapper = styled(Container)`
   padding-top: 5rem;
 
   ${media('<=desktop')} {
-    margin-top: 1rem;
+    padding-top: 1rem;
     flex-direction: column;
     align-items: center;
   }

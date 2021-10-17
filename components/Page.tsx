@@ -54,7 +54,7 @@ const Title = styled(SectionTitle)`
 
 const Description = styled.div`
   font-size: 1.8rem;
-  color: rgba(var(--background), 0.8);
+  color: rgba(var(--textSecondary), 0.8);
   text-align: center;
   max-width: 60%;
   margin: auto;

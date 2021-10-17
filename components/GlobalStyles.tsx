@@ -23,10 +23,24 @@ export const GlobalStyle = createGlobalStyle`
   --inputBackground: 255,255,255;
   --navbarBackground: 255,255,255;
   --modalBackground: 251,251,253;
-  --errorColor: 207,34,46
+  --errorColor: 207,34,46;
+  --logoColor: #243A5A;
 }
 
 .dark-theme {
+  --background: 26,32,44;
+  --secondBackground: 45,55,72;
+  --text: 237,237,238;
+  --textSecondary: 255,255,255;
+  --primary: 22,115,255; 
+  --secondary: 10,18,30;
+  --tertiary: 231,241,251;
+  --cardBackground: 45,55,72;
+  --inputBackground: 45,55,72;
+  --navbarBackground: 45,55,72;
+  --modalBackground: 26,32,44;
+  --errorColor: 207,34,46;
+  --logoColor: #fff;
 }
 
 :root {
