@@ -23,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
   --inputBackground: 255,255,255;
   --navbarBackground: 255,255,255;
   --modalBackground: 251,251,253;
+  --errorColor: 207,34,46
 }
 
 .dark-theme {
