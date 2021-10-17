@@ -75,7 +75,7 @@ export default function Navbar({ items }: NavbarProps) {
           ))}
         </NavItemList>
         <HamburgerMenuWrapper>
-          <HamburgerIcon onClick={toggle} />
+          <HamburgerIcon aria-label="Toggle menu" onClick={toggle} />
         </HamburgerMenuWrapper>
       </Content>
     </NavbarContainer>

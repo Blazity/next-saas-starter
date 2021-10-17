@@ -16,7 +16,7 @@ export default function ArticleCard({ title, slug, imageUrl, description }: Arti
       <ArticleCardWrapper className="article-card-wrapper">
         <HoverEffectContainer>
           <ImageContainer>
-            <NextImage src={imageUrl} layout="fill" objectFit="cover" />
+            <NextImage src={imageUrl} layout="fill" objectFit="cover" alt={title} />
           </ImageContainer>
           <Content>
             <Title>{title}</Title>

@@ -44,7 +44,7 @@ export default function FeaturesGallery() {
 
     return (
       <ImageContainer key={singleTab.title} isActive={isActive}>
-        <NextImage src={singleTab.imageUrl} layout="fill" objectFit="contain" priority={isFirst} />
+        <NextImage src={singleTab.imageUrl} alt={singleTab.title} layout="fill" objectFit="contain" priority={isFirst} />
       </ImageContainer>
     );
   });
@@ -58,7 +58,7 @@ export default function FeaturesGallery() {
           <CircleContainer>
             <ThreeLayersCircle baseColor={isActive ? 'transparent' : singleTab.baseColor} secondColor={singleTab.secondColor} />
           </CircleContainer>
-          <h3>{singleTab.title}</h3>
+          <h4>{singleTab.title}</h4>
         </TabTitleContainer>
         <Collapse isOpen={isActive} duration={300}>
           <TabContent>
@@ -176,7 +176,7 @@ const TabTitleContainer = styled.div`
   display: flex;
   align-items: center;
 
-  h3 {
+  h4 {
     flex: 1;
   }
 `;

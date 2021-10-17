@@ -1,6 +1,7 @@
-import { FormEventHandler, useState } from 'react';
+import React, { useState } from 'react';
 import MailchimpSubscribe, { DefaultFormFields } from 'react-mailchimp-subscribe';
 import styled from 'styled-components';
+import { EnvVars } from 'env';
 import useEscClose from 'hooks/useEscKey';
 import { media } from 'utils/media';
 import Button from './Button';
@@ -19,7 +20,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
 
   useEscClose({ onClose });
 
-  function onSubmit(event: HTMLFormElement, enrollNewsletter: (props: DefaultFormFields) => void) {
+  function onSubmit(event: React.FormEvent<HTMLFormElement>, enrollNewsletter: (props: DefaultFormFields) => void) {
     event.preventDefault();
     console.log({ email });
     if (email) {
@@ -29,13 +30,13 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
 
   return (
     <MailchimpSubscribe
-      url="https://bstefanski.us5.list-manage.com/subscribe/post?u=66b4c22d5c726ae22da1dcb2e&id=679fb0eec9"
+      url={EnvVars.MAILCHIMP_SUBSCRIBE_URL}
       render={({ subscribe, status, message }) => {
         const hasSignedUp = status === 'success';
         return (
           <Overlay>
             <Container>
-              <Card onSubmit={(event: HTMLFormElement) => onSubmit(event, subscribe)}>
+              <Card onSubmit={(event: React.FormEvent<HTMLFormElement>) => onSubmit(event, subscribe)}>
                 <CloseIconContainer>
                   <CloseIcon onClick={onClose} />
                 </CloseIconContainer>
@@ -54,7 +55,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                         Submit
                       </CustomButton>
                     </Row>
-                    {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message }} />}
+                    {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message as string }} />}
                   </>
                 )}
               </Card>

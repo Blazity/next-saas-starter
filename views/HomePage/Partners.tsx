@@ -36,12 +36,16 @@ export default function Partners() {
       >
         {PARTNER_LOGOS.map((logo) => (
           <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} width={128} height={128} />
+            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128} />
           </SwiperSlide>
         ))}
       </Swiper>
     </PartnersWrapper>
   );
+}
+
+function normalizePartnerLogoName(logo: string) {
+  return logo.replace('.svg', '');
 }
 
 const Title = styled.h3`
