@@ -54,8 +54,8 @@ const Title = styled(SectionTitle)`
 `;
 
 const OutlinedButton = styled(Button)`
-  border: 1px solid rgb(var(--backgroundSecondary));
-  color: rgb(var(--backgroundSecondary));
+  border: 1px solid rgb(var(--textSecondary));
+  color: rgb(var(--textSecondary));
 `;
 
 const CustomButtonGroup = styled(ButtonGroup)`
