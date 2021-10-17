@@ -102,7 +102,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Blazity/next
 
 ## 🧝🧝 Authors
 
-* all contributors here
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## 😎 Acknowledgements
 
