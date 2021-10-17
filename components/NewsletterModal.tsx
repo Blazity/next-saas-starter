@@ -1,3 +1,5 @@
+import { FormEventHandler, useState } from 'react';
+import MailchimpSubscribe, { DefaultFormFields } from 'react-mailchimp-subscribe';
 import styled from 'styled-components';
 import useEscClose from 'hooks/useEscKey';
 import { media } from 'utils/media';
@@ -5,6 +7,7 @@ import Button from './Button';
 import CloseIcon from './CloseIcon';
 import Container from './Container';
 import Input from './Input';
+import MailSentState from './MailSentState';
 import Overlay from './Overlay';
 
 export interface NewsletterModalProps {
@@ -12,27 +15,58 @@ export interface NewsletterModalProps {
 }
 
 export default function NewsletterModal({ onClose }: NewsletterModalProps) {
+  const [email, setEmail] = useState('');
+
   useEscClose({ onClose });
 
+  function onSubmit(event: HTMLFormElement, enrollNewsletter: (props: DefaultFormFields) => void) {
+    event.preventDefault();
+    console.log({ email });
+    if (email) {
+      enrollNewsletter({ EMAIL: email });
+    }
+  }
+
   return (
-    <Overlay>
-      <Container>
-        <Card>
-          <CloseIconContainer>
-            <CloseIcon onClick={onClose} />
-          </CloseIconContainer>
-          <Title>Are you ready to enroll to the best newsletter ever?</Title>
-          <Row>
-            <CustomInput placeholder="Enter your email..." />
-            <CustomButton>Submit</CustomButton>
-          </Row>
-        </Card>
-      </Container>
-    </Overlay>
+    <MailchimpSubscribe
+      url="https://bstefanski.us5.list-manage.com/subscribe/post?u=66b4c22d5c726ae22da1dcb2e&id=679fb0eec9"
+      render={({ subscribe, status, message }) => {
+        const hasSignedUp = status === 'success';
+        return (
+          <Overlay>
+            <Container>
+              <Card onSubmit={(event: HTMLFormElement) => onSubmit(event, subscribe)}>
+                <CloseIconContainer>
+                  <CloseIcon onClick={onClose} />
+                </CloseIconContainer>
+                {hasSignedUp && <MailSentState />}
+                {!hasSignedUp && (
+                  <>
+                    <Title>Are you ready to enroll to the best newsletter ever?</Title>
+                    <Row>
+                      <CustomInput
+                        value={email}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                        placeholder="Enter your email..."
+                        required
+                      />
+                      <CustomButton as="button" type="submit" disabled={hasSignedUp}>
+                        Submit
+                      </CustomButton>
+                    </Row>
+                    {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message }} />}
+                  </>
+                )}
+              </Card>
+            </Container>
+          </Overlay>
+        );
+      }}
+    />
   );
 }
 
-const Card = styled.div`
+const Card = styled.form`
   display: flex;
   position: relative;
   flex-direction: column;
@@ -42,6 +76,7 @@ const Card = styled.div`
   border-radius: 0.6rem;
   max-width: 70rem;
   overflow: hidden;
+  color: rgb(var(--text));
 
   ${media('<=tablet')} {
     padding: 7.5rem 2.5rem;
@@ -70,6 +105,13 @@ const Title = styled.div`
   ${media('<=tablet')} {
     font-size: 2.6rem;
   }
+`;
+
+const ErrorMessage = styled.p`
+  color: rgb(var(--errorColor));
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
 `;
 
 const Row = styled.div`
