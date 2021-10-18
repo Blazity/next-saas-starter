@@ -39,7 +39,7 @@
 - [🤲🏻 Contributing](#-contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
 - [😎 Acknowledgements](#-acknowledgements)
-- [Contributors ✨](#contributors-)
+- [✨ Contributors](#-contributors)
 - [📝 License](#-license)
 
 ## 🤩 Features
@@ -102,7 +102,7 @@ Contributions are what make the open source community such an amazing place to b
 
 - todo, but add this `next-api-og-image`, `nextjs-color-mode`
 
-## Contributors ✨
+## ✨ Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -112,6 +112,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://bstefanski.com/"><img src="https://avatars.githubusercontent.com/u/28964599?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Bart Stefanski</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=bmstefanski" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ilasota"><img src="https://avatars.githubusercontent.com/u/34578189?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Igor Lasota</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=ilasota" title="Code">💻</a></td>
   </tr>
 </table>
 
