@@ -56,7 +56,21 @@
 
 ## 🚀 Getting Started
 
-- todo but fork repo, setup mailchimp and sendgrid and that's it
+- Click `Use the template` or [this link](https://github.com/Blazity/next-saas-starter/generate)
+- Setup your [sendgrid](https://sendgrid.com/) API key and add it to environment variables (`SENDGRID_API_KEY` - `.env.local`)
+- Adjust the template to your needs (and checkout `env.ts` file)
+- Deploy the project on [Vercel](https://vercel.com/) **don't forget to add env variables**
+
+```
+# run the dev mode
+$ yarn dev 
+
+# run the prod mode
+yarn start
+
+# build the app
+yarn build
+```
 
 ## 🧰 Built With
 
