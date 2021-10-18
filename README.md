@@ -2,10 +2,10 @@
 <p align="center">
 
   <a href="https://github.com/Blazity/next-saas-starter" >
-    <img src="https://i.imgur.com/SipzHFY.png" alt="Logo"  width="49%">
+    <img src="https://i.imgur.com/jmc2Q1w.png" alt="Logo"  width="49%">
   </a>
    <a href="https://github.com/Blazity/next-saas-starter">
-    <img src="https://i.imgur.com/SipzHFY.png" alt="Logo" width="49%">
+    <img src="https://i.imgur.com/CxkjHhi.png" alt="Logo" width="49%">
   </a>
 
   <h3 align="center">✨ Free Next.js marketing website template for SaaS startups ✨</h3>
@@ -33,8 +33,6 @@
 - [Table Of Contents](#table-of-contents)
 - [🤩 Features](#-features)
 - [🚀 Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [🧰 Built With](#-built-with)
 - [🤲🏻 Contributing](#-contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
@@ -52,36 +50,22 @@
 - 🔥 **Blog with MDX**
 - 🔥 **Mailchimp Integration** - for newsletters
 - 🔥 **Sendgrid Integration** - for sending emails
-- 🔥 **Automatic Open Graph Images generation**
 - 🔥 **Dark mode** - and customizable themes!
 - 🔥 **No UI library** - just styled components, so you don't have to learn any new syntax
 - 🔥 **One click deployment** - with Vercel or any other serverless deployment environment
 - 🔥 **Eslint** - with Next.js's recommended settings and imports sorting rule
-- 🔥 **Prettier**
-- 🔥 **Bundler Analyzer**
+- 🔥 **Prettier** - with imports sorting
 
 ## 🚀 Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-
-```sh
-npm install npm@latest -g
-```
-
-### Installation
-
-- todo
+- todo but fork repo, setup mailchimp and sendgrid and that's it
 
 ## 🧰 Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+- Statically generated pages with [**Next.js** ](https://github.com/vercel/next.js)
+- [Styled components](https://github.com/styled-components/styled-components/)
+- [MDX](https://github.com/mdx-js/mdx)
+- [TypeScript](https://github.com/Microsoft/TypeScript)
 
 ## 🤲🏻 Contributing
 
@@ -100,7 +84,10 @@ Contributions are what make the open source community such an amazing place to b
 
 ## 😎 Acknowledgements
 
-- todo, but add this `next-api-og-image`, `nextjs-color-mode`
+Big thanks to authors of these libraries:
+- https://github.com/neg4n/next-api-og-image - generating open graph images 
+- https://github.com/blazity/nextjs-color-mode - non-flickering dark mode
+- https://github.com/Brew-Brew/css-in-js-media - a convenient way of creating media queries
 
 ## ✨ Contributors
 
