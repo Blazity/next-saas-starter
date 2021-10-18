@@ -42,19 +42,17 @@
 
 ## 🤩 Features
 
-// todo various emotes here
-
 - ⚡ **Next.js** - React framework for static rendering
-- 🔥 **Best SEO setup** - Meta Tags, JSON-LD, Sitemaps, RSS Channels and Open Graph Tags
-- 🔥 **Optimized for ✅ Web Vitals**
-- 🔥 **Blog with MDX**
-- 🔥 **Mailchimp Integration** - for newsletters
-- 🔥 **Sendgrid Integration** - for sending emails
-- 🔥 **Dark mode** - and customizable themes!
-- 🔥 **No UI library** - just styled components, so you don't have to learn any new syntax
-- 🔥 **One click deployment** - with Vercel or any other serverless deployment environment
-- 🔥 **Eslint** - with Next.js's recommended settings and imports sorting rule
-- 🔥 **Prettier** - with imports sorting
+- 🤩 **Best SEO setup** - Meta Tags, JSON-LD, Sitemaps, RSS Channels and Open Graph Tags
+- ✅ **Optimized for Web Vitals**
+- 📜 **Blog with MDX**
+- 📫 **Mailchimp Integration** - for newsletters
+- 🗳 **Sendgrid Integration** - for sending emails
+- 🌃 **Dark mode** - and customizable themes!
+- 🧽 **No UI library** - just styled components, so you don't have to learn any new syntax
+- 🖱 **One click deployment** - with Vercel or any other serverless deployment environment
+- 🔍 **Eslint** - with Next.js's recommended settings and imports sorting rule
+- 🕯 **Prettier** - with imports sorting
 
 ## 🚀 Getting Started
 
