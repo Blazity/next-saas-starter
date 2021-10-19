@@ -28,6 +28,10 @@
 
 </div>
 
+<p align="center"><b>Created with :heart:  at Blazity </b></p>
+<p align="center"><a href="https://blazity.com/">Blazity</a> is a group of Next.js/Jamstack/Headless experts. Contact us at <a href="mailto:contact@blazity.com">contact@blazity.com</a> if you’d like to talk about your project or just to have a chat with us :grin:</p>
+
+
 ## Table Of Contents
 
 - [Table Of Contents](#table-of-contents)
