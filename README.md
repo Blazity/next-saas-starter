@@ -76,6 +76,18 @@ yarn start
 yarn build
 ```
 
+## One click deploy
+
+Clone the repository and one-click deploy to Vercel for free!
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-saas-starter)
+
+Clone the repository and one-click deploy to Netlify for free!
+
+[![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blazity/next-saas-starter)
+
+
+
 ## 🧰 Built With
 
 - Statically generated pages with [**Next.js** ](https://github.com/vercel/next.js)
