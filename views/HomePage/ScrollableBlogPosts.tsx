@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -5,6 +6,7 @@ import ArticleCard from 'components/ArticleCard';
 import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
+import { useResizeObserver } from 'hooks/useResizeObserver';
 import { SingleArticle } from 'types';
 import { media } from 'utils/media';
 
@@ -13,6 +15,16 @@ interface ScrollableBlogPostsProps {
 }
 
 export default function ScrollableBlogPosts({ posts }: ScrollableBlogPostsProps) {
+  const [hasMounted, setHasMounted] = useState(false);
+  const { ref, width = 1 } = useResizeObserver<HTMLDivElement>();
+
+  const oneItemWidth = 350;
+  const noOfItems = width / oneItemWidth;
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   return (
     <Section>
       <Container>
@@ -22,31 +34,21 @@ export default function ScrollableBlogPosts({ posts }: ScrollableBlogPostsProps)
         </Content>
       </Container>
 
-      <SwiperContainer>
-        <Swiper
-          modules={[A11y]}
-          slidesPerView={3.5}
-          spaceBetween={10}
-          breakpoints={{
-            300: { slidesPerView: 1.1 },
-            400: { slidesPerView: 1.5 },
-            768: { slidesPerView: 2.5 },
-            1024: { slidesPerView: 3 },
-            1300: { slidesPerView: 4, centeredSlides: true },
-            1500: { slidesPerView: 6, centeredSlides: true },
-          }}
-        >
-          {posts.map((singlePost, idx) => (
-            <SwiperSlide className={idx === 0 ? 'first-slide' : undefined} key={singlePost.meta.title}>
-              <ArticleCard
-                title={singlePost.meta.title}
-                description={singlePost.meta.description}
-                imageUrl={singlePost.meta.imageUrl}
-                slug={singlePost.slug}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <SwiperContainer ref={ref}>
+        {hasMounted && (
+          <Swiper modules={[A11y]} slidesPerView={noOfItems} spaceBetween={10} loop>
+            {posts.map((singlePost, idx) => (
+              <SwiperSlide key={singlePost.meta.title}>
+                <ArticleCard
+                  title={singlePost.meta.title}
+                  description={singlePost.meta.description}
+                  imageUrl={singlePost.meta.imageUrl}
+                  slug={singlePost.slug}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </SwiperContainer>
     </Section>
   );
@@ -74,6 +76,7 @@ const Section = styled.section`
 
 const SwiperContainer = styled(Container)`
   max-width: 250em;
+  height: 46rem;
 
   & > *:first-child {
     margin-top: 4rem;
@@ -82,9 +85,5 @@ const SwiperContainer = styled(Container)`
   ${media('<=largeDesktop')} {
     max-width: 100%;
     padding: 0;
-  }
-
-  .first-slide {
-    margin-left: 2rem;
   }
 `;
