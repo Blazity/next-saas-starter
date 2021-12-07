@@ -147,6 +147,10 @@ export type DocumentNode = PostsDocument;
 export type Posts = {
   __typename?: 'Posts';
   title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['String']>;
+  tags?: Maybe<Scalars['String']>;
+  imageUrl?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
 };
 
@@ -221,26 +225,34 @@ export type DocumentMutation = {
 
 export type PostsMutation = {
   title?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  date?: InputMaybe<Scalars['String']>;
+  tags?: InputMaybe<Scalars['String']>;
+  imageUrl?: InputMaybe<Scalars['String']>;
   body?: InputMaybe<Scalars['String']>;
 };
 
-export type PostsPartsFragment = { __typename?: 'Posts', title?: string | null | undefined, body?: string | null | undefined };
+export type PostsPartsFragment = { __typename?: 'Posts', title?: string | null | undefined, description?: string | null | undefined, date?: string | null | undefined, tags?: string | null | undefined, imageUrl?: string | null | undefined, body?: string | null | undefined };
 
 export type GetPostsDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetPostsDocumentQuery = { __typename?: 'Query', getPostsDocument: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, body?: string | null | undefined } } };
+export type GetPostsDocumentQuery = { __typename?: 'Query', getPostsDocument: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, description?: string | null | undefined, date?: string | null | undefined, tags?: string | null | undefined, imageUrl?: string | null | undefined, body?: string | null | undefined } } };
 
 export type GetPostsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsListQuery = { __typename?: 'Query', getPostsList: { __typename?: 'PostsConnection', totalCount: number, edges?: Array<{ __typename?: 'PostsConnectionEdges', node?: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, body?: string | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetPostsListQuery = { __typename?: 'Query', getPostsList: { __typename?: 'PostsConnection', totalCount: number, edges?: Array<{ __typename?: 'PostsConnectionEdges', node?: { __typename?: 'PostsDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Posts', title?: string | null | undefined, description?: string | null | undefined, date?: string | null | undefined, tags?: string | null | undefined, imageUrl?: string | null | undefined, body?: string | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export const PostsPartsFragmentDoc = gql`
     fragment PostsParts on Posts {
   title
+  description
+  date
+  tags
+  imageUrl
   body
 }
     `;

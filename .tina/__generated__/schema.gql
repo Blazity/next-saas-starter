@@ -79,6 +79,10 @@ union DocumentNode = PostsDocument
 
 type Posts {
   title: String
+  description: String
+  date: String
+  tags: String
+  imageUrl: String
   body: String
 }
 
@@ -116,6 +120,10 @@ input DocumentMutation {
 
 input PostsMutation {
   title: String
+  description: String
+  date: String
+  tags: String
+  imageUrl: String
   body: String
 }
 

@@ -3,12 +3,32 @@
     {
       "label": "Blog Posts",
       "name": "posts",
-      "path": "content/posts",
+      "path": "posts",
       "fields": [
         {
           "type": "string",
           "label": "Title",
           "name": "title"
+        },
+        {
+          "type": "string",
+          "label": "Description",
+          "name": "description"
+        },
+        {
+          "type": "string",
+          "label": "Date",
+          "name": "date"
+        },
+        {
+          "type": "string",
+          "label": "Tags",
+          "name": "tags"
+        },
+        {
+          "type": "string",
+          "label": "Image URL",
+          "name": "imageUrl"
         },
         {
           "type": "string",

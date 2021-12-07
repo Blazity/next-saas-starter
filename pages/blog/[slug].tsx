@@ -2,6 +2,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { staticRequest } from 'tinacms';
 import Container from 'components/Container';
 import MDXRichText from 'components/MDXRichText';
 import { formatDate } from 'utils/formatDate';
@@ -13,6 +14,8 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
+import { Query } from '.tina/__generated__/types';
+import { NonNullableChildrenDeep } from 'types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, content, meta, readTime } = props;
@@ -61,9 +64,35 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPostsSlugs();
+  const postsListData = await staticRequest({
+    query: `
+      query PostsSlugs{
+        getPostsList{
+          edges{
+            node{
+              sys{
+                basename
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {},
+  });
+
+  if (!postsListData) {
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
+
+  type NullAwarePostsList = { getPostsList: NonNullableChildrenDeep<Query['getPostsList']> };
   return {
-    paths: posts.map((slug) => ({ params: { slug } })),
+    paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge) => ({
+      params: { slug: edge.node.sys.basename },
+    })),
     fallback: false,
   };
 }

@@ -3,7 +3,7 @@
     {
       "label": "Blog Posts",
       "name": "posts",
-      "path": "content/posts",
+      "path": "posts",
       "fields": [
         {
           "type": "string",
@@ -12,6 +12,42 @@
           "namespace": [
             "posts",
             "title"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Description",
+          "name": "description",
+          "namespace": [
+            "posts",
+            "description"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Date",
+          "name": "date",
+          "namespace": [
+            "posts",
+            "date"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Tags",
+          "name": "tags",
+          "namespace": [
+            "posts",
+            "tags"
+          ]
+        },
+        {
+          "type": "string",
+          "label": "Image URL",
+          "name": "imageUrl",
+          "namespace": [
+            "posts",
+            "imageUrl"
           ]
         },
         {
