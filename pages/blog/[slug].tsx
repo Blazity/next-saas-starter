@@ -1,4 +1,5 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import ErrorPage from 'next/error';
 import Head from 'next/head';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
@@ -14,14 +15,13 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { Query } from '.tina/__generated__/types';
+import { PostsDocument, Query } from '.tina/__generated__/types';
 import { NonNullableChildrenDeep } from 'types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { slug, content, meta, readTime } = props;
-  const { title, date, imageUrl } = meta;
-
-  const formattedDate = formatDate(new Date(date));
+  const { slug, content, data, readTime } = props;
+  const { title, description, date, tags, imageUrl } = data;
+  const meta = { title, description, date: date, tags, imageUrl, author: '' };
 
   useEffect(() => {
     lazyLoadPrismTheme();
@@ -43,6 +43,12 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       }
     }
   }, []);
+
+  if (!date) {
+    return <ErrorPage statusCode={404} />;
+  }
+
+  const formattedDate = formatDate(new Date(date));
 
   return (
     <>
@@ -91,18 +97,51 @@ export async function getStaticPaths() {
   type NullAwarePostsList = { getPostsList: NonNullableChildrenDeep<Query['getPostsList']> };
   return {
     paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge) => ({
-      params: { slug: edge.node.sys.basename },
+      params: { slug: normalizePostName(edge.node.sys.basename) },
     })),
     fallback: false,
   };
 }
 
+function normalizePostName(postName: string) {
+  return postName.replace('.mdx', '');
+}
+
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  if (params) {
-    const { slug, content, meta } = await getSinglePost(params.slug);
-    const serializedContent = await serializeContent(content, meta);
-    return { props: { slug, content: serializedContent, meta, readTime: getReadTime(content) } };
+  if (!params?.slug) {
+    return {
+      notFound: true,
+    };
   }
+
+  const { slug } = params;
+  const variables = { relativePath: `${slug}.mdx` };
+  const query = `
+    query BlogPostQuery($relativePath: String!) {
+      getPostsDocument(relativePath: $relativePath) {
+        data {
+          title
+          description
+          date
+          tags
+          imageUrl
+          body
+        }
+      }
+    }
+  `;
+
+  const data = (await staticRequest({
+    query: query,
+    variables: variables,
+  })) as { getPostsDocument: PostsDocument };
+
+  const { title, description, date, tags, imageUrl, body } = data.getPostsDocument.data;
+  const meta = { title, description, date, tags, imageUrl };
+  const serializedContent = await serializeContent(body || '', meta);
+  return {
+    props: { slug, content: serializedContent, readTime: getReadTime(body || ''), variables, query, data: data.getPostsDocument.data },
+  };
 
   async function serializeContent(content: string, meta: Record<string, unknown>) {
     const { serialize } = await import('next-mdx-remote/serialize');

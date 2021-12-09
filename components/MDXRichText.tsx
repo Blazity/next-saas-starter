@@ -5,11 +5,12 @@ import ArticleImage from './ArticleImage';
 import Code from './Code';
 import Link from './Link';
 import Quote from './Quote';
+import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
 
-export default function RichText(props: MDXRemoteSerializeResult) {
+export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[]; components?: Components<{}> }) {
   return (
     <Container>
-      <MDXRemote {...props} components={components} />
+      <TinaMarkdown {...props} components={components} />
     </Container>
   );
 }
@@ -104,13 +105,13 @@ const TextHighlight = styled.code`
 `;
 
 const components = {
-  h2: SecondHeading,
-  h3: ThirdHeading,
-  p: Paragraph,
-  br: Break,
+  h2: () => <SecondHeading />,
+  h3: () => <ThirdHeading />,
+  p: () => <Paragraph />,
+  br: () => <Break />,
   inlineCode: TextHighlight,
   Image: ArticleImage,
-  a: Link,
+  Link,
   Code,
   Quote,
   ArticleImage,
