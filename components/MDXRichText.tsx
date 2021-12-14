@@ -1,16 +1,15 @@
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import styled from 'styled-components';
+import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
 import { media } from 'utils/media';
 import ArticleImage from './ArticleImage';
 import Code from './Code';
 import Link from './Link';
 import Quote from './Quote';
-import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
 
-export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[]; components?: Components<{}> }) {
+export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[] }) {
   return (
     <Container>
-      <TinaMarkdown {...props} components={components} />
+      <TinaMarkdown content={props.content} components={components as Components<{}>} />
     </Container>
   );
 }
@@ -105,10 +104,10 @@ const TextHighlight = styled.code`
 `;
 
 const components = {
-  h2: () => <SecondHeading />,
-  h3: () => <ThirdHeading />,
-  p: () => <Paragraph />,
-  br: () => <Break />,
+  h2: SecondHeading,
+  h3: ThirdHeading,
+  p: Paragraph,
+  br: Break,
   inlineCode: TextHighlight,
   Image: ArticleImage,
   Link,

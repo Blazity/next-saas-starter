@@ -56,12 +56,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           editMode={
             <TinaCMS
               query={pageProps.query}
-              variables={pageProps.variables} // Variables used in your query
+              variables={pageProps.variables}
               data={pageProps.data}
-              clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
-              branch={process.env.NEXT_PUBLIC_EDIT_BRANCH}
-              organization={process.env.NEXT_PUBLIC_ORGANIZATION_NAME}
               isLocalClient={true}
+              branch={process.env.NEXT_PUBLIC_EDIT_BRANCH}
+              clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
               {...pageProps}
             >
               {(livePageProps: TinaCMSProviderProps) => <Component {...livePageProps} />}

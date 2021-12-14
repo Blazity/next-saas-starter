@@ -83,7 +83,7 @@ type Posts {
   date: String
   tags: String
   imageUrl: String
-  body: String
+  body: JSON
 }
 
 type PostsDocument implements Node & Document {
@@ -124,7 +124,7 @@ input PostsMutation {
   date: String
   tags: String
   imageUrl: String
-  body: String
+  body: JSON
 }
 
 schema {

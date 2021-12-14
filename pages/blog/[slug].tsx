@@ -1,28 +1,22 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
-import ErrorPage from 'next/error';
 import Head from 'next/head';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { staticRequest } from 'tinacms';
 import Container from 'components/Container';
 import MDXRichText from 'components/MDXRichText';
+import { NonNullableChildrenDeep } from 'types';
 import { formatDate } from 'utils/formatDate';
 import { media } from 'utils/media';
-import { getAllPostsSlugs, getSinglePost } from 'utils/postsFetcher';
 import { getReadTime } from 'utils/readTime';
 import Header from 'views/SingleArticlePage/Header';
 import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { PostsDocument, Query } from '.tina/__generated__/types';
-import { NonNullableChildrenDeep } from 'types';
+import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { slug, content, data, readTime } = props;
-  const { title, description, date, tags, imageUrl } = data;
-  const meta = { title, description, date: date, tags, imageUrl, author: '' };
-
   useEffect(() => {
     lazyLoadPrismTheme();
 
@@ -44,12 +38,14 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
     }
   }, []);
 
-  if (!date) {
-    return <ErrorPage statusCode={404} />;
+  const { slug, content, data, readTime } = props;
+  if (!data) {
+    return null;
   }
-
+  const { title, description, date, tags, imageUrl } = data.getPostsDocument.data as NonNullableChildrenDeep<Posts>;
+  const meta = { title, description, date: date, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
-
+  const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
   return (
     <>
       <Head>
@@ -62,8 +58,8 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       <MetadataHead {...meta} />
       <CustomContainer id="content">
         <ShareWidget title={title} slug={slug} />
-        <Header title={title} formattedDate={formattedDate} imageUrl={imageUrl} readTime={readTime} />
-        <MDXRichText {...content} />
+        <Header title={title} formattedDate={formattedDate} imageUrl={absoluteImageUrl} readTime={readTime} />
+        <MDXRichText content={content} />
       </CustomContainer>
     </>
   );
@@ -108,13 +104,7 @@ function normalizePostName(postName: string) {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
-  if (!params?.slug) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const { slug } = params;
+  const { slug } = params as { slug: string };
   const variables = { relativePath: `${slug}.mdx` };
   const query = `
     query BlogPostQuery($relativePath: String!) {
@@ -137,10 +127,12 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   })) as { getPostsDocument: PostsDocument };
 
   const { title, description, date, tags, imageUrl, body } = data.getPostsDocument.data;
+  console.log(body);
+
   const meta = { title, description, date, tags, imageUrl };
   const serializedContent = await serializeContent(body || '', meta);
   return {
-    props: { slug, content: serializedContent, readTime: getReadTime(body || ''), variables, query, data: data.getPostsDocument.data },
+    props: { slug, content: body || '', readTime: getReadTime(body || ''), variables, query, data },
   };
 
   async function serializeContent(content: string, meta: Record<string, unknown>) {
