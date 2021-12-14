@@ -1,6 +1,6 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { staticRequest } from 'tinacms';
 import Container from 'components/Container';
@@ -17,8 +17,19 @@ import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
 import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [readTime, setReadTime] = useState('');
+
   useEffect(() => {
+    calculateReadTime();
     lazyLoadPrismTheme();
+
+    function calculateReadTime() {
+      const currentContent = contentRef.current;
+      if (currentContent) {
+        setReadTime(getReadTime(currentContent.textContent || ''));
+      }
+    }
 
     function lazyLoadPrismTheme() {
       const prismThemeLinkEl = document.querySelector('link[data-id="prism-theme"]');
@@ -38,7 +49,7 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
     }
   }, []);
 
-  const { slug, content, data, readTime } = props;
+  const { slug, content, data } = props;
   if (!data) {
     return null;
   }
@@ -56,7 +67,7 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
       <OpenGraphHead slug={slug} {...meta} />
       <StructuredDataHead slug={slug} {...meta} />
       <MetadataHead {...meta} />
-      <CustomContainer id="content">
+      <CustomContainer id="content" ref={contentRef}>
         <ShareWidget title={title} slug={slug} />
         <Header title={title} formattedDate={formattedDate} imageUrl={absoluteImageUrl} readTime={readTime} />
         <MDXRichText content={content} />
@@ -126,35 +137,10 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     variables: variables,
   })) as { getPostsDocument: PostsDocument };
 
-  const { title, description, date, tags, imageUrl, body } = data.getPostsDocument.data;
-  console.log(body);
-
-  const meta = { title, description, date, tags, imageUrl };
-  const serializedContent = await serializeContent(body || '', meta);
+  const { body } = data.getPostsDocument.data;
   return {
-    props: { slug, content: body || '', readTime: getReadTime(body || ''), variables, query, data },
+    props: { slug, content: body || '', variables, query, data },
   };
-
-  async function serializeContent(content: string, meta: Record<string, unknown>) {
-    const { serialize } = await import('next-mdx-remote/serialize');
-    return serialize(content, {
-      scope: meta,
-      mdxOptions: {
-        remarkPlugins: [
-          // @ts-ignore
-          await import('@fec/remark-a11y-emoji'),
-          await import('remark-breaks'),
-          await import('remark-gfm'),
-          await import('remark-footnotes'),
-          await import('remark-external-links'),
-          await import('remark-slug'),
-          // @ts-ignore
-          await import('remark-sectionize'),
-        ],
-        rehypePlugins: [],
-      },
-    });
-  }
 }
 
 const CustomContainer = styled(Container)`
