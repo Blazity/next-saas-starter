@@ -48,7 +48,7 @@
 
 - ⚡ **Next.js** - React framework for static rendering
 - 🤩 **Best SEO setup** - Meta Tags, JSON-LD and Open Graph Tags
-- 🦒 Tina CMS integration - local & (optional) production CMS
+- 🦒 **Tina CMS integration** - local & (optional) production CMS
 - ✅ **Optimized for Web Vitals**
 - 📜 **Blog with MDX**
 - 📫 **Mailchimp Integration** - for newsletters
