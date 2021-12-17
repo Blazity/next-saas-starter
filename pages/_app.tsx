@@ -3,10 +3,14 @@ import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
+import { TinaCMSProviderProps } from '@tinacms/toolkit';
 import { AppProps } from 'next/dist/shared/lib/router/router';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { ColorModeScript } from 'nextjs-color-mode';
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
+import { TinaEditProvider } from 'tinacms/dist/edit-state';
+
 import Footer from 'components/Footer';
 import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
@@ -23,9 +27,9 @@ const navItems: NavItems = [
   { title: 'Sign up', href: '/sign-up', outlined: true },
 ];
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const standaloneMarkup = <Component {...pageProps} />;
+const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
 
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -44,10 +48,27 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ColorModeScript />
       <GlobalStyle />
+
       <Providers>
         <Modals />
         <Navbar items={navItems} />
-        {standaloneMarkup}
+        <TinaEditProvider
+          editMode={
+            <TinaCMS
+              query={pageProps.query}
+              variables={pageProps.variables}
+              data={pageProps.data}
+              isLocalClient={!process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+              branch={process.env.NEXT_PUBLIC_EDIT_BRANCH}
+              clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+              {...pageProps}
+            >
+              {(livePageProps: TinaCMSProviderProps) => <Component {...livePageProps} />}
+            </TinaCMS>
+          }
+        >
+          <Component {...pageProps} />
+        </TinaEditProvider>
         <WaveCta />
         <Footer />
       </Providers>
