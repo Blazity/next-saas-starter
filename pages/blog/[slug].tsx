@@ -139,7 +139,6 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     variables: variables,
   })) as { getPostsDocument: PostsDocument };
 
-  // const { body } = data.getPostsDocument.data;
   return {
     props: { slug, variables, query, data },
   };
