@@ -49,7 +49,9 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
     }
   }, []);
 
-  const { slug, content, data } = props;
+  const { slug, data } = props;
+  const content = data.getPostsDocument.data.body;
+
   if (!data) {
     return null;
   }
@@ -137,9 +139,9 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
     variables: variables,
   })) as { getPostsDocument: PostsDocument };
 
-  const { body } = data.getPostsDocument.data;
+  // const { body } = data.getPostsDocument.data;
   return {
-    props: { slug, content: body || '', variables, query, data },
+    props: { slug, variables, query, data },
   };
 }
 

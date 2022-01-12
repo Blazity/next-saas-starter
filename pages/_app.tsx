@@ -3,7 +3,6 @@ import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-import { TinaCMSProviderProps } from '@tinacms/toolkit';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
@@ -63,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
               {...pageProps}
             >
-              {(livePageProps: TinaCMSProviderProps) => <Component {...livePageProps} />}
+              {(livePageProps: any) => <Component {...livePageProps} />}
             </TinaCMS>
           }
         >

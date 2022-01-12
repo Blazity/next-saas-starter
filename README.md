@@ -48,7 +48,7 @@
 
 - ⚡ **Next.js** - React framework for static rendering
 - 🤩 **Best SEO setup** - Meta Tags, JSON-LD and Open Graph Tags
-- 🦒 **Tina CMS integration** - local & (optional) production CMS
+- 🦒 **[Tina CMS](https://tina.io/) integration** - local & (optional) production CMS
 - ✅ **Optimized for Web Vitals**
 - 📜 **Blog with MDX**
 - 📫 **Mailchimp Integration** - for newsletters
@@ -65,15 +65,13 @@
 - Setup your [sendgrid](https://sendgrid.com/) API key and add it to environment variables (`SENDGRID_API_KEY` - `.env.local`)
 - Adjust the template to your needs (and checkout `env.ts` file)
 - Deploy the project on [Vercel](https://vercel.com/) **don't forget to add env variables**
-- _(optional)_ Create [Tina Cloud account](), [a project](https://tina.io/docs/tina-cloud/) and fill these `NEXT_PUBLIC_ORGANIZATION_NAME`, `NEXT_PUBLIC_TINA_CLIENT_ID` env vars with proper values
+- _(optional)_ Create [Tina Cloud account](https://app.tina.io/), [a project](https://tina.io/docs/tina-cloud/) and fill these `NEXT_PUBLIC_ORGANIZATION_NAME`, `NEXT_PUBLIC_TINA_CLIENT_ID` env vars with proper values
   > Tina's Content API authenticates directly with GitHub removing the need for users to create GitHub accounts. Access is granted through the dashboard, allowing users to login directly through your site and begin editing! Any changes that are saved by your editors will be commited to the configured branch in your GitHub repository.
+  - For more details [see the docs](https://tina.io/docs/tina-cloud/)
 
 ```
 # run the dev mode
 $ yarn dev
-
-# run with tina
-$ yarn tina-dev
 
 # run the prod mode
 yarn start
