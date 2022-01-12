@@ -80,6 +80,8 @@ yarn start
 yarn build
 ```
 
+> Hint: To edit the blog pages go to [/admin](http://localhost:3000/admin) and navigate to a blog page to edit it. To exit editing mode navigate to [/admin/logout](http://localhost:3000/admin/logout)
+
 ## One click deploy
 
 Clone the repository and one-click deploy to Vercel for free!
