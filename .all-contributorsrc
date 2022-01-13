@@ -36,6 +36,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "logan-anderson",
+      "name": "Logan Anderson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43075109?v=4",
+      "profile": "https://www.logana.dev/",
+      "contributions": [
+        "code",
+        "doc",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7
