@@ -47,6 +47,15 @@
         "doc",
         "mentoring"
       ]
+    },
+    {
+      "login": "fdukat",
+      "name": "Filip Dukat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/87642690?v=4",
+      "profile": "https://github.com/fdukat",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
