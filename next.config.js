@@ -12,10 +12,11 @@ module.exports = withBundleAnalyzer({
     deviceSizes: [320, 640, 1080, 1200],
     imageSizes: [64, 128],
   },
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    if (!dev) {
-      config.plugins.push(new CopyPlugin({ patterns: [{ from: 'posts', to: 'posts' }] }));
-    }
     config.module.rules.push({
       test: /\.svg$/,
       issuer: {
