@@ -10,12 +10,12 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
+    title: 'Create your own ERC-20 token',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+      '<p> </p>',
     imageUrl: '/demo-illustration-3.png',
-    baseColor: '249,82,120',
-    secondColor: '221,9,57',
+    baseColor: '235, 94, 40',
+    secondColor: '241, 80, 37',
   },
   {
     title: 'Another amazing feature',

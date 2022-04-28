@@ -14,10 +14,9 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-
         <Heading>Empowering you to invest in your future.</Heading>
         <Description>
-          Here at MobLabs, we are building the next generation of digital marketplace for metabrands and their communities. Come say hi.
+          MobLabs is disrupting how content creators and their communities interact with each other through accessible, scalable, and social web3 technologies. 
         </Description>
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
@@ -25,9 +24,10 @@ export default function Hero() {
           </Button>
         </CustomButtonGroup>
       </Contents>
-      <ImageContainer>
+      {/**<ImageContainer>
         <HeroIllustration />
       </ImageContainer>
+  */}
     </HeroWrapper>
   );
 }
