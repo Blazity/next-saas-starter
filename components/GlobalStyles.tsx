@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   --tertiary: 235, 94, 40;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
-  --navbarBackground: 25, 25, 25 + "aa";
+  --navbarBackground: 37,36,34 + "aa";
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;
