@@ -69,7 +69,7 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
+            <Logo /> 
           </LogoWrapper>
         </NextLink>
         <NavItemList>

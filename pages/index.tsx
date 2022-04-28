@@ -26,25 +26,21 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
       <HomepageWrapper>
         <WhiteBackgroundContainer>
           <Hero />
-          <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+          {//<Partners />
+          }
+          <BasicSection imageUrl="/demo-illustration-1.svg" title="Build Your Creator Economy" overTitle="For Content Creators:">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
+              Use our interface to make <strong>custom creator tokens</strong> that your fans can purchase to support your business. Reward tokens to your holders or leverage token holder input to better grow your brand. 
             </p>
           </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
+          <BasicSection imageUrl="/demo-illustration-2.svg" title="Invest in brands you care about" overTitle="For the fans:" reversed>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
-              <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
+              Support your favorite creators by buying their tokens to access exclusive interactions, rewards and more. 
             </p>
             <ul>
-              <li>Professional point 1</li>
-              <li>Professional remark 2</li>
-              <li>Professional feature 3</li>
+              <li>Get rewards for holding creator tokens</li>
+              <li>Buy specific actions or content</li>
+              <li>Voice your opinions on brands</li>
             </ul>
           </BasicSection>
         </WhiteBackgroundContainer>

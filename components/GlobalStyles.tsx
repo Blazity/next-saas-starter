@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondBackground: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255; 
+  --primary: 235, 94, 40; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 255,255,255;
@@ -28,16 +28,16 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 .next-dark-theme {
-  --background: 26,32,44;
-  --secondBackground: 45,55,72;
+  --background: 25, 25, 25;
+  --secondBackground: 37,36,34;
   --text: 237,237,238;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255; 
+  --primary: 235, 94, 40; 
   --secondary: 10,18,30;
-  --tertiary: 231,241,251;
+  --tertiary: 235, 94, 40;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
-  --navbarBackground: 45,55,72;
+  --navbarBackground: 25, 25, 25 + "aa";
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;

@@ -14,21 +14,15 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+
+        <Heading>Empowering you to invest in your future.</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+          Here at MobLabs, we are building the next generation of digital marketplace for metabrands and their communities. Come say hi.
         </Description>
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
+            Get in Touch <span>&rarr;</span>
           </Button>
-          <NextLink href="#whitepaper" passHref>
-            <Button transparent>
-              Features <span>&rarr;</span>
-            </Button>
-          </NextLink>
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
