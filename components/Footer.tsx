@@ -75,7 +75,7 @@ export default function Footer() {
               </a>
             </NextLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>&copy; Copyright 2022 MobLabs Inc.</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
