@@ -14,7 +14,7 @@ export default function Cta() {
       <Container>
         <Stack>
 
-          <SectionTitle>Stay ujajajajajap siodufnasoidfuosadiufoasdiufho to date with recent developments by subscribing to our monthly newsletter.</SectionTitle>
+          <SectionTitle>Stay up to date with recent developments by subscribing to our monthly newsletter.</SectionTitle>
           <ButtonGroup>
             <NextLink href="#early-access" passHref>
               <Button>
