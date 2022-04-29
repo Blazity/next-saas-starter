@@ -65,7 +65,7 @@ export default function Footer() {
 
             <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
               <a>
-                <FacebookIcon size={50} round={true} iconFillColor="#ff5a01" />
+                <FacebookIcon size={50} round={true} bgStyle= iconFillColor="#ff5a01" />
               </a>
             </NextLink>
 

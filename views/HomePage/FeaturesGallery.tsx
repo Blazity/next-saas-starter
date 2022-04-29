@@ -28,7 +28,7 @@ const TABS = [
   {
     title: 'Next generation digital marketplace',
     description:
-      '<p>Merchandise sales on creator shops generate yield for token holders. Sell merch, game time, NFTs and more.</p>',
+      '<p>Merchandise sales on creator shops generate yield for token holders. Sell merch, game time, NFTs and more. Build your digital economy. </p>',
     imageUrl: '/demo-illustration-5.png',
     baseColor: '235, 94, 40',
     secondColor: '241, 80, 37',
