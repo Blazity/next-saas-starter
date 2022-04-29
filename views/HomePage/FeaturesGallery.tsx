@@ -12,26 +12,26 @@ const TABS = [
   {
     title: 'Create your own ERC-20 token',
     description:
-      '<p> </p>',
+      '<p> Create custom incentives to engage with your community. Charities. Parties. E-Sports Tournaments. The choices are limitless, but they are up to you. </p>',
     imageUrl: '/demo-illustration-3.png',
     baseColor: '235, 94, 40',
     secondColor: '241, 80, 37',
   },
   {
-    title: 'Another amazing feature',
+    title: 'Next generation interaction',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+      '<p> Vote on a a twitch streamer\'s next move. Help direct a youtuber\'s next video. Compete for tokens with communitiy members. Many more to come.</p>',
     imageUrl: '/demo-illustration-4.png',
-    baseColor: '57,148,224',
-    secondColor: '99,172,232',
+    baseColor: '235, 94, 40',
+    secondColor: '241, 80, 37',
   },
   {
-    title: 'And yet... another truly fascinating feature',
+    title: 'Next generation digital marketplace',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+      '<p>Merchandise sales on creator shops generate yield for token holders. Sell merch, game time, NFTs and more. Build your digital economy. </p>',
     imageUrl: '/demo-illustration-5.png',
-    baseColor: '88,193,132',
-    secondColor: '124,207,158',
+    baseColor: '235, 94, 40',
+    secondColor: '241, 80, 37',
   },
 ];
 
@@ -76,8 +76,8 @@ export default function FeaturesGallery() {
   return (
     <FeaturesGalleryWrapper>
       <Content>
-        <OverTitle>features</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        <OverTitle>This is MobLabs</OverTitle>
+        <SectionTitle>Let's Mob</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

@@ -60,19 +60,19 @@ export default function Footer() {
           {/*</BottomBar>ShareBar>
             <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
               <a>
-                <TwitterIcon size={50} round={true} />
+                <TwitterIcon size={50} round={true} iconFillColor="#ff5a01" />
               </a>
             </NextLink>
 
             <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
               <a>
-                <FacebookIcon size={50} round={true} />
+                <FacebookIcon size={50} round={true} bgStyle= iconFillColor="#ff5a01" />
               </a>
             </NextLink>
 
             <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
               <a>
-                <LinkedinIcon size={50} round={true} />
+                <LinkedinIcon size={50} round={true} iconFillColor="#ff5a01"/>
               </a>
             </NextLink>
           </ShareBar>
