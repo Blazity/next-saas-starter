@@ -21,9 +21,9 @@ import { NavItems } from 'types';
 
 const navItems: NavItems = [
   { title: 'Whitepaper', href: '/whitepaper' },
-  { title: 'Creator Hubs', href: '/pricing' },
+  //{ title: 'Creator Hubs', href: '/pricing' },
   { title: 'About', href: '/about' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  //{ title: 'Sign up', href: '/sign-up', outlined: true },
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });

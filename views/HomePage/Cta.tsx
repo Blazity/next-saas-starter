@@ -7,26 +7,22 @@ import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
+import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 
 export default function Cta() {
+  const { setIsModalOpened } = useNewsletterModalContext();
+
   return (
     <CtaWrapper>
       <Container>
         <Stack>
 
-          <SectionTitle>Stay up to date with recent developments by subscribing to our monthly newsletter.</SectionTitle>
-          <ButtonGroup>
-            <NextLink href="#early-access" passHref>
-              <Button>
-                Subscribe to the newsletter <span>&rarr;</span>
-              </Button>
-            </NextLink>
-            <NextLink href="#whitepaper" passHref>
-              <OutlinedButton transparent>
-                Features <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
-          </ButtonGroup>
+          <SectionTitle>Stay up to date with recent developments by subscribing to our newsletter.</SectionTitle>
+          <CustomButtonGroup>
+          <Button onClick={() => setIsModalOpened(true)}>
+            Subscribe <span>&rarr;</span>
+          </Button>
+        </CustomButtonGroup>
         </Stack>
       </Container>
     </CtaWrapper>
@@ -69,4 +65,8 @@ const OutlinedButton = styled(Button)`
 
 const CtaWrapper = styled.div`
   background: rgb(var(--secondary));
+`;
+
+const CustomButtonGroup = styled(ButtonGroup)`
+  margin-top: 4rem;
 `;

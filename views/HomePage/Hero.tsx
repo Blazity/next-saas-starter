@@ -19,9 +19,11 @@ export default function Hero() {
           MobLabs is disrupting how content creators and their communities interact with each other through accessible, scalable, and social web3 technologies. 
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Get in Touch <span>&rarr;</span>
-          </Button>
+          <NextLink href="/contact" passHref>
+            <Button>
+              Get in touch <span>&rarr;</span>
+            </Button>
+          </NextLink>
         </CustomButtonGroup>
       </Contents>
       {/**<ImageContainer>

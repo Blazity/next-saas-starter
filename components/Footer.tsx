@@ -14,7 +14,7 @@ const footerItems: FooterItems = [
     title: 'Company',
     items: [
       { title: 'About', href: '/about' },
-      { title: 'Privacy Policy', href: '/privacy-policy' },
+      //{ title: 'Privacy Policy', href: '/privacy-policy' },
     ],
   },
   {
@@ -38,8 +38,8 @@ const footerItems: FooterItems = [
   {
     title: 'Contact',
     items: [
-      { title: 'Contact Information', href: '/contact_information' },
-      { title: 'Email', href: '/email_form' },
+      //{ title: 'Contact Information', href: '/contact' },
+      { title: 'Email Us', href: '/contact' },
       //{ title: 'Something else2', href: '/something-else2' },
       //{ title: 'And something else2', href: '/and-something-else2' },
     ],
@@ -56,8 +56,7 @@ export default function Footer() {
           ))}
         </ListContainer>
         <BottomBar>
-
-          {/*</BottomBar>ShareBar>
+          <ShareBar>
             <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
               <a>
                 <TwitterIcon size={50} round={true} iconFillColor="#ff5a01" />
@@ -66,7 +65,7 @@ export default function Footer() {
 
             <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
               <a>
-                <FacebookIcon size={50} round={true} bgStyle= iconFillColor="#ff5a01" />
+                <FacebookIcon size={50} round={true} iconFillColor="#ff5a01" />
               </a>
             </NextLink>
 
@@ -76,7 +75,6 @@ export default function Footer() {
               </a>
             </NextLink>
           </ShareBar>
-          */}
           <Copyright>&copy; Copyright 2022 MobLabs Inc.</Copyright>
         </BottomBar>
       </Container>
@@ -108,7 +106,7 @@ function ListItem({ title, href }: SingleFooterListItem) {
 const FooterWrapper = styled.div`
   padding-top: 10rem;
   padding-bottom: 4rem;
-  background: rgb(var(--secondary));
+  background: rgb(var(--footerColor));
   color: rgb(var(--textSecondary));
 `;
 

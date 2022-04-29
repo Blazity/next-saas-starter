@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: #243A5A;
+  --footerColor: 235,94,40;
 }
 
 .next-dark-theme {
@@ -33,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
   --text: 237,237,238;
   --textSecondary: 255,255,255;
   --primary: 235, 94, 40; 
-  --secondary: 10,18,30;
+  --secondary: 0,0,0;
   --tertiary: 235, 94, 40;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
@@ -41,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 0,0,0;
   --errorColor: 207,34,46;
   --logoColor: #fff;
+  --footerColor: 235, 94, 40; 
 }
 
 :root {
