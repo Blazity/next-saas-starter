@@ -12,7 +12,7 @@ export default function WhitePaperPage() {
   return (
     <Page title="White Paper" description="Learn more about how Xchange will work to help you build our your vision of your community.">
       <Wrapper>
-        <SectionTitle>###PUT WHITE PAPER HERE###</SectionTitle>
+        <SectionTitle>Change to gitbook link</SectionTitle>
 
       </Wrapper>
     </Page>
