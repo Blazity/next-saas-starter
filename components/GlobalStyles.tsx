@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 
 .next-dark-theme {
   --background: 25, 25, 25;
-  --secondBackground: 37,36,34;
+  --secondBackground: 0,0,0;
   --text: 237,237,238;
   --textSecondary: 255,255,255;
   --primary: 235, 94, 40; 
@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   --tertiary: 235, 94, 40;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
-  --navbarBackground: 37,36,34 + "aa";
+  --navbarBackground: 0,0,0 + "aa";
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;
