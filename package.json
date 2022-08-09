@@ -35,7 +35,7 @@
     "tinacms": "^0.63.0",
     "url-loader": "^4.1.1",
     "use-clipboard-copy": "^0.2.0",
-    "use-resize-observer": "^8.0.0"
+    "use-resize-observer": "^9.0.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
