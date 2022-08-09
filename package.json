@@ -35,12 +35,12 @@
     "tinacms": "^0.63.0",
     "url-loader": "^4.1.1",
     "use-clipboard-copy": "^0.2.0",
-    "use-resize-observer": "^8.0.0"
+    "use-resize-observer": "^9.0.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
     "@fec/remark-a11y-emoji": "^3.1.0",
-    "@next/bundle-analyzer": "^11.1.2",
+    "@next/bundle-analyzer": "^12.2.4",
     "@tinacms/cli": "^0.60.0",
     "@types/react": "^17.0.20",
     "@types/react-mailchimp-subscribe": "^2.1.1",
