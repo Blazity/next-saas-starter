@@ -44,7 +44,7 @@
     "@tinacms/cli": "^0.60.0",
     "@types/react": "^17.0.20",
     "@types/react-mailchimp-subscribe": "^2.1.1",
-    "@types/styled-components": "^5.1.25",
+    "@types/styled-components": "^5.1.26",
     "@types/swiper": "^5.4.3",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.33.0",
