@@ -45,23 +45,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         /> */}
         {/* <script async src="https://www.google-analytics.com/analytics.js"></script> */}
       </Head>
-            <link rel="stylesheet" href="https://bstefanski.com/widget.css" />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function (w, d, s, o, f, js, fjs) {
-        w[o] =
-          w[o] ||
-          function () {
-            (w[o].q = w[o].q || []).push(arguments);
-          };
-        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-        js.id = o;
-        js.src = f;
-        js.defer = 1;
-        fjs.parentNode.insertBefore(js, fjs);
-      })(window, document, 'script', '_mb-widget', 'https://bstefanski.com/widget.js');`,
-        }}
-      />
       <ColorModeScript />
       <GlobalStyle />
 
