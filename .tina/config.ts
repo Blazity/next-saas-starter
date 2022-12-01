@@ -12,6 +12,11 @@ export default defineConfig({
         name: 'posts',
         path: 'posts',
         format: 'mdx',
+        ui: {
+          router: ({ document }) => {
+            return `/blog/${document._sys.filename}`;
+          },
+        },
         fields: [
           {
             type: 'string',
