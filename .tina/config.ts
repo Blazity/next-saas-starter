@@ -9,7 +9,7 @@ export default defineConfig({
     collections: [
       {
         label: 'Blog Posts',
-        name: 'posts',
+        name: 'post',
         path: 'posts',
         format: 'mdx',
         ui: {

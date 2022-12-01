@@ -48,12 +48,12 @@ type Query {
   collections: [Collection!]!
   node(id: String): Node!
   document(collection: String, relativePath: String): DocumentNode!
-  posts(relativePath: String): Posts!
-  postsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostsFilter): PostsConnection!
+  post(relativePath: String): Post!
+  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
 }
 
 input DocumentFilter {
-  posts: PostsFilter
+  post: PostFilter
 }
 
 type DocumentConnectionEdges {
@@ -79,9 +79,9 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
 }
 
-union DocumentNode = Posts
+union DocumentNode = Post
 
-type Posts implements Node & Document {
+type Post implements Node & Document {
   title: String
   description: String
   date: String
@@ -100,13 +100,13 @@ input StringFilter {
   in: [String]
 }
 
-input PostsBodyQuoteFilter {
+input PostBodyQuoteFilter {
   content: StringFilter
   author: StringFilter
   cite: StringFilter
 }
 
-input PostsBodyArticleImageFilter {
+input PostBodyArticleImageFilter {
   src: StringFilter
   caption: StringFilter
 }
@@ -116,7 +116,7 @@ input BooleanFilter {
   exists: Boolean
 }
 
-input PostsBodyCodeFilter {
+input PostBodyCodeFilter {
   code: StringFilter
   language: StringFilter
   selectedLines: StringFilter
@@ -125,30 +125,30 @@ input PostsBodyCodeFilter {
   caption: StringFilter
 }
 
-input PostsBodyFilter {
-  Quote: PostsBodyQuoteFilter
-  ArticleImage: PostsBodyArticleImageFilter
-  Code: PostsBodyCodeFilter
+input PostBodyFilter {
+  Quote: PostBodyQuoteFilter
+  ArticleImage: PostBodyArticleImageFilter
+  Code: PostBodyCodeFilter
 }
 
-input PostsFilter {
+input PostFilter {
   title: StringFilter
   description: StringFilter
   date: StringFilter
   tags: StringFilter
   imageUrl: StringFilter
-  body: PostsBodyFilter
+  body: PostBodyFilter
 }
 
-type PostsConnectionEdges {
+type PostConnectionEdges {
   cursor: String!
-  node: Posts
+  node: Post
 }
 
-type PostsConnection implements Connection {
+type PostConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [PostsConnectionEdges]
+  edges: [PostConnectionEdges]
 }
 
 type Mutation {
@@ -156,15 +156,15 @@ type Mutation {
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updatePosts(relativePath: String!, params: PostsMutation!): Posts!
-  createPosts(relativePath: String!, params: PostsMutation!): Posts!
+  updatePost(relativePath: String!, params: PostMutation!): Post!
+  createPost(relativePath: String!, params: PostMutation!): Post!
 }
 
 input DocumentMutation {
-  posts: PostsMutation
+  post: PostMutation
 }
 
-input PostsMutation {
+input PostMutation {
   title: String
   description: String
   date: String

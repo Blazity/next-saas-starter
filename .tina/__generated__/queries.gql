@@ -1,5 +1,5 @@
-query posts($relativePath: String!) {
-  posts(relativePath: $relativePath) {
+query post($relativePath: String!) {
+  post(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -11,12 +11,12 @@ query posts($relativePath: String!) {
       }
       id
     }
-    ...PostsParts
+    ...PostParts
   }
 }
 
-query postsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PostsFilter) {
-  postsConnection(
+query postConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PostFilter) {
+  postConnection(
     before: $before
     after: $after
     first: $first
@@ -45,7 +45,7 @@ query postsConnection($before: String, $after: String, $first: Float, $last: Flo
           }
           id
         }
-        ...PostsParts
+        ...PostParts
       }
     }
   }

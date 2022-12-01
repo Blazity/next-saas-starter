@@ -13,7 +13,7 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { Posts } from '.tina/__generated__/types';
+import { Post } from '.tina/__generated__/types';
 import { client } from ".tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 
@@ -57,16 +57,16 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
     }
   }, []);
 
-  const content = data.posts.body;
+  const content = data.post.body;
 
   if (!data) {
     return null;
   }
-  const { title, description, date, tags, imageUrl } = data.posts as NonNullableChildrenDeep<Posts>;
+  const { title, description, date, tags, imageUrl } = data.post as NonNullableChildrenDeep<Posts>;
   const meta = { title, description, date: date, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
   const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
-  const slug = data.posts._sys.filename
+  const slug = data.post._sys.filename
   return (
     <>
       <Head>
@@ -88,9 +88,9 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
 
 export async function getStaticPaths() {
 
-  const postsListData = await client.queries.postsConnection();
+  const postListData = await client.queries.postConnection();
   return {
-    paths: postsListData!.data!.postsConnection!.edges.map((post) => ({
+    paths: postListData!.data!.postConnection!.edges.map((post) => ({
       params: { slug: post.node._sys.filename },
     })),
     fallback: "blocking",
@@ -98,7 +98,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params }: {params: {slug: string}}) => {
-  const tinaProps = await client.queries.posts({
+  const tinaProps = await client.queries.post({
     relativePath: `${params.slug}.mdx`,
   });
   
