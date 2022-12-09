@@ -17,7 +17,7 @@ import { Post } from '.tina/__generated__/types';
 import { client } from ".tina/__generated__/client";
 import { useTina } from "tinacms/dist/react";
 
-export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function SingleArticlePage(props: any) {
   
   const { data } = useTina({
     query: props.query,
