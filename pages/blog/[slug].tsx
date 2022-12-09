@@ -62,7 +62,7 @@ export default function SingleArticlePage(props: any) {
   if (!data) {
     return null;
   }
-  const { title, description, date, tags, imageUrl } = data.post as NonNullableChildrenDeep<Posts>;
+  const { title, description, date, tags, imageUrl } = data.post as NonNullableChildrenDeep<Post>;
   const meta = { title, description, date: date, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
   const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
