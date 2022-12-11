@@ -1,4 +1,4 @@
-fragment PostParts on Post {
+fragment PostsParts on Posts {
   title
   description
   date

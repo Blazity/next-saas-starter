@@ -1,7 +1,8 @@
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { staticRequest } from 'tinacms';
 import Container from 'components/Container';
 import MDXRichText from 'components/MDXRichText';
 import { NonNullableChildrenDeep } from 'types';
@@ -13,18 +14,9 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { Post } from '.tina/__generated__/types';
-import { client } from ".tina/__generated__/client";
-import { useTina } from "tinacms/dist/react";
+import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 
-export default function SingleArticlePage(props: any) {
-  
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  });
-  
+export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [readTime, setReadTime] = useState('');
 
@@ -57,16 +49,16 @@ export default function SingleArticlePage(props: any) {
     }
   }, []);
 
-  const content = data.post.body;
+  const { slug, data } = props;
+  const content = data.getPostsDocument.data.body;
 
   if (!data) {
     return null;
   }
-  const { title, description, date, tags, imageUrl } = data.post as NonNullableChildrenDeep<Post>;
+  const { title, description, date, tags, imageUrl } = data.getPostsDocument.data as NonNullableChildrenDeep<Posts>;
   const meta = { title, description, date: date, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
   const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
-  const slug = data.post._sys.filename
   return (
     <>
       <Head>
@@ -87,27 +79,70 @@ export default function SingleArticlePage(props: any) {
 }
 
 export async function getStaticPaths() {
+  const postsListData = await staticRequest({
+    query: `
+      query PostsSlugs{
+        getPostsList{
+          edges{
+            node{
+              sys{
+                basename
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {},
+  });
 
-  const postListData = await client.queries.postConnection();
+  if (!postsListData) {
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
+
+  type NullAwarePostsList = { getPostsList: NonNullableChildrenDeep<Query['getPostsList']> };
   return {
-    paths: postListData!.data!.postConnection!.edges.map((post) => ({
-      params: { slug: post.node._sys.filename },
+    paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge) => ({
+      params: { slug: normalizePostName(edge.node.sys.basename) },
     })),
-    fallback: "blocking",
+    fallback: false,
   };
 }
 
-export const getStaticProps = async ({ params }: {params: {slug: string}}) => {
-  const tinaProps = await client.queries.post({
-    relativePath: `${params.slug}.mdx`,
-  });
-  
+function normalizePostName(postName: string) {
+  return postName.replace('.mdx', '');
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: string }>) {
+  const { slug } = params as { slug: string };
+  const variables = { relativePath: `${slug}.mdx` };
+  const query = `
+    query BlogPostQuery($relativePath: String!) {
+      getPostsDocument(relativePath: $relativePath) {
+        data {
+          title
+          description
+          date
+          tags
+          imageUrl
+          body
+        }
+      }
+    }
+  `;
+
+  const data = (await staticRequest({
+    query: query,
+    variables: variables,
+  })) as { getPostsDocument: PostsDocument };
+
   return {
-    props: {
-      ...tinaProps,
-    },
+    props: { slug, variables, query, data },
   };
-};
+}
 
 const CustomContainer = styled(Container)`
   position: relative;

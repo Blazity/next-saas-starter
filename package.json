@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn tinacms dev -c \"next dev\"",
+    "dev": "yarn tinacms server:start -c \"next dev\"",
     "build": "yarn tinacms server:start -c \"next build\"",
     "start": "yarn tinacms server:start -c \"next start\"",
     "lint": "next lint"
@@ -32,7 +32,7 @@
     "schema-dts": "^1.0.0",
     "styled-components": "^5.3.5",
     "swiper": "8.3.2",
-    "tinacms": "1.0.1",
+    "tinacms": "^0.63.0",
     "url-loader": "^4.1.1",
     "use-clipboard-copy": "^0.2.0",
     "use-resize-observer": "^9.0.2"
@@ -41,7 +41,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@next/bundle-analyzer": "^12.2.4",
-    "@tinacms/cli": "1.0.1",
+    "@tinacms/cli": "^0.60.0",
     "@types/react": "^17.0.20",
     "@types/react-mailchimp-subscribe": "^2.1.1",
     "@types/styled-components": "^5.1.25",
