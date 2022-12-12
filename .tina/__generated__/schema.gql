@@ -7,6 +7,7 @@ scalar JSON
 
 type SystemInfo {
   filename: String!
+  title: String
   basename: String!
   breadcrumbs(excludeExtension: Boolean): [String!]!
   path: String!
@@ -30,36 +31,39 @@ interface Node {
 
 """"""
 interface Document {
-  sys: SystemInfo
   id: ID!
-  form: JSON!
-  values: JSON!
+  _sys: SystemInfo
+  _values: JSON!
 }
 
 """A relay-compliant pagination connection"""
 interface Connection {
-  totalCount: Int!
+  totalCount: Float!
+  pageInfo: PageInfo!
 }
 
 type Query {
-  getCollection(collection: String): Collection!
-  getCollections: [Collection!]!
+  getOptimizedQuery(queryString: String!): String
+  collection(collection: String): Collection!
+  collections: [Collection!]!
   node(id: String): Node!
-  getDocument(collection: String, relativePath: String): DocumentNode!
-  getDocumentList(before: String, after: String, first: Int, last: Int): DocumentConnection!
-  getDocumentFields: JSON!
-  getPostsDocument(relativePath: String): PostsDocument!
-  getPostsList(before: String, after: String, first: Int, last: Int): PostsConnection!
+  document(collection: String, relativePath: String): DocumentNode!
+  post(relativePath: String): Post!
+  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
+}
+
+input DocumentFilter {
+  post: PostFilter
 }
 
 type DocumentConnectionEdges {
-  cursor: String
+  cursor: String!
   node: DocumentNode
 }
 
 type DocumentConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Int!
+  pageInfo: PageInfo!
+  totalCount: Float!
   edges: [DocumentConnectionEdges]
 }
 
@@ -72,53 +76,106 @@ type Collection {
   matches: String
   templates: [JSON]
   fields: [JSON]
-  documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
+  documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument
+union DocumentNode = Post
 
-type Posts {
+type Post implements Node & Document {
   title: String
   description: String
   date: String
   tags: String
   imageUrl: String
   body: JSON
-}
-
-type PostsDocument implements Node & Document {
   id: ID!
-  sys: SystemInfo!
-  data: Posts!
-  form: JSON!
-  values: JSON!
-  dataJSON: JSON!
+  _sys: SystemInfo!
+  _values: JSON!
 }
 
-type PostsConnectionEdges {
-  cursor: String
-  node: PostsDocument
+input StringFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
 }
 
-type PostsConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Int!
-  edges: [PostsConnectionEdges]
+input PostBodyQuoteFilter {
+  content: StringFilter
+  author: StringFilter
+  cite: StringFilter
+}
+
+input PostBodyArticleImageFilter {
+  src: StringFilter
+  caption: StringFilter
+}
+
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
+}
+
+input PostBodyCodeFilter {
+  code: StringFilter
+  language: StringFilter
+  selectedLines: StringFilter
+  withCopyButton: BooleanFilter
+  withLineNumbers: BooleanFilter
+  caption: StringFilter
+}
+
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
+input PostBodyBrFilter {
+  children: RichTextFilter
+}
+
+input PostBodyFilter {
+  Quote: PostBodyQuoteFilter
+  ArticleImage: PostBodyArticleImageFilter
+  Code: PostBodyCodeFilter
+  br: PostBodyBrFilter
+}
+
+input PostFilter {
+  title: StringFilter
+  description: StringFilter
+  date: StringFilter
+  tags: StringFilter
+  imageUrl: StringFilter
+  body: PostBodyFilter
+}
+
+type PostConnectionEdges {
+  cursor: String!
+  node: Post
+}
+
+type PostConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PostConnectionEdges]
 }
 
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
+  deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
-  createPostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
+  updatePost(relativePath: String!, params: PostMutation!): Post!
+  createPost(relativePath: String!, params: PostMutation!): Post!
 }
 
 input DocumentMutation {
-  posts: PostsMutation
+  post: PostMutation
 }
 
-input PostsMutation {
+input PostMutation {
   title: String
   description: String
   date: String

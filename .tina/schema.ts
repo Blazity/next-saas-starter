@@ -1,11 +1,17 @@
-import { defineSchema } from '@tinacms/cli';
+import { defineSchema } from 'tinacms';
 
-export default defineSchema({
+export const schema = defineSchema({
   collections: [
     {
       label: 'Blog Posts',
-      name: 'posts',
+      name: 'post',
       path: 'posts',
+      format: 'mdx',
+      ui: {
+        router: ({ document }) => {
+          return `/blog/${document._sys.filename}`;
+        },
+      },
       fields: [
         {
           type: 'string',
@@ -112,28 +118,10 @@ export default defineSchema({
               ],
             },
             {
-              name: 'h2',
-              label: 'H2',
-              inline: true,
-              fields: [],
-            },
-            {
-              name: 'h3',
-              label: 'H3',
-              inline: true,
-              fields: [],
-            },
-            {
               name: 'br',
               label: 'BR',
               inline: true,
-              fields: [],
-            },
-            {
-              name: 'p',
-              label: 'P',
-              inline: true,
-              fields: [],
+              fields: [{ type: 'rich-text', name: 'children', label: 'Content' }],
             },
           ],
         },
