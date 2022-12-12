@@ -1,3 +1,4 @@
+import { Language } from 'prism-react-renderer';
 import styled from 'styled-components';
 import { Components, TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
 import { media } from 'utils/media';
@@ -5,14 +6,6 @@ import ArticleImage from './ArticleImage';
 import Code from './Code';
 import Link from './Link';
 import Quote from './Quote';
-
-export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[] }) {
-  return (
-    <Container>
-      <TinaMarkdown content={props.content} components={components as Components<{}>} />
-    </Container>
-  );
-}
 
 const Container = styled.div`
   display: flex;
@@ -108,10 +101,21 @@ const components = {
   h3: ThirdHeading,
   p: Paragraph,
   br: Break,
-  inlineCode: TextHighlight,
+  code: TextHighlight,
   Image: ArticleImage,
   Link,
-  Code,
+  code_block: (props: { value?: string; language?: string }) => {
+    console.log(props);
+    return <Code code={props?.value || ''} language={props?.language as Language} />;
+  },
   Quote,
   ArticleImage,
 };
+
+export default function RichText(props: { content: TinaMarkdownContent | TinaMarkdownContent[] }) {
+  return (
+    <Container>
+      <TinaMarkdown content={props.content} components={components as Components<{}>} />
+    </Container>
+  );
+}
