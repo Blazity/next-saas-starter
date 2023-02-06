@@ -105,7 +105,6 @@ const components = {
   Image: ArticleImage,
   Link,
   code_block: (props: { value?: string; language?: string }) => {
-    console.log(props);
     return <Code code={props?.value || ''} language={props?.language as Language} />;
   },
   Quote,

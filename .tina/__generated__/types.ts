@@ -260,7 +260,7 @@ export type MutationAddPendingDocumentArgs = {
 export type MutationUpdateDocumentArgs = {
   collection?: InputMaybe<Scalars['String']>;
   relativePath: Scalars['String'];
-  params: DocumentMutation;
+  params: DocumentUpdateMutation;
 };
 
 
@@ -286,6 +286,11 @@ export type MutationUpdatePostArgs = {
 export type MutationCreatePostArgs = {
   relativePath: Scalars['String'];
   params: PostMutation;
+};
+
+export type DocumentUpdateMutation = {
+  post?: InputMaybe<PostMutation>;
+  relativePath?: InputMaybe<Scalars['String']>;
 };
 
 export type DocumentMutation = {

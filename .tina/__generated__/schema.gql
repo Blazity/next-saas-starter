@@ -164,11 +164,16 @@ type PostConnection implements Connection {
 
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
-  updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
+  updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
   deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePost(relativePath: String!, params: PostMutation!): Post!
   createPost(relativePath: String!, params: PostMutation!): Post!
+}
+
+input DocumentUpdateMutation {
+  post: PostMutation
+  relativePath: String
 }
 
 input DocumentMutation {

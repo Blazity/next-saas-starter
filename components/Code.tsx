@@ -36,7 +36,6 @@ export default function Code({
       </CopyButton>
     </ClientOnly>
   );
-  console.log('code', code);
 
   return (
     <>
