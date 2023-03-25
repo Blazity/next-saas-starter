@@ -29,34 +29,34 @@
 </div>
 
 <p align="center"><b>Created with :heart: at Blazity </b></p>
-<p align="center"><a href="https://blazity.com/">Blazity</a> is a group of Next.js/Jamstack/Headless experts. Contact us at <a href="mailto:contact@blazity.com">contact@blazity.com</a> if you’d like to talk about your project or just to have a chat with us :grin:</p>
+<p align="center"><a href="https://blazity.com/">Blazity</a> is a group of Next.js/Jamstack/Headless experts. Contact us at <a href="mailto:contact@blazity.com">contact@blazity.com</a> if you’d like to talk about your project or just to have a chat with us</p>
 
 ## Table Of Contents
 
-- [🤩 Features](#-features)
-- [🤓 Getting Started](#-getting-started)
-- [🚀 One click deploy](#one-click-deploy)
-- [🧰 Built With](#-built-with)
-- [🤲🏻 Contributing](#-contributing)
+- [Features](#-features)
+- [Getting Started](#-getting-started)  
+- [One click deploy](#one-click-deploy)  
+- [Built With](#-built-with)
+- [Contributing](#-contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
-- [😎 Acknowledgements](#-acknowledgements)
-- [✨ Contributors](#-contributors)
-- [📝 License](#-license)
+- [Acknowledgements](#-acknowledgements)
+- [Contributors](#-contributors)
+- [License](#-license)
 
-## 🤩 Features
+## Features
 
 - ⚡ **Next.js** - React framework for static rendering
-- 🤩 **Best SEO setup** - Meta Tags, JSON-LD and Open Graph Tags
-- 🦒 **[Tina CMS](https://tina.io/) integration** - local & (optional) production CMS
-- ✅ **Optimized for Web Vitals**
-- 📜 **Blog with MDX**
-- 📫 **Mailchimp Integration** - for newsletters
-- 🗳 **Sendgrid Integration** - for sending emails
-- 🌃 **Dark mode** - and customizable themes!
-- 🧽 **No UI library** - just styled components, so you don't have to learn any new syntax
-- 🖱 **One click deployment** - with Vercel or any other serverless deployment environment
-- 🔍 **Eslint** - with Next.js's recommended settings and imports sorting rule
-- 🕯 **Prettier**
+- **Best SEO setup** - Meta Tags, JSON-LD and Open Graph Tags
+- **[Tina CMS](https://tina.io/) integration** - local & (optional) production CMS
+- **Optimized for Web Vitals**
+- **Blog with MDX**
+- **Mailchimp Integration** - for newsletters
+- **Sendgrid Integration** - for sending emails
+- **Dark mode** - and customizable themes!
+- **No UI library** - just styled components, so you don't have to learn any new syntax
+- **One click deployment** - with Vercel or any other serverless deployment environment
+- **Eslint** - with Next.js's recommended settings and imports sorting rule
+- **Prettier**
 
 ## 🤓 Getting Started
 
@@ -134,7 +134,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/ilasota"><img src="https://avatars.githubusercontent.com/u/34578189?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Igor Lasota</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=ilasota" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/jbryn"><img src="https://avatars.githubusercontent.com/u/52970664?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Jan Bryński</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=jbryn" title="Code">💻</a></td>
     <td align="center"><a href="https://www.logana.dev/"><img src="https://avatars.githubusercontent.com/u/43075109?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Logan Anderson</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=logan-anderson" title="Code">💻</a> <a href="https://github.com/Blazity/next-saas-starter/commits?author=logan-anderson" title="Documentation">📖</a> <a href="#mentoring-logan-anderson" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/fdukat"><img src="https://avatars.githubusercontent.com/u/87642690?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Filip Dukat</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=fdukat" title="Documentation">📖</a></td>
   </tr>
 </table>
 
