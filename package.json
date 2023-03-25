@@ -48,7 +48,7 @@
     "@types/swiper": "^5.4.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "all-contributors-cli": "^6.20.0",
+    "all-contributors-cli": "^6.24.0",
     "babel-eslint": "^10.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "eslint": "^7.32.0",
