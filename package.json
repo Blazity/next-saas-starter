@@ -29,7 +29,7 @@
     "react-schemaorg": "^2.0.0",
     "react-share": "^4.4.1",
     "reading-time": "^1.5.0",
-    "schema-dts": "^1.0.0",
+    "schema-dts": "^1.1.2",
     "styled-components": "^5.3.5",
     "swiper": "8.3.2",
     "tinacms": "^0.63.0",
