@@ -41,7 +41,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@next/bundle-analyzer": "^13.1.6",
-    "@tinacms/cli": "^0.60.0",
+    "@tinacms/cli": "^1.5.5",
     "@types/react": "^17.0.20",
     "@types/react-mailchimp-subscribe": "^2.1.1",
     "@types/styled-components": "^5.1.25",
