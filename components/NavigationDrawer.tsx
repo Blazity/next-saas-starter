@@ -1,13 +1,13 @@
-import NextLink from 'next/link'
-import { useRouter } from 'next/router'
-import { PropsWithChildren, useEffect, useRef } from 'react'
-import styled from 'styled-components'
-import { NavItems } from 'types'
-import ClientOnly from './ClientOnly'
-import CloseIcon from './CloseIcon'
-import OriginalDrawer from './Drawer'
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import { PropsWithChildren, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import { NavItems } from 'types';
+import ClientOnly from './ClientOnly';
+import CloseIcon from './CloseIcon';
+import OriginalDrawer from './Drawer';
 
-type NavigationDrawerProps = PropsWithChildren<{ items: NavItems }>
+type NavigationDrawerProps = PropsWithChildren<{ items: NavItems }>;
 
 export default function NavigationDrawer({ children, items }: NavigationDrawerProps) {
   return (
@@ -26,21 +26,21 @@ export default function NavigationDrawer({ children, items }: NavigationDrawerPr
       </Wrapper>
       {children}
     </OriginalDrawer.Drawer>
-  )
+  );
 }
 
 function NavItemsList({ items }: NavigationDrawerProps) {
-  const { close } = OriginalDrawer.useDrawer()
-  const router = useRouter()
+  const { close } = OriginalDrawer.useDrawer();
+  const router = useRouter();
 
   useEffect(() => {
     function handleRouteChangeComplete() {
-      close()
+      close();
     }
 
-    router.events.on('routeChangeComplete', handleRouteChangeComplete)
-    return () => router.events.off('routeChangeComplete', handleRouteChangeComplete)
-  }, [close, router])
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    return () => router.events.off('routeChangeComplete', handleRouteChangeComplete);
+  }, [close, router]);
 
   return (
     <ul>
@@ -49,17 +49,17 @@ function NavItemsList({ items }: NavigationDrawerProps) {
           <NavItem key={idx}>
             <NextLink href={singleItem.href}>{singleItem.title}</NextLink>
           </NavItem>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }
 
 function DrawerCloseButton() {
-  const ref = useRef(null)
-  const a11yProps = OriginalDrawer.useA11yCloseButton(ref)
+  const ref = useRef(null);
+  const a11yProps = OriginalDrawer.useA11yCloseButton(ref);
 
-  return <CloseIcon className="close-icon" _ref={ref} {...a11yProps} />
+  return <CloseIcon className="close-icon" _ref={ref} {...a11yProps} />;
 }
 
 const Wrapper = styled.div`
@@ -83,7 +83,8 @@ const Wrapper = styled.div`
   .close-icon {
     position: absolute;
     right: 2rem;
-    top: 2rem;
+    top: 1rem;
+    width: 4rem;
   }
 
   .drawer-closed {
@@ -108,7 +109,7 @@ const Wrapper = styled.div`
       margin-bottom: 3rem;
     }
   }
-`
+`;
 
 const NavItem = styled.li`
   a {
@@ -121,4 +122,4 @@ const NavItem = styled.li`
     padding: 0.5rem 1rem;
     text-align: center;
   }
-`
+`;

@@ -89,6 +89,7 @@ html:focus-within {
 } 
 
 html {
+  /*scroll-behavior: smooth;*/
   -webkit-font-smoothing: antialiased;
   touch-action: manipulation;
   text-rendering: optimizelegibility;
@@ -117,6 +118,7 @@ body {
   color: rgb(var(--text));
   background: rgb(var(--background));
   font-feature-settings: "kern";
+  scroll-behavior: smooth;
 }
 
 svg {
