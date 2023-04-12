@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
+import { createRef, forwardRef, useRef } from 'react';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
 import Link from 'components/Link';
@@ -13,7 +14,25 @@ import Partners from 'views/HomePage/Partners';
 import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 import Testimonials from 'views/HomePage/Testimonials';
 
-export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+/*
+function isElementVisible(element) {
+  const rect = element.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= windowHeight && rect.right <= windowWidth;
+}*/
+
+const Homepage = forwardRef(({ posts }: InferGetStaticPropsType<typeof getStaticProps>, ref) => {
+  const myRef = ref;
+  const scrollToChild = () => {
+    /*const myChild = ref.current;
+    console.log(myChild);
+    if (myChild) myChild.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    */
+    console.log(myRef);
+  };
+
   return (
     <>
       <Head>
@@ -23,8 +42,90 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
         />
       </Head>
-      <HomepageWrapper>
-        <WhiteBackgroundContainer>
+      <button className="btn-scroll" onClick={scrollToChild}>
+        Scroll Down
+      </button>
+      <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
+          voluptate quo deleniti animi laboriosam.
+        </p>
+      </BasicSection>
+
+      <Cta />
+
+      <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
+          voluptate quo deleniti animi laboriosam.
+        </p>
+      </BasicSection>
+
+      <BasicSection
+        ref={myRef}
+        imageUrl="/demo-illustration-1.svg"
+        title="Lorem ipsum dolor sit amet consectetur."
+        overTitle="sit amet gogo"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
+          voluptate quo deleniti animi laboriosam.
+        </p>
+      </BasicSection>
+    </>
+  );
+});
+
+export default Homepage;
+
+const HomepageWrapper = styled.div`
+  & > :last-child {
+    margin-bottom: 15rem;
+  }
+`;
+
+const DarkerBackgroundContainer = styled.div`
+  background: rgb(var(--background));
+
+  & > *:not(:first-child) {
+    margin-top: 15rem;
+  }
+`;
+
+const WhiteBackgroundContainer = styled.div`
+  background: rgb(var(--secondBackground));
+
+  & > :last-child {
+    padding-bottom: 15rem;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: 15rem;
+  }
+`;
+/*
+const ScrollContainer = styled.div`
+  height: calc(100vh - 6rem);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+`;
+
+const ScrollArea = styled.div`
+  scroll-snap-align: start;
+`;*/
+
+export async function getStaticProps() {
+  return {
+    props: {
+      posts: await getAllPosts(),
+    },
+  };
+}
+/** 
+          <WhiteBackgroundContainer>
           <Hero />
           <Partners />
           <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
@@ -55,41 +156,4 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <Testimonials />
           <ScrollableBlogPosts posts={posts} />
         </DarkerBackgroundContainer>
-      </HomepageWrapper>
-    </>
-  );
-}
-
-const HomepageWrapper = styled.div`
-  & > :last-child {
-    margin-bottom: 15rem;
-  }
-`;
-
-const DarkerBackgroundContainer = styled.div`
-  background: rgb(var(--background));
-
-  & > *:not(:first-child) {
-    margin-top: 15rem;
-  }
-`;
-
-const WhiteBackgroundContainer = styled.div`
-  background: rgb(var(--secondBackground));
-
-  & > :last-child {
-    padding-bottom: 15rem;
-  }
-
-  & > *:not(:first-child) {
-    margin-top: 15rem;
-  }
-`;
-
-export async function getStaticProps() {
-  return {
-    props: {
-      posts: await getAllPosts(),
-    },
-  };
-}
+ */

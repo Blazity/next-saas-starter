@@ -14,7 +14,7 @@ export default function Cta() {
       <Container>
         <Stack>
           <OverTitle>Lorem ipsum dolor sit amet</OverTitle>
-          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
+          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</SectionTitle>
           <Description>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
             culpa.
@@ -45,7 +45,7 @@ const Description = styled.div`
 const Stack = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 12.5rem 0;
+  height: calc(100vh - 6rem);
   color: rgb(var(--textSecondary));
   text-align: center;
   align-items: center;
