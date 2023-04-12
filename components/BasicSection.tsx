@@ -77,7 +77,7 @@ type Props = Pick<BasicSectionProps, 'reversed'>;
 const BasicSectionWrapper = styled(Container)`
   display: flex;
   align-items: center;
-  height: calc(100vh - 6rem);
+  min-height: calc(100vh - 6rem);
   flex-direction: ${(p: Props) => (p.reversed ? 'row-reverse' : 'row')};
 
   ${ImageContainer} {

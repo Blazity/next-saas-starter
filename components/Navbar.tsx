@@ -168,7 +168,7 @@ const NavbarContainer = styled.div<NavbarContainerProps>`
   top: 0;
   padding: 0rem 0;
   width: 100%;
-  height: 6rem;
+  height: 60px;
   z-index: var(--z-navbar);
 
   background-color: rgb(var(--navbarBackground));

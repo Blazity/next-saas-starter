@@ -1,38 +1,20 @@
-import { InferGetStaticPropsType } from 'next';
+// import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import { createRef, forwardRef, useRef } from 'react';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
 import { EnvVars } from 'env';
 import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Cta';
-import Features from 'views/HomePage/Features';
-import FeaturesGallery from 'views/HomePage/FeaturesGallery';
-import Hero from 'views/HomePage/Hero';
-import Partners from 'views/HomePage/Partners';
-import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
-import Testimonials from 'views/HomePage/Testimonials';
+// import Features from 'views/HomePage/Features';
+// import FeaturesGallery from 'views/HomePage/FeaturesGallery';
+// import Hero from 'views/HomePage/Hero';
+// import Partners from 'views/HomePage/Partners';
+// import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
+// import Testimonials from 'views/HomePage/Testimonials';
+import useMySwipeHandlers from 'hooks/useMySwipeHandlers';
 
-/*
-function isElementVisible(element) {
-  const rect = element.getBoundingClientRect();
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
 
-  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= windowHeight && rect.right <= windowWidth;
-}*/
-
-const Homepage = forwardRef(({ posts }: InferGetStaticPropsType<typeof getStaticProps>, ref) => {
-  const myRef = ref;
-  const scrollToChild = () => {
-    /*const myChild = ref.current;
-    console.log(myChild);
-    if (myChild) myChild.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    */
-    console.log(myRef);
-  };
-
+const Homepage = (props) => {
   return (
     <>
       <Head>
@@ -42,39 +24,49 @@ const Homepage = forwardRef(({ posts }: InferGetStaticPropsType<typeof getStatic
           content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
         />
       </Head>
-      <button className="btn-scroll" onClick={scrollToChild}>
-        Scroll Down
-      </button>
-      <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-          voluptate quo deleniti animi laboriosam.
-        </p>
-      </BasicSection>
 
-      <Cta />
 
-      <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-          voluptate quo deleniti animi laboriosam.
-        </p>
-      </BasicSection>
 
-      <BasicSection
-        ref={myRef}
-        imageUrl="/demo-illustration-1.svg"
-        title="Lorem ipsum dolor sit amet consectetur."
-        overTitle="sit amet gogo"
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-          voluptate quo deleniti animi laboriosam.
-        </p>
-      </BasicSection>
+      {/*<ScrollLink to="section2" smooth={true} offset={-57}>*/}
+        <div id="section1" {...useMySwipeHandlers("section2", "", true)}>
+          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
+              voluptate quo deleniti animi laboriosam.
+            </p>
+          </BasicSection>
+        </div>
+      {/*</ScrollLink>*/}
+
+        <div id="section2" {...useMySwipeHandlers("section3", "section1", true)}>
+          <Cta />
+        </div>
+
+        <div id="section3" {...useMySwipeHandlers("section4", "section2", true)}>
+          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
+              voluptate quo deleniti animi laboriosam.
+            </p>
+          </BasicSection>
+        </div>
+
+        <div id="section4" {...useMySwipeHandlers("section5", "section3", true)}>
+          <Cta />
+        </div>
+
+        <div id="section5" {...useMySwipeHandlers("", "section4", false)}>
+          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
+              voluptate quo deleniti animi laboriosam.
+            </p>
+          </BasicSection>
+        </div>
+
     </>
   );
-});
+};
 
 export default Homepage;
 
@@ -105,7 +97,7 @@ const WhiteBackgroundContainer = styled.div`
 `;
 /*
 const ScrollContainer = styled.div`
-  height: calc(100vh - 6rem);
+  min-height: calc(100vh - 6rem);
   overflow-y: scroll;
   scroll-behavior: smooth;
   -webkit-scroll-snap-type: y mandatory;
