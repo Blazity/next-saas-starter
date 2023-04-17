@@ -32,7 +32,7 @@
     "schema-dts": "^1.0.0",
     "styled-components": "^5.3.5",
     "swiper": "8.3.2",
-    "tinacms": "^0.63.0",
+    "tinacms": "^1.4.6",
     "url-loader": "^4.1.1",
     "use-clipboard-copy": "^0.2.0",
     "use-resize-observer": "^9.0.2"
