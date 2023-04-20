@@ -2,6 +2,8 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { client } from 'tina/__generated__/client';
+import type { Post, Query } from 'tina/__generated__/types';
 import { useTina } from 'tinacms/dist/react';
 
 import Container from 'components/Container';
@@ -15,8 +17,6 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import type { Post, Query } from '.tina/__generated__/types';
-import { client } from '.tina/__generated__/client';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const contentRef = useRef<HTMLDivElement | null>(null);
