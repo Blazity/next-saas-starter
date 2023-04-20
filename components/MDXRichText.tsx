@@ -107,6 +107,11 @@ const components = {
   code_block: (props: { value?: string; language?: string }) => {
     return <Code code={props?.value || ''} language={props?.language as Language} />;
   },
+  Code: (args: any) => {
+    const selectedLines: string = args.selectedLines;
+    const lines = selectedLines?.split(',').map((x) => Number(x));
+    return <Code {...args} selectedLines={lines} />;
+  },
   Quote,
   ArticleImage,
 };
