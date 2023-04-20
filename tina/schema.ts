@@ -1,11 +1,17 @@
-import { defineSchema } from '@tinacms/cli';
+import { defineSchema } from 'tinacms';
 
-export default defineSchema({
+export const schema = defineSchema({
   collections: [
     {
       label: 'Blog Posts',
-      name: 'posts',
+      name: 'post',
       path: 'posts',
+      format: 'mdx',
+      ui: {
+        router: ({ document }) => {
+          return `/blog/${document._sys.filename}`;
+        },
+      },
       fields: [
         {
           type: 'string',
@@ -83,16 +89,54 @@ export default defineSchema({
                   type: 'string',
                   name: 'code',
                   label: 'Code',
+                  ui: {
+                    component: 'textarea',
+                  },
                 },
                 {
                   type: 'string',
                   name: 'language',
                   label: 'Language',
+                  options: [
+                    'markup',
+                    'bash',
+                    'clike',
+                    'c',
+                    'cpp',
+                    'css',
+                    'javascript',
+                    'jsx',
+                    'coffeescript',
+                    'actionscript',
+                    'css-extr',
+                    'diff',
+                    'git',
+                    'go',
+                    'graphql',
+                    'handlebars',
+                    'json',
+                    'less',
+                    'makefile',
+                    'markdown',
+                    'objectivec',
+                    'ocaml',
+                    'python',
+                    'reason',
+                    'sass',
+                    'scss',
+                    'sql',
+                    'stylus',
+                    'tsx',
+                    'typescript',
+                    'wasm',
+                    'yaml',
+                  ],
                 },
                 {
                   type: 'string',
                   name: 'selectedLines',
                   label: 'Selected Lines',
+                  description: 'Comma separated list of line numbers',
                 },
                 {
                   type: 'boolean',
@@ -112,28 +156,10 @@ export default defineSchema({
               ],
             },
             {
-              name: 'h2',
-              label: 'H2',
-              inline: true,
-              fields: [],
-            },
-            {
-              name: 'h3',
-              label: 'H3',
-              inline: true,
-              fields: [],
-            },
-            {
               name: 'br',
               label: 'BR',
               inline: true,
-              fields: [],
-            },
-            {
-              name: 'p',
-              label: 'P',
-              inline: true,
-              fields: [],
+              fields: [{ type: 'rich-text', name: 'children', label: 'Content' }],
             },
           ],
         },

@@ -33,15 +33,17 @@
 
 ## Table Of Contents
 
-- [Features](#-features)
-- [Getting Started](#-getting-started)  
-- [One click deploy](#one-click-deploy)  
-- [Built With](#-built-with)
-- [Contributing](#-contributing)
+- [Table Of Contents](#table-of-contents)
+- [Features](#features)
+- [🤓 Getting Started](#-getting-started)
+- [🚀 One click deploy](#-one-click-deploy)
+- [🦙 Adding TinaCMS editing in production](#-adding-tinacms-editing-in-production)
+- [🧰 Built With](#-built-with)
+- [🤲🏻 Contributing](#-contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
-- [Acknowledgements](#-acknowledgements)
-- [Contributors](#-contributors)
-- [License](#-license)
+- [😎 Acknowledgements](#-acknowledgements)
+- [✨ Contributors](#-contributors)
+- [📝 License](#-license)
 
 ## Features
 
@@ -90,6 +92,15 @@ Clone the repository and one-click deploy to Vercel for free!
 Clone the repository and one-click deploy to Netlify for free!
 
 [![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blazity/next-saas-starter)
+
+## 🦙 Adding TinaCMS editing in production
+
+By default, TinaCMS is disabled in production. This is so that you are not forced to use TinaCMS. To enable it, you need to create [Tina Cloud account](https://app.tina.io/), [a project](https://tina.io/docs/tina-cloud/) and fill these `NEXT_PUBLIC_ORGANIZATION_NAME`, `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN` env vars with proper values. After that you can build the editing interface by updating your build script to be.
+
+```diff
+- "build": "tinacms dev -c 'next build'",
++ "build": "tinacms build && next build"
+```
 
 ## 🧰 Built With
 

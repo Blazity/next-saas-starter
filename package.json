@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn tinacms server:start -c \"next dev\"",
-    "build": "yarn tinacms server:start -c \"next build\"",
-    "start": "yarn tinacms server:start -c \"next start\"",
+    "dev": "yarn tinacms dev -c \"next dev\"",
+    "build": "tinacms dev -c 'next build'",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "@babel/eslint-parser": "^7.21.3",
     "@fec/remark-a11y-emoji": "^3.1.0",
     "@next/bundle-analyzer": "^13.1.6",
-    "@tinacms/cli": "^0.60.0",
+    "@tinacms/cli": "^1.5.6",
     "@types/react": "^17.0.20",
     "@types/react-mailchimp-subscribe": "^2.1.1",
     "@types/styled-components": "^5.1.25",

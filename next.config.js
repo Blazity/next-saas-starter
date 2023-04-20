@@ -6,6 +6,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/admin',
+        destination: '/admin/index.html',
+      },
+    ];
+  },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
     domains: ['github.blog'],
