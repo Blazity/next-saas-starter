@@ -31,8 +31,8 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
             <p>
               Moving is one of the top three most stressful times in a humans life. Do not get lost as an after thought to your customer and
               instead, be proactive! <Link href="">Help them move their existing product or sell a whole new system.</Link> Your customers
-              will thank you for not having to think about it and you'll thank Is My Customer Moving for letting you know about the amazing
-              lead.
+              will thank you for not having to think about it and you will thank Is My Customer Moving for letting you know about the
+              amazing lead.
             </p>
           </BasicSection>
           <BasicSection imageUrl="/demo-illustration-2.svg" title="My Customer Already Moved" overTitle="New Customers" reversed>
