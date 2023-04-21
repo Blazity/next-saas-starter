@@ -11,9 +11,10 @@ import Button from './Button';
 import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
-import Logo from './Logo';
+// import Logo from './Logo';
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
+const Logo = dynamic(() => import('../components/Logo'), { ssr: false });
 
 type NavbarProps = { items: NavItems };
 type ScrollingDirections = 'up' | 'down' | 'none';
@@ -89,15 +90,15 @@ export default function Navbar({ items }: NavbarProps) {
 }
 
 function NavItem({ href, title, outlined }: SingleNavItem) {
-  const { setIsModalOpened } = useNewsletterModalContext();
+  // const { setIsModalOpened } = useNewsletterModalContext();
 
-  function showNewsletterModal() {
-    setIsModalOpened(true);
-  }
+  // function showNewsletterModal() {
+  //   setIsModalOpened(true);
+  // }
 
-  if (outlined) {
-    return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
-  }
+  // if (outlined) {
+  //   return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
+  // }
 
   return (
     <NavItemWrapper outlined={outlined}>

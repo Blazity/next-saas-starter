@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import MailchimpSubscribe, { DefaultFormFields } from 'react-mailchimp-subscribe';
 import styled from 'styled-components';
 import { EnvVars } from 'env';
 import useEscClose from 'hooks/useEscKey';
@@ -11,59 +10,63 @@ import Input from './Input';
 import MailSentState from './MailSentState';
 import Overlay from './Overlay';
 
-export interface NewsletterModalProps {
+export interface FreeListModalProps {
   onClose: () => void;
 }
 
-export default function NewsletterModal({ onClose }: NewsletterModalProps) {
+export default function FreeListModal({ onClose }: FreeListModalProps) {
   const [email, setEmail] = useState('');
+  const [zipCode, setZipCode] = useState('');
+  const [hasSignedUp, setHasSignedUp] = useState(false);
 
   useEscClose({ onClose });
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>, enrollNewsletter: (props: DefaultFormFields) => void) {
+  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     console.log({ email });
+    console.log({ zipCode });
     if (email) {
-      enrollNewsletter({ EMAIL: email });
+      // subscribe
+      console.log('subscribed');
+      setHasSignedUp(true);
     }
   }
 
   return (
-    <MailchimpSubscribe
-      url={EnvVars.MAILCHIMP_SUBSCRIBE_URL}
-      render={({ subscribe, status, message }) => {
-        const hasSignedUp = status === 'success';
-        return (
-          <Overlay>
-            <Container>
-              <Card onSubmit={(event: React.FormEvent<HTMLFormElement>) => onSubmit(event, subscribe)}>
-                <CloseIconContainer>
-                  <CloseIcon onClick={onClose} />
-                </CloseIconContainer>
-                {hasSignedUp && <MailSentState />}
-                {!hasSignedUp && (
-                  <>
-                    <Title>Are you ready to enroll to the best newsletter ever?</Title>
-                    <Row>
-                      <CustomInput
-                        value={email}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                        placeholder="Enter your email..."
-                        required
-                      />
-                      <CustomButton as="button" type="submit" disabled={hasSignedUp}>
-                        Submit
-                      </CustomButton>
-                    </Row>
-                    {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message as string }} />}
-                  </>
-                )}
-              </Card>
-            </Container>
-          </Overlay>
-        );
-      }}
-    />
+    <Overlay>
+      <Container>
+        <Card onSubmit={(event: React.FormEvent<HTMLFormElement>) => onSubmit(event)}>
+          <CloseIconContainer>
+            <CloseIcon onClick={onClose} />
+          </CloseIconContainer>
+          {hasSignedUp && <MailSentState />}
+          {!hasSignedUp && (
+            <>
+              <Title>Are you ready to find who is moving in your area?</Title>
+              <Row>
+                <CustomInput
+                  value={email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                  placeholder="Enter your email..."
+                  required
+                />
+              </Row>
+              <Row>
+                <CustomInput
+                  value={zipCode}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setZipCode(e.target.value)}
+                  placeholder="Enter the biggest zip code in your area..."
+                  required
+                />
+                <CustomButton as="button" type="submit" disabled={hasSignedUp}>
+                  Submit
+                </CustomButton>
+              </Row>
+            </>
+          )}
+        </Card>
+      </Container>
+    </Overlay>
   );
 }
 

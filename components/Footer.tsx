@@ -14,7 +14,7 @@ const footerItems: FooterItems = [
     title: 'Company',
     items: [
       { title: 'Privacy Policy', href: '/privacy-policy' },
-      { title: 'Cookies Policy', href: '/cookies-policy' },
+      { title: 'Terms of Service', href: '/terms-of-service' },
     ],
   },
   {
@@ -57,25 +57,25 @@ export default function Footer() {
         </ListContainer>
         <BottomBar>
           <ShareBar>
-            <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
+            {/* <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
               <a>
                 <TwitterIcon size={50} round={true} />
               </a>
-            </NextLink>
+            </NextLink> */}
 
-            <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
+            <NextLink href="https://www.facebook.com/groups/717278510115963/" passHref>
               <a>
                 <FacebookIcon size={50} round={true} />
               </a>
             </NextLink>
 
-            <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
+            <NextLink href="https://www.linkedin.com/company/is-my-customer-moving/" passHref>
               <a>
                 <LinkedinIcon size={50} round={true} />
               </a>
             </NextLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>&copy; Copyright 2023 Is My Customer Moving LLC</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>

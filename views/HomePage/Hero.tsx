@@ -14,19 +14,22 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <CustomOverTitle>The Best Leads Money Can Buy</CustomOverTitle>
+        <Heading>
+          Don't Lose Your Customers, <ColorSpan>Move With Them!</ColorSpan>
+        </Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+          Sell to existing customers when they are ready to buy again! You don't know when your customers are moving, and they're too busy
+          to remember your name. We instantly notify you when your customers list their home for sale, so you can be the first one to the
+          new home.
         </Description>
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
+            Find Out Who Is Moving <span>&rarr;</span>
           </Button>
-          <NextLink href="#whitepaper" passHref>
+          <NextLink href="/#contact" passHref>
             <Button transparent>
-              Features <span>&rarr;</span>
+              Get A Demo <span>&rarr;</span>
             </Button>
           </NextLink>
         </CustomButtonGroup>
@@ -106,4 +109,8 @@ const Heading = styled.h1`
     font-size: 4.6rem;
     margin-bottom: 2rem;
   }
+`;
+
+const ColorSpan = styled.span`
+  color: rgb(var(--primary));
 `;

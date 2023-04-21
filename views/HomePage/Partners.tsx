@@ -6,20 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import { media } from 'utils/media';
 
-const PARTNER_LOGOS = [
-  'logoipsum-logo-1.svg',
-  'logoipsum-logo-2.svg',
-  'logoipsum-logo-3.svg',
-  'logoipsum-logo-4.svg',
-  'logoipsum-logo-5.svg',
-  'logoipsum-logo-6.svg',
-  'logoipsum-logo-7.svg',
-];
+const PARTNER_LOGOS = ['aquaclear.png', 'advancedWaterSystems.png', 'serviceTitan.png', 'awq.svg', 'aquapro.png', 'zapier.jpg'];
 
 export default function Partners() {
   return (
     <PartnersWrapper>
-      <Title>official partners with</Title>
+      <Title>who we work with</Title>
       <Swiper
         modules={[Autoplay]}
         slidesPerView={6}
@@ -36,7 +28,7 @@ export default function Partners() {
       >
         {PARTNER_LOGOS.map((logo) => (
           <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128} />
+            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={150} height={128} />
           </SwiperSlide>
         ))}
       </Swiper>

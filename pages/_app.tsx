@@ -14,16 +14,16 @@ import Footer from 'components/Footer';
 import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
 import NavigationDrawer from 'components/NavigationDrawer';
-import NewsletterModal from 'components/NewsletterModal';
+import FreeListModal from 'components/FreeListModal';
 import WaveCta from 'components/WaveCta';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  { title: 'Awesome SaaS Features', href: '/features' },
+  { title: 'Features', href: '/#features' },
   { title: 'Pricing', href: '/pricing' },
   { title: 'Contact', href: '/contact' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  { title: 'Get Started', href: '/#contact', outlined: true },
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
@@ -88,7 +88,7 @@ function Modals() {
   if (!isModalOpened) {
     return null;
   }
-  return <NewsletterModal onClose={() => setIsModalOpened(false)} />;
+  return <FreeListModal onClose={() => setIsModalOpened(false)} />;
 }
 
 export default MyApp;

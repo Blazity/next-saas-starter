@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondBackground: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255; 
+  --primary: 140, 232, 197; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 255,255,255;
@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: #243A5A;
+  --logo: url('/logo-black.svg');
 }
 
 .next-dark-theme {
@@ -32,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondBackground: 45,55,72;
   --text: 237,237,238;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255; 
+  --primary: 140, 232, 197; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
@@ -41,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;
+  --logo: url('/logo-white.svg');
 }
 
 :root {

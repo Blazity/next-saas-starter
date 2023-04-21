@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export default function ColorSwitcher() {
   const { toggleTheme, colorMode } = useColorSwitcher();
+  // console.log(colorMode);
 
   const sunIcon = (
     <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">

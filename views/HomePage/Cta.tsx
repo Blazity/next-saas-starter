@@ -7,30 +7,33 @@ import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
+import { useRef } from 'react';
 
 export default function Cta() {
   return (
-    <CtaWrapper>
+    <CtaWrapper id="contact">
       <Container>
         <Stack>
-          <OverTitle>Lorem ipsum dolor sit amet</OverTitle>
-          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
-            culpa.
-          </Description>
-          <ButtonGroup>
-            <NextLink href="#early-access" passHref>
-              <Button>
-                Subscribe to the newsletter <span>&rarr;</span>
-              </Button>
-            </NextLink>
-            <NextLink href="#whitepaper" passHref>
-              <OutlinedButton transparent>
-                Features <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
-          </ButtonGroup>
+          <OverTitle>Contact Us</OverTitle>
+          <SectionTitle>Schedule a Demo, Ask a Question, or Get a Quote Today!</SectionTitle>
+          <iframe
+            src="https://letsmeet.io/jonathanbrewster/ismycustomermoving-demo"
+            // style="border:none; min-height: 700px; width: 1px; min-width: 100%; *width: 100%;"
+            style={{
+              border: 'none',
+              minHeight: '700px',
+              // width: "1px",
+              minWidth: '80%',
+              width: '80%',
+            }}
+            name="booking"
+            scrolling="no"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            referrerPolicy="unsafe-url"
+            allowFullScreen
+          ></iframe>
         </Stack>
       </Container>
     </CtaWrapper>

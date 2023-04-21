@@ -10,25 +10,24 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+    title: 'Integrate your CRM with our customized platform',
+    description: `<p>We connect with Service Titan, Salesforce, ZoHo and are adding working to add any more. Don't see your CRM, don't worry! We make it easy to upload an excel file so no matter what, you can find out who is moving!</p>`,
     imageUrl: '/demo-illustration-3.png',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
   },
   {
-    title: 'Another amazing feature',
+    title: 'Find Out Who Is Moving',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+      '<p>Within one hour, you will have a full list of any of your existing customers that have their home on the market AND anyone who has sold their home in the past 6 months. This list is then updated everyday so you make sure you never miss someone again.</p>',
     imageUrl: '/demo-illustration-4.png',
     baseColor: '57,148,224',
     secondColor: '99,172,232',
   },
   {
-    title: 'And yet... another truly fascinating feature',
+    title: 'Keep Your Customers',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+      '<p>Work personally with our team and mastermind group to create top notch marketing campaigns, connect to zapier, and grow your business.</p>',
     imageUrl: '/demo-illustration-5.png',
     baseColor: '88,193,132',
     secondColor: '124,207,158',
@@ -74,10 +73,10 @@ export default function FeaturesGallery() {
   }
 
   return (
-    <FeaturesGalleryWrapper>
+    <FeaturesGalleryWrapper id="features">
       <Content>
-        <OverTitle>features</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        <OverTitle>integrations</OverTitle>
+        <SectionTitle>How do you get leads?</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>
