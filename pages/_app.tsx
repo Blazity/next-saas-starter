@@ -16,6 +16,7 @@ import Navbar from 'components/Navbar';
 import NavigationDrawer from 'components/NavigationDrawer';
 import FreeListModal from 'components/FreeListModal';
 import WaveCta from 'components/WaveCta';
+import Chatbot from 'components/Chatbot';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { NavItems } from 'types';
 
@@ -68,6 +69,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </TinaEditProvider>
+        <Chatbot />
         <WaveCta />
         <Footer />
       </Providers>

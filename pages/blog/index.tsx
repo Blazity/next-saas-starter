@@ -9,10 +9,10 @@ import { getAllPosts } from 'utils/postsFetcher';
 export default function BlogIndexPage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page
-      title="My SaaS Startup Blog"
-      description="Culpa duis reprehenderit in ex amet cillum nulla do in enim commodo. Sunt ut excepteur et est aliqua anim ea excepteur fugiat voluptate. Fugiat exercitation dolore laboris do quis consectetur eiusmod tempor consequat."
+      title="Coming Soon!"
+      description="From marketing tips, success stories, and much more, come back shortly to get resources and insight to help grow your business!"
     >
-      <CustomAutofitGrid>
+      {/* <CustomAutofitGrid>
         {posts.map((singlePost, idx) => (
           <ArticleCard
             key={singlePost.slug}
@@ -22,7 +22,7 @@ export default function BlogIndexPage({ posts }: InferGetStaticPropsType<typeof 
             slug={singlePost.slug}
           />
         ))}
-      </CustomAutofitGrid>
+      </CustomAutofitGrid> */}
     </Page>
   );
 }

@@ -16,6 +16,7 @@ export interface FreeListModalProps {
 
 export default function FreeListModal({ onClose }: FreeListModalProps) {
   const [email, setEmail] = useState('');
+  const [phone, setPhoneNumber] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [hasSignedUp, setHasSignedUp] = useState(false);
 
@@ -47,7 +48,14 @@ export default function FreeListModal({ onClose }: FreeListModalProps) {
                 <CustomInput
                   value={email}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                  placeholder="Enter your email..."
+                  placeholder="Email..."
+                  required
+                />
+                <div style={{ width: '1rem' }} />
+                <CustomInput
+                  value={phone}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value)}
+                  placeholder="Phone Number..."
                   required
                 />
               </Row>
