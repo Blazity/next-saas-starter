@@ -2048,9 +2048,9 @@
     "@jridgewell/sourcemap-codec" "1.4.14"
 
 "@juggle/resize-observer@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
-  integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
+  integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
 "@mdx-js/mdx@^2.2.1":
   version "2.2.1"
@@ -11973,9 +11973,9 @@ use-memo-one@^1.1.1:
   integrity sha512-g66/K7ZQGYrI6dy8GLpVcMsBp4s17xNkYJVSMvTEevGy3nDxHOfE6z8BVE22+5G5x7t3+bhzrlTDB7ObrEE0cQ==
 
 use-resize-observer@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/use-resize-observer/-/use-resize-observer-9.0.2.tgz#25830221933d9b6e931850023305eb9d24379a6b"
-  integrity sha512-JOzsmF3/IDmtjG7OE5qXOP69LEpBpwhpLSiT1XgSr+uFRX0ftJHQnDaP7Xq+uhbljLYkJt67sqsbnyXBjiY8ig==
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/use-resize-observer/-/use-resize-observer-9.1.0.tgz#14735235cf3268569c1ea468f8a90c5789fc5c6c"
+  integrity sha512-R25VqO9Wb3asSD4eqtcxk8sJalvIOYBqS8MNZlpDSQ4l4xMQxC/J7Id9HoTqPq8FwULIn0PVW+OAqF2dyYbjow==
   dependencies:
     "@juggle/resize-observer" "^3.3.1"
 
