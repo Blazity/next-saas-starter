@@ -1,3 +1,11 @@
+import React from 'react';
+
+const BlogPost = () => {
+  return <div>BlogPost</div>;
+};
+
+export default BlogPost;
+
 // import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 // import Head from 'next/head';
 // import React, { useEffect, useRef, useState } from 'react';
