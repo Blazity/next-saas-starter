@@ -1,18 +1,18 @@
 import { InferGetStaticPropsType } from 'next';
-import styled from 'styled-components';
-import ArticleCard from 'components/ArticleCard';
-import AutofitGrid from 'components/AutofitGrid';
+// import styled from 'styled-components';
+// import ArticleCard from 'components/ArticleCard';
+// import AutofitGrid from 'components/AutofitGrid';
 import Page from 'components/Page';
-import { media } from 'utils/media';
+// import { media } from 'utils/media';
 import { getAllPosts } from 'utils/postsFetcher';
 
 export default function BlogIndexPage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page
-      title="My SaaS Startup"
-      description="Culpa duis reprehenderit in ex amet cillum nulla do in enim commodo. Sunt ut excepteur et est aliqua anim ea excepteur fugiat voluptate. Fugiat exercitation dolore laboris do quis consectetur eiusmod tempor consequat."
+      title="Coming Soon!"
+      description="From marketing tips, success stories, and much more, come back shortly to get resources and insight to help grow your business!"
     >
-      <CustomAutofitGrid>
+      {/* <CustomAutofitGrid>
         {posts.map((singlePost, idx) => (
           <ArticleCard
             key={singlePost.slug}
@@ -22,25 +22,26 @@ export default function BlogIndexPage({ posts }: InferGetStaticPropsType<typeof 
             slug={singlePost.slug}
           />
         ))}
-      </CustomAutofitGrid>
+      </CustomAutofitGrid> */}
     </Page>
   );
 }
-const CustomAutofitGrid = styled(AutofitGrid)`
-  --autofit-grid-item-size: 40rem;
 
-  ${media('<=tablet')} {
-    --autofit-grid-item-size: 30rem;
-  }
+// const CustomAutofitGrid = styled(AutofitGrid)`
+//   --autofit-grid-item-size: 40rem;
 
-  ${media('<=phone')} {
-    --autofit-grid-item-size: 100%;
-  }
+//   ${media('<=tablet')} {
+//     --autofit-grid-item-size: 30rem;
+//   }
 
-  .article-card-wrapper {
-    max-width: 100%;
-  }
-`;
+//   ${media('<=phone')} {
+//     --autofit-grid-item-size: 100%;
+//   }
+
+//   .article-card-wrapper {
+//     max-width: 100%;
+//   }
+// `;
 
 export async function getStaticProps() {
   return {
