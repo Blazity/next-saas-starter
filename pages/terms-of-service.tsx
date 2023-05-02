@@ -36,9 +36,9 @@ export default function ContactPage() {
                 </p>
                 &nbsp;
                 <p>
-                  1. <b>Agreement.</b> This Term of Use agreement (&quot;"the &quot;"Agreement&quot;") specifies the Terms and Conditions
-                  for access to and use of ismycustomermoving.com (the &quot;"Site&quot;") and describe the terms and conditions applicable
-                  to your access of and use of the Site. This Agreement may be modified at any time by IsMyCustomerMoving LLC, a Tennessee
+                  1. <b>Agreement.</b> This Term of Use agreement (&quot;the &quot;Agreement&quot;) specifies the Terms and Conditions for
+                  access to and use of ismycustomermoving.com (the &quot;Site&quot;) and describe the terms and conditions applicable to
+                  your access of and use of the Site. This Agreement may be modified at any time by IsMyCustomerMoving LLC, a Tennessee
                   limited liability company, the operator of the Site upon posting of the modified Agreement. Any such modifications shall
                   be effective immediately. You can view the most recent version of these terms at any time at ismycustomermoving.com. Each
                   use by you shall constitute and be deemed your unconditional acceptance of this Agreement.
@@ -85,13 +85,13 @@ export default function ContactPage() {
                 &nbsp;
                 <p>
                   8. <b>Indemnification.</b> You agree to indemnify, defend and hold IsMyCustomerMoving LLC and our partners, employees, and
-                  affiliates, harmless from any liability, loss, claim and expense, including reasonable attorney&apos;'s fees, related to
+                  affiliates, harmless from any liability, loss, claim and expense, including reasonable attorney&apos;s fees, related to
                   your violation of this Agreement or use of the Site.
                 </p>
                 &nbsp;
                 <p>
-                  9. <b>Disclaimer.</b> THE INFORMATION ON THIS SITE IS PROVIDED ON AN &quot;"AS IS,&quot;" &quot;"AS AVAILABLE&quot;"
-                  BASIS. YOU AGREE THAT USE OF THIS SITE IS AT YOUR SOLE RISK. IsMyCustomerMoving LLC DISCLAIMS ALL WARRANTIES OF ANY KIND,
+                  9. <b>Disclaimer.</b> THE INFORMATION ON THIS SITE IS PROVIDED ON AN &quot;AS IS,&quot; &quot;AS AVAILABLE&quot; BASIS.
+                  YOU AGREE THAT USE OF THIS SITE IS AT YOUR SOLE RISK. IsMyCustomerMoving LLC DISCLAIMS ALL WARRANTIES OF ANY KIND,
                   INCLUDING BUT NOT LIMITED TO ANY EXPRESS WARRANTIES, STATUTORY WARRANTIES, AND ANY IMPLIED W ARRANTIES OF MERCHANT ABILITY
                   , FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. TO THE EXTENT YOUR JURISDICTION DOES NOT ALLOW LIMIT A TIONS ON
                   W ARRANTIES, THIS LIMITATION MAY NOT APPLY TO YOU. YOUR SOLE AND EXCLUSIVE REMEDY RELATING TO YOUR USE OF THE SITE SHALL
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 </p>
                 <p>
                   &emsp;(f) A statement by you, made under penalty of perjury, that the above information in your notice is accurate and
-                  that you are the copyright owner or authorized to act on the copyright owner&apos;'s behalf.
+                  that you are the copyright owner or authorized to act on the copyright owner&apos;s behalf.
                 </p>
                 &nbsp;
                 <p>

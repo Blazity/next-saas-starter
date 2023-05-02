@@ -32,8 +32,8 @@ export default function ContactPage() {
                   1. <b>Introduction.</b>
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
-                  (a) Web Site Owner. IsMyCustomerMoving LLC, a Tennessee limited liability company (&quot;"IsMyCustomerMoving&quot;") is
-                  the owner of this web site (ismycustomermoving.com &quot;"IsMyCustomerMoving Web Site&quot;"). IsMyCustomerMoving can be
+                  (a) Web Site Owner. IsMyCustomerMoving LLC, a Tennessee limited liability company (&quot;IsMyCustomerMoving&quot;) is the
+                  owner of this web site (ismycustomermoving.com &quot;IsMyCustomerMoving Web Site&quot;). IsMyCustomerMoving can be
                   contacted by mail at 6339 Charlotte Pk., Unit 643, Nashville, TN 37209, by phone at 615-685-6848, or by e-mail at
                   jb@ismycustomermoving.com. This online privacy notice discloses IsMyCustomerMoving’s information practices for this
                   IsMyCustomerMoving Web Site, including what type of personal identifiable information is requested in order to make a
@@ -47,9 +47,9 @@ export default function ContactPage() {
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (c) Web Site Transactions. At times, IsMyCustomerMoving will need personal information regarding a customer or a prospect.
-                  For example to process an order or provide a subscription, IsMyCustomerMoving may need to know a customer&apos;'s name,
-                  mailing address, e-mail address and credit card details. It is IsMyCustomerMoving&apos;'s intent to inform you know before
-                  IsMyCustomerMoving collects personal information, such as user&apos;'s name and/or address on the Internet.
+                  For example to process an order or provide a subscription, IsMyCustomerMoving may need to know a customer&apos;s name,
+                  mailing address, e-mail address and credit card details. It is IsMyCustomerMoving&apos;s intent to inform you know before
+                  IsMyCustomerMoving collects personal information, such as user&apos;s name and/or address on the Internet.
                 </p>
                 <p>
                   2. <b>Personal Information That May Be Collected.</b>
@@ -60,26 +60,26 @@ export default function ContactPage() {
                   identifying information, which may include: legal name, postal address, e-mail address, screen name, password, daytime
                   telephone number, facsimile number, method of payment, and, if applicable, credit card number or other banking and/or
                   payment information. IsMyCustomerMoving may request additional information necessary to establish and maintain
-                  customer&apos;'s account.
+                  customer&apos;s account.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (b) Service Quality Monitoring. Some Web site transactions may require a customer to telephone IsMyCustomerMoving, or
                   IsMyCustomerMoving to call the customer. IsMyCustomerMoving will not contact you by telephone without your prior consent,
                   except to confirm an order placed online and/or to inform a customer of the status of such order. Customer should be aware
-                  that it is IsMyCustomerMoving &apos;'s practice to monitor, and in some cases record such calls for staff training or
+                  that it is IsMyCustomerMoving &apos;s practice to monitor, and in some cases record such calls for staff training or
                   quality assurance purposes.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (c) Information from Children. IsMyCustomerMoving does not sell products or services for purchase by children, and will
                   not collect or post information from a child under the age of 18 without the involvement of a parent or guardian.
-                  IsMyCustomerMoving will notify the child&apos;'s parent or guardian at the e-mail address provided by the prospective
-                  customer, alerting the parent or guardian to the child&apos;'s use of the Web site and providing instructions as to how
-                  the parent or guardian can delete the child&apos;'s registration from the Web site. IsMyCustomerMoving does not use
-                  personally identifying information collected from children for marketing or promotional purposes, and does not disclose
-                  such information to any third party for any purpose whatsoever.
+                  IsMyCustomerMoving will notify the child&apos;s parent or guardian at the e-mail address provided by the prospective
+                  customer, alerting the parent or guardian to the child&apos;s use of the Web site and providing instructions as to how the
+                  parent or guardian can delete the child&apos;s registration from the Web site. IsMyCustomerMoving does not use personally
+                  identifying information collected from children for marketing or promotional purposes, and does not disclose such
+                  information to any third party for any purpose whatsoever.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
-                  (d) Lost or Stolen Information. If a customer&apos;'s credit card, other banking information, and/or password is lost or
+                  (d) Lost or Stolen Information. If a customer&apos;s credit card, other banking information, and/or password is lost or
                   stolen, the customer should promptly notify IsMyCustomerMoving in order to enable IsMyCustomerMoving to cancel the lost or
                   stolen information and to update its records with a changed credit card, other banking information, and/or password.
                 </p>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   or posts messages to an IsMyCustomerMoving bulletin board, customer should be aware that the information disclosed and
                   shared will be broadly available to other persons, both inside of and/or outside IsMyCustomerMoving, who have access to
                   that chat room, forum or bulletin board. Some individual IsMyCustomerMoving chat rooms, forums or bulletin boards have
-                  additional rules and conditions regarding participation. Also, participant&apos;'s expressed opinion is his or her own and
+                  additional rules and conditions regarding participation. Also, participant&apos;s expressed opinion is his or her own and
                   should not be considered as reflecting the opinion of IsMyCustomerMoving.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   3. <b>Uses Made of the Information.</b>
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
-                  (a) Limited Uses Identified. Without customer&apos;'s prior consent, IsMyCustomerMoving will not use your personal
+                  (a) Limited Uses Identified. Without customer&apos;s prior consent, IsMyCustomerMoving will not use your personal
                   identifiable information for any purpose other than that for which it is submitted. IsMyCustomerMoving uses personal
                   identifiable information to reply to inquiries, handle complaints, provide operational notices and in program
                   record-keeping. IsMyCustomerMoving also processes billing and business requests related to IsMyCustomerMoving Web Site
@@ -107,12 +107,12 @@ export default function ContactPage() {
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (b) Marketing Uses. IsMyCustomerMoving reserves the right to provide customer with information about
-                  IsMyCustomerMoving&apos;'s Web site, IsMyCustomerMoving products and services, and related information in which customer
+                  IsMyCustomerMoving&apos;s Web site, IsMyCustomerMoving products and services, and related information in which customer
                   has indicated an interest.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (c) Stored Information Uses. IsMyCustomerMoving stores and retains the information provided by customer and the
-                  information entered on the IsMyCustomerMoving Web site. This information is used to compile a customer&apos;'s purchase
+                  information entered on the IsMyCustomerMoving Web site. This information is used to compile a customer&apos;s purchase
                   history in order to enable IsMyCustomerMoving to recommend products, services, or special offers that would be of interest
                   to a customer.
                 </p>
@@ -161,9 +161,9 @@ export default function ContactPage() {
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (b) Use of Cookies. IsMyCustomerMoving, or its third party vendors, collects non-identifiable and personal information
-                  through the use of various technologies, including &quot;"cookies&quot;". A cookie is an alphanumeric identifier that a
-                  web site can transfer to customer&apos;'s hard drive through customer&apos;'s browser. The cookie is then stored on
-                  customer&apos;'s computer as an anonymous tag that identifies the customer&apos;'s computer, but not the customer. Cookies
+                  through the use of various technologies, including &quot;cookies&quot;. A cookie is an alphanumeric identifier that a web
+                  site can transfer to customer&apos;s hard drive through customer&apos;s browser. The cookie is then stored on
+                  customer&apos;s computer as an anonymous tag that identifies the customer&apos;s computer, but not the customer. Cookies
                   may be sent by IsMyCustomerMoving or its third party vendors. Customer can set its browser to notify customer before a
                   cookie is received, giving an opportunity to decide whether to accept the cookie. Customer may also set its browser to
                   turn off cookies; however, some web sites may not then work properly.
@@ -173,7 +173,7 @@ export default function ContactPage() {
                   Web site(s) to provide better customer service. If these technologies are in use, when a visitor accesses these pages of
                   the Web site, a non-identifiable notice of that visit is generated which may be processed by IsMyCustomerMoving or by its
                   suppliers. Web beacons usually work in conjunction with cookies. If customer does not want cookie information to be
-                  associated with customer&apos;'s visits to these pages, customer can set its browser to turn off cookies; however, Web
+                  associated with customer&apos;s visits to these pages, customer can set its browser to turn off cookies; however, Web
                   beacon and other technologies will still detect visits to these pages, but the notices they generate cannot be associated
                   with other non-identifiable cookie information and are disregarded.
                 </p>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   visits to the IsMyCustomerMoving Web Site in order to provide better customer service. Examples of such collecting
                   include: traffic analysis, such as tracking of the domains from which users visit, or tracking numbers of visitors;
                   measuring visitor activity on the IsMyCustomerMoving Web Site; Web site and system administration; user analysis; and
-                  business decision making. Such information is sometimes known as &quot;"clickstream data.&quot;" IsMyCustomerMoving or its
+                  business decision making. Such information is sometimes known as &quot;clickstream data.&quot; IsMyCustomerMoving or its
                   contractors may use this data to analyze trends and statistics.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
@@ -221,19 +221,19 @@ export default function ContactPage() {
                   to be collected, used or disclosed by IsMyCustomerMoving and/or by any third parties with whom IsMyCustomerMoving has
                   shared and/or transferred such personal information. Right of cancellation may be exercised by contacting
                   IsMyCustomerMoving via e-mail or certified postal mail. After processing the cancellation, IsMyCustomerMoving will delete
-                  customer or prospective customer&apos;'s personal information from its data base.
+                  customer or prospective customer&apos;s personal information from its data base.
                 </p>
                 <p>
                   8. <b>Access Rights to Data.</b>
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
-                  (a) Information Maintained by IsMyCustomerMoving. Upon customer&apos;'s request, IsMyCustomerMoving will provide a
-                  reasonable description of customer&apos;'s personally identifiable information that IsMyCustomerMoving maintains in its
+                  (a) Information Maintained by IsMyCustomerMoving. Upon customer&apos;s request, IsMyCustomerMoving will provide a
+                  reasonable description of customer&apos;s personally identifiable information that IsMyCustomerMoving maintains in its
                   data bank. IsMyCustomerMoving can be contacted by e-mail or certified postal mail.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
                   (b) Corrections and Changes to Personal Information. Help IsMyCustomerMoving to keep customer personal information
-                  accurate. If customer&apos;'s personal information changes, or if customer notes an error upon review of customer
+                  accurate. If customer&apos;s personal information changes, or if customer notes an error upon review of customer
                   information that IsMyCustomerMoving has on file, please promptly e-mail IsMyCustomerMoving and provide the new or correct
                   information.
                 </p>
@@ -262,10 +262,10 @@ export default function ContactPage() {
                   organization and information on how to contact the organization.
                 </p>
                 <p style={{ paddingLeft: '5%' }}>
-                  (b) Terms of Use. If customer chooses to enter into a purchase order or to subscribe to IsMyCustomerMoving&apos;'s
-                  services, customer&apos;'s action is hereby deemed acceptance of IsMyCustomerMoving practices described in this policy
+                  (b) Terms of Use. If customer chooses to enter into a purchase order or to subscribe to IsMyCustomerMoving&apos;s
+                  services, customer&apos;s action is hereby deemed acceptance of IsMyCustomerMoving practices described in this policy
                   statement. Any dispute over privacy between customer and IsMyCustomerMoving is subject to the provisions of this notice
-                  and to IsMyCustomerMoving &apos;'s Terms of Service which is hereby incorporated herein and which can be read at
+                  and to IsMyCustomerMoving &apos;s Terms of Service which is hereby incorporated herein and which can be read at
                   IsMyCustomerMoving’s Web Site.
                 </p>
               </div>
