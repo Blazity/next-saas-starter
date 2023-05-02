@@ -26,7 +26,6 @@ export default function BlogIndexPage({ posts }: InferGetStaticPropsType<typeof 
     </Page>
   );
 }
-
 const CustomAutofitGrid = styled(AutofitGrid)`
   --autofit-grid-item-size: 40rem;
 
