@@ -6,33 +6,28 @@ export default function FaqSection() {
   return (
     <Wrapper>
       <SectionTitle>Frequently asked question</SectionTitle>
-      <Accordion title="Eiusmod eu laboris qui minim incididunt et id in elit veniam Lorem nulla ullamco.">
-        Voluptate ad aliquip in adipisicing incididunt officia. Aliqua consectetur id commodo fugiat sunt dolor minim. Aliqua ut deserunt
-        sit irure tempor esse labore elit commodo pariatur in nisi minim culpa. Exercitation eu in mollit tempor cillum excepteur
-        adipisicing cillum do et dolor est deserunt dolor. Deserunt reprehenderit nulla commodo quis et consectetur deserunt ea eiusmod
-        reprehenderit aliqua. Cupidatat commodo do ad ullamco ad enim sint sint irure amet culpa. Consequat sit Lorem sint culpa.
+      <Accordion title="How often do I get updates on which of my customers have moved or sold their home?">
+        The real estate data is gathered in real time throughout the day. Each morning you will receive a summary email notifying you of all
+        the updates.
       </Accordion>
-      <Accordion title="Minim eiusmod aliquip in ea mollit fugiat ullamco veniam enim sint exercitation.">
-        Lorem laboris ullamco labore consectetur duis amet excepteur esse labore sunt pariatur do aliqua amet. Enim exercitation labore
-        nostrud consectetur veniam eiusmod pariatur do commodo dolore pariatur amet veniam. Irure do et ut dolor quis reprehenderit anim
-        aute sint deserunt tempor sunt nostrud. Deserunt et aute non dolor.
+      <Accordion title="How much does it cost?">
+        Our pricing is based on the number of customers you have. You can find our pricing on the pricing page.
       </Accordion>
-      <Accordion title="Commodo officia dolore anim occaecat.">
-        Enim ea cillum pariatur incididunt incididunt sunt ea exercitation nisi aliquip. Cillum deserunt ut esse Lorem non qui labore labore
-        eiusmod magna incididunt ut quis. Nulla excepteur adipisicing ipsum do non occaecat.
+      <Accordion title="What sort of security measures do you have in place?">
+        We use the latest security measures to ensure your data is safe. This includes using Stripe to process payments, two factor
+        authentication, and SSL encryption. All our data is stored on Amazon Web Services servers in the United States.
       </Accordion>
-      <Accordion title="Irure Lorem proident esse enim.">
-        Ipsum laboris sit minim occaecat nisi qui. Tempor eiusmod fugiat occaecat labore. Exercitation do cillum cillum laborum velit
-        laborum ea magna duis laborum in anim. Enim laboris dolore laboris consectetur enim duis deserunt consequat excepteur ipsum
-        excepteur. Non dolor magna et est cillum sint eiusmod sit eiusmod veniam id. Aliqua non non labore amet laborum fugiat ad nostrud ex
-        officia exercitation.
+      <Accordion title="Do you do anything else with my customer list?">
+        Of course not! We only use your customer list to gather real estate data. We do not sell your customer list to anyone else or use it
+        for any other purpose.
       </Accordion>
-      <Accordion title="Ea quis consequat sunt sint aute pariatur aliquip minim voluptate.">
-        Sint eiusmod aute nulla ut esse sunt fugiat nulla exercitation duis pariatur. Magna anim incididunt magna id quis irure laborum sint
-        voluptate tempor esse elit dolore. Elit exercitation pariatur adipisicing aute. Nisi deserunt enim consequat anim adipisicing
-        laborum sint occaecat elit. Consequat officia cupidatat magna incididunt nisi in sunt duis reprehenderit ullamco in amet cillum.
-        Dolor nisi proident ipsum aute velit aliquip magna fugiat reprehenderit. Enim ex aliqua et velit exercitation reprehenderit veniam
-        do eu exercitation ad duis.
+      <Accordion title="How do I get started?">
+        You can get started by signing up for an account on the pricing page. You can then begin by syncing with your customers with your
+        CRM or uploading a list. You can also setup an onboarding call with us to get started.
+      </Accordion>
+      <Accordion title="What CRMs do you integrate with?">
+        We currently integrate with Service Titan and Hubspot. If you use a different CRM, you can still use our service by uploading a list
+        of your customers and we are constantly working to add more integrations.
       </Accordion>
     </Wrapper>
   );
