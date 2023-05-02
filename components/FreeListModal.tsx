@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { EnvVars } from 'env';
+// import { EnvVars } from 'env';
 import useEscClose from 'hooks/useEscKey';
 import { media } from 'utils/media';
 import Button from './Button';
@@ -16,19 +16,37 @@ export interface FreeListModalProps {
 
 export default function FreeListModal({ onClose }: FreeListModalProps) {
   const [email, setEmail] = useState('');
+  const [phone, setPhoneNumber] = useState('');
   const [zipCode, setZipCode] = useState('');
-  const [hasSignedUp, setHasSignedUp] = useState(false);
+  const [hasSuccessfullySentMail, setHasSuccessfullySentMail] = useState(false);
+  const [hasErrored, setHasErrored] = useState(false);
 
   useEscClose({ onClose });
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log({ email });
-    console.log({ zipCode });
     if (email) {
-      // subscribe
-      console.log('subscribed');
-      setHasSignedUp(true);
+      try {
+        const res = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            subject: 'Email from contact form',
+            ...{ name: phone, email, description: zipCode },
+          }),
+        });
+
+        if (res.status !== 204) {
+          setHasErrored(true);
+        }
+      } catch {
+        setHasErrored(true);
+        return;
+      }
+
+      setHasSuccessfullySentMail(true);
     }
   }
 
@@ -39,15 +57,22 @@ export default function FreeListModal({ onClose }: FreeListModalProps) {
           <CloseIconContainer>
             <CloseIcon onClick={onClose} />
           </CloseIconContainer>
-          {hasSignedUp && <MailSentState />}
-          {!hasSignedUp && (
+          {hasSuccessfullySentMail && <MailSentState />}
+          {!hasSuccessfullySentMail && (
             <>
               <Title>Are you ready to find who is moving in your area?</Title>
               <Row>
                 <CustomInput
                   value={email}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                  placeholder="Enter your email..."
+                  placeholder="Email..."
+                  required
+                />
+                <div style={{ width: '1rem' }} />
+                <CustomInput
+                  value={phone}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value)}
+                  placeholder="Phone Number..."
                   required
                 />
               </Row>
@@ -58,7 +83,7 @@ export default function FreeListModal({ onClose }: FreeListModalProps) {
                   placeholder="Enter the biggest zip code in your area..."
                   required
                 />
-                <CustomButton as="button" type="submit" disabled={hasSignedUp}>
+                <CustomButton as="button" type="submit" disabled={hasSuccessfullySentMail}>
                   Submit
                 </CustomButton>
               </Row>
@@ -111,12 +136,12 @@ const Title = styled.div`
   }
 `;
 
-const ErrorMessage = styled.p`
-  color: rgb(var(--errorColor));
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  text-align: center;
-`;
+// const ErrorMessage = styled.p`
+//   color: rgb(var(--errorColor));
+//   font-size: 1.5rem;
+//   margin: 1rem 0;
+//   text-align: center;
+// `;
 
 const Row = styled.div`
   display: flex;

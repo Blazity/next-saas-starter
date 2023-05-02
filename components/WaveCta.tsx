@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
@@ -53,10 +52,10 @@ const Title = styled(SectionTitle)`
   margin-bottom: 4rem;
 `;
 
-const OutlinedButton = styled(Button)`
-  border: 1px solid rgb(var(--textSecondary));
-  color: rgb(var(--textSecondary));
-`;
+// const OutlinedButton = styled(Button)`
+//   border: 1px solid rgb(var(--textSecondary));
+//   color: rgb(var(--textSecondary));
+// `;
 
 const CustomButtonGroup = styled(ButtonGroup)`
   justify-content: center;

@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from 'react-share';
+import { FacebookIcon, LinkedinIcon } from 'react-share';
 import styled from 'styled-components';
 import Container from 'components/Container';
 import { media } from 'utils/media';
@@ -17,33 +17,35 @@ const footerItems: FooterItems = [
       { title: 'Terms of Service', href: '/terms-of-service' },
     ],
   },
-  {
-    title: 'Product',
-    items: [
-      { title: 'Features', href: '/features' },
-      { title: 'Something', href: '/something' },
-      { title: 'Something else', href: '/something-else' },
-      { title: 'And something else', href: '/and-something-else' },
-    ],
-  },
+  // {
+  //   title: 'Product',
+  //   items: [
+  //     { title: 'Features', href: '/features' },
+  //     { title: 'Something', href: '/something' },
+  //     { title: 'Something else', href: '/something-else' },
+  //     { title: 'And something else', href: '/and-something-else' },
+  //   ],
+  // },
   {
     title: 'Knowledge',
     items: [
       { title: 'Blog', href: '/blog' },
       { title: 'Contact', href: '/contact' },
-      { title: 'FAQ', href: '/faq' },
-      { title: 'Help Center', href: '/help-center' },
+      { title: 'Pricing', href: '/pricing' },
+      { title: 'Demo', href: '/#contact' },
+      // { title: 'FAQ', href: '/faq' },
+      // { title: 'Help Center', href: '/help-center' },
     ],
   },
-  {
-    title: 'Something',
-    items: [
-      { title: 'Features2', href: '/features2' },
-      { title: 'Something2', href: '/something2' },
-      { title: 'Something else2', href: '/something-else2' },
-      { title: 'And something else2', href: '/and-something-else2' },
-    ],
-  },
+  // {
+  //   title: 'Something',
+  //   items: [
+  //     { title: 'Features2', href: '/features2' },
+  //     { title: 'Something2', href: '/something2' },
+  //     { title: 'Something else2', href: '/something-else2' },
+  //     { title: 'And something else2', href: '/and-something-else2' },
+  //   ],
+  // },
 ];
 
 export default function Footer() {
@@ -64,15 +66,11 @@ export default function Footer() {
             </NextLink> */}
 
             <NextLink href="https://www.facebook.com/groups/717278510115963/" passHref>
-              <a>
-                <FacebookIcon size={50} round={true} />
-              </a>
+              <FacebookIcon size={50} round={true} />
             </NextLink>
 
             <NextLink href="https://www.linkedin.com/company/is-my-customer-moving/" passHref>
-              <a>
-                <LinkedinIcon size={50} round={true} />
-              </a>
+              <LinkedinIcon size={50} round={true} />
             </NextLink>
           </ShareBar>
           <Copyright>&copy; Copyright 2023 Is My Customer Moving LLC</Copyright>
@@ -97,7 +95,7 @@ function ListItem({ title, href }: SingleFooterListItem) {
   return (
     <ListItemWrapper>
       <NextLink href={href} passHref>
-        <a>{title}</a>
+        {title}
       </NextLink>
     </ListItemWrapper>
   );

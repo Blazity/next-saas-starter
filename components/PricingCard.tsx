@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
+import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 import Button from './Button';
 import RichText from './RichText';
@@ -9,10 +10,27 @@ interface PricingCardProps {
   description: string;
   benefits: string[];
   isOutlined?: boolean;
+  checkoutLink: string;
 }
 
-export default function PricingCard({ title, description, benefits, isOutlined, children }: PropsWithChildren<PricingCardProps>) {
+export default function PricingCard({
+  title,
+  description,
+  benefits,
+  isOutlined,
+  children,
+  checkoutLink,
+}: PropsWithChildren<PricingCardProps>) {
   const isAnyBenefitPresent = benefits?.length;
+  const { setIsModalOpened } = useNewsletterModalContext();
+  const handleClick = () => {
+    if (!checkoutLink) {
+      setIsModalOpened(true);
+      return;
+    }
+    // go to checkout link paage
+    window.open(checkoutLink, '_blank');
+  };
 
   return (
     <Wrapper isOutlined={isOutlined}>
@@ -30,7 +48,7 @@ export default function PricingCard({ title, description, benefits, isOutlined, 
           </CustomRichText>
         )}
       </PriceContainer>
-      <CustomButton>Get started</CustomButton>
+      <CustomButton onClick={handleClick}>Get started</CustomButton>
     </Wrapper>
   );
 }
