@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </TinaEditProvider>
-        <Chatbot />
+        {/* <Chatbot /> */}
         <WaveCta />
         <Footer />
       </Providers>

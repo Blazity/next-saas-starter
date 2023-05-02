@@ -23,7 +23,7 @@ export default function PricingTablesSection() {
     {
       title: 'Silver',
       description: 'For Small Businesses',
-      price: '$149',
+      price: '$150',
       benefits: [
         '5,000 Clients',
         'Unlimited Users',
@@ -37,7 +37,7 @@ export default function PricingTablesSection() {
     {
       title: 'Gold',
       description: 'For Large Businesses With An Extensive Client Base',
-      price: '$249',
+      price: '$250',
       benefits: [
         '10,000 Clients',
         'Unlimited Users',
@@ -52,7 +52,7 @@ export default function PricingTablesSection() {
     {
       title: 'Platinum',
       description: 'For Long Established Client Bases',
-      price: '$399',
+      price: '$400',
       benefits: [
         '20,000 Clients',
         'Personalized Marketing Campaigns',
