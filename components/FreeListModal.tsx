@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { EnvVars } from 'env';
+// import { EnvVars } from 'env';
 import useEscClose from 'hooks/useEscKey';
 import { media } from 'utils/media';
 import Button from './Button';
@@ -136,12 +136,12 @@ const Title = styled.div`
   }
 `;
 
-const ErrorMessage = styled.p`
-  color: rgb(var(--errorColor));
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  text-align: center;
-`;
+// const ErrorMessage = styled.p`
+//   color: rgb(var(--errorColor));
+//   font-size: 1.5rem;
+//   margin: 1rem 0;
+//   text-align: center;
+// `;
 
 const Row = styled.div`
   display: flex;

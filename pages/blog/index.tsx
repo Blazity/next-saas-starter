@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import styled from 'styled-components';
-import ArticleCard from 'components/ArticleCard';
+// import ArticleCard from 'components/ArticleCard';
 import AutofitGrid from 'components/AutofitGrid';
 import Page from 'components/Page';
 import { media } from 'utils/media';
@@ -27,21 +27,21 @@ export default function BlogIndexPage({ posts }: InferGetStaticPropsType<typeof 
   );
 }
 
-const CustomAutofitGrid = styled(AutofitGrid)`
-  --autofit-grid-item-size: 40rem;
+// const CustomAutofitGrid = styled(AutofitGrid)`
+//   --autofit-grid-item-size: 40rem;
 
-  ${media('<=tablet')} {
-    --autofit-grid-item-size: 30rem;
-  }
+//   ${media('<=tablet')} {
+//     --autofit-grid-item-size: 30rem;
+//   }
 
-  ${media('<=phone')} {
-    --autofit-grid-item-size: 100%;
-  }
+//   ${media('<=phone')} {
+//     --autofit-grid-item-size: 100%;
+//   }
 
-  .article-card-wrapper {
-    max-width: 100%;
-  }
-`;
+//   .article-card-wrapper {
+//     max-width: 100%;
+//   }
+// `;
 
 export async function getStaticProps() {
   return {

@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
+import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 import Button from './Button';
 import RichText from './RichText';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 
 interface PricingCardProps {
   title: string;
