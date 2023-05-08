@@ -65,7 +65,7 @@
     "remark-external-links": "^9.0.1",
     "remark-footnotes": "^4.0.1",
     "remark-gfm": "^3.0.1",
-    "remark-sectionize": "^1.1.1",
+    "remark-sectionize": "^2.0.0",
     "remark-slug": "^7.0.1",
     "typescript": "5.0.4"
   }
