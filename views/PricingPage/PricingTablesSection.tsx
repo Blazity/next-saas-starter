@@ -6,12 +6,20 @@ import AutofitGrid from 'components/AutofitGrid';
 import PricingCard from 'components/PricingCard';
 import SectionTitle from 'components/SectionTitle';
 
+interface Plan {
+  title: string;
+  description: string;
+  price: string;
+  benefits: string[];
+  checkoutLink: string;
+}
+
 export default function PricingTablesSection() {
   const tabletQuery = '(min-width: 768px)';
   const phoneQuery = '(max-width: 767px)';
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [plansToRender, setPlansToRender] = useState([]);
+  const [plansToRender, setPlansToRender] = useState<Plan[]>([]);
 
   const pricingPlans = [
     {
