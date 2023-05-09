@@ -9,6 +9,7 @@ import Head from 'next/head';
 import { ColorModeScript } from 'nextjs-color-mode';
 import React, { PropsWithChildren } from 'react';
 import { TinaEditProvider } from 'tinacms/dist/edit-state';
+import { Analytics } from '@vercel/analytics/react';
 
 import Footer from 'components/Footer';
 import { GlobalStyle } from 'components/GlobalStyles';
@@ -72,6 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <WaveCta />
         <Footer />
       </Providers>
+      <Analytics />
     </>
   );
 }

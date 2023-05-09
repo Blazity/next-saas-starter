@@ -13,6 +13,7 @@
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@sendgrid/mail": "^7.7.0",
     "@svgr/webpack": "^6.5.1",
+    "@vercel/analytics": "^1.0.1",
     "css-in-js-media": "^2.0.1",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
