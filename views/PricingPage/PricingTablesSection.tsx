@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import ArrowButton from 'components/ArrowButton';
 import AutofitGrid from 'components/AutofitGrid';
@@ -6,7 +7,12 @@ import PricingCard from 'components/PricingCard';
 import SectionTitle from 'components/SectionTitle';
 
 export default function PricingTablesSection() {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const tabletQuery = '(min-width: 768px)';
+  const phoneQuery = '(max-width: 767px)';
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [plansToRender, setPlansToRender] = useState([]);
+
   const pricingPlans = [
     {
       title: 'Free',
@@ -36,7 +42,7 @@ export default function PricingTablesSection() {
     },
     {
       title: 'Gold',
-      description: 'For Large Businesses With An Extensive Client Base',
+      description: 'For Large Client Bases',
       price: '$250',
       benefits: [
         '10,000 Clients',
@@ -74,15 +80,33 @@ export default function PricingTablesSection() {
     },
   ];
 
+  const isTabletOrGreater = useMediaQuery({ query: tabletQuery });
+
+  useEffect(() => {
+    if (!isTabletOrGreater) {
+      setPlansToRender(pricingPlans);
+    } else {
+      setPlansToRender(pricingPlans.slice(currentIndex, currentIndex + 3));
+    }
+  }, [currentIndex, isTabletOrGreater, pricingPlans]);
+
+  const clickLeftArrow = () => {
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+  };
+
+  const clickRightArrow = () => {
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, pricingPlans.length - 3));
+  };
+
   return (
     <Wrapper>
       <SectionTitle>Flexible pricing for any size business</SectionTitle>
       <PricingContainer>
-        <ArrowButton onClick={() => setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0))} disabled={currentIndex === 0}>
+        <ArrowButton onClick={clickLeftArrow} disabled={currentIndex === 0}>
           {'<'}
         </ArrowButton>
         <AutofitGrid>
-          {pricingPlans.slice(currentIndex, currentIndex + 3).map((plan, index) => (
+          {plansToRender.map((plan, index) => (
             <PricingCard
               key={index}
               title={plan.title}
@@ -95,10 +119,7 @@ export default function PricingTablesSection() {
             </PricingCard>
           ))}
         </AutofitGrid>
-        <ArrowButton
-          onClick={() => setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, pricingPlans.length - 3))}
-          disabled={currentIndex === pricingPlans.length - 3}
-        >
+        <ArrowButton onClick={clickRightArrow} disabled={currentIndex === pricingPlans.length - 3}>
           {'>'}
         </ArrowButton>
       </PricingContainer>

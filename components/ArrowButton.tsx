@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from 'utils/media';
 
 const ArrowButton = styled.button`
   background-color: transparent;
@@ -16,6 +17,10 @@ const ArrowButton = styled.button`
   &:disabled {
     color: #333;
     cursor: not-allowed;
+  }
+
+  ${media('<=tablet')} {
+    font-size: 0rem;
   }
 `;
 

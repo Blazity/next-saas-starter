@@ -33,25 +33,29 @@ export default function PricingCard({
   };
 
   return (
-    <Wrapper isOutlined={isOutlined}>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <PriceContainer>
-        <Price>{children}</Price>
-        {isAnyBenefitPresent && (
-          <CustomRichText>
-            <ul>
-              {benefits.map((singleBenefit, idx) => (
-                <li key={idx}>{singleBenefit}</li>
-              ))}
-            </ul>
-          </CustomRichText>
-        )}
-      </PriceContainer>
-      <CustomButton onClick={handleClick}>Get started</CustomButton>
-    </Wrapper>
+    <Card>
+      <Wrapper isOutlined={isOutlined}>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <PriceContainer>
+          <Price>{children}</Price>
+          {isAnyBenefitPresent && (
+            <CustomRichText>
+              <ul>
+                {benefits.map((singleBenefit, idx) => (
+                  <li key={idx}>{singleBenefit}</li>
+                ))}
+              </ul>
+            </CustomRichText>
+          )}
+        </PriceContainer>
+        <CustomButton onClick={handleClick}>Get started</CustomButton>
+      </Wrapper>
+    </Card>
   );
 }
+
+const Card = styled.div``;
 
 const Wrapper = styled.div<{ isOutlined?: boolean }>`
   display: flex;
@@ -80,6 +84,9 @@ const Title = styled.h3`
 
 const Description = styled.p`
   font-size: 2.5rem;
+  ${media('<=tablet')} {
+    font-size: 2rem;
+  }
 `;
 
 const PriceContainer = styled.div`

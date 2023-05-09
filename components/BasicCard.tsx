@@ -1,5 +1,6 @@
 import NextImage from 'next/image';
 import styled from 'styled-components';
+import { media } from 'utils/media';
 
 interface BasicCardProps {
   title: string;
@@ -38,8 +39,20 @@ const Card = styled.div`
 
 const Title = styled.div`
   font-weight: bold;
+  ${media('<=tablet')} {
+    font-size: 1.4rem;
+  }
+  ${media('<=phone')} {
+    font-size: 1.2rem;
+  }
 `;
 
 const Description = styled.div`
   opacity: 0.6;
+  ${media('<=tablet')} {
+    font-size: 1.4rem;
+  }
+  ${media('<=phone')} {
+    font-size: 1.2rem;
+  }
 `;

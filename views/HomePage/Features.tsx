@@ -56,12 +56,25 @@ export default function Features() {
 
 const CustomAutofitGrid = styled(AutofitGrid)`
   --autofit-grid-item-size: 40rem;
+  gap: 2rem;
 
   ${media('<=tablet')} {
     --autofit-grid-item-size: 30rem;
+    gap: 1.5rem;
   }
 
   ${media('<=phone')} {
     --autofit-grid-item-size: 100%;
+    gap: 1rem;
+  }
+
+  /* Add the following styles to limit the total width of the grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-rows: 40rem; /* or set this to the desired height of the grid items */
+
+  /* Add the following media query to adjust the grid for smaller screens */
+  ${media('<=phone')} {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   }
 `;
