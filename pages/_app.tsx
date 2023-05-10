@@ -24,7 +24,7 @@ const navItems: NavItems = [
   { title: 'Features', href: '/#features' },
   { title: 'Pricing', href: '/pricing' },
   { title: 'Contact', href: '/contact' },
-  { title: 'Login', href: 'https://app.ismycutomermoving.com' },
+  { title: 'Login', href: 'https://app.ismycustomermoving.com' },
   { title: 'Get Started', href: '/#contact', outlined: true },
 ];
 
