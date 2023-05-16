@@ -11,7 +11,7 @@ import { media } from 'utils/media';
 const TABS = [
   {
     title: 'Integrate your CRM with our customized platform',
-    description: `<p>We connect with Service Titan, Salesforce, ZoHo and are adding working to add any more. Don't see your CRM, don't worry! We make it easy to upload an excel file so no matter what, you can find out who is moving!</p>`,
+    description: `<p>We currently connect with Service Titan, Salesforce, and Zoho, and are working to add more. If you don't see your CRM listed, don't worry! We make it easy to upload an Excel file so you can always find out who is moving.!</p>`,
     imageUrl: '/features/crm.png',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
