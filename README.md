@@ -1,3 +1,5 @@
+## Checkout our new boilerplate for Enterprise projects with Next.js: [next-enterprise](https://github.com/blazity/next-enterprise)
+
 <br/>
 <p align="center">
 
