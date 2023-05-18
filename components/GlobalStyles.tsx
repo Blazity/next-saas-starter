@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   --background: 26,32,44;
   --secondBackground: 45,55,72;
   --text: 237,237,238;
-  --textSecondary: 255,255,255;
+  --textSecondary: 255, 255, 255;
   --primary: 140, 232, 197; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;

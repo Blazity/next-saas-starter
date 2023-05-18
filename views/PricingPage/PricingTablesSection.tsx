@@ -18,9 +18,6 @@ export default function PricingTablesSection() {
   const tabletQuery = '(min-width: 768px)';
   const phoneQuery = '(max-width: 767px)';
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [plansToRender, setPlansToRender] = useState<Plan[]>([]);
-
   const pricingPlans = [
     {
       title: 'Free',
@@ -88,6 +85,8 @@ export default function PricingTablesSection() {
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [plansToRender, setPlansToRender] = useState<Plan[]>(pricingPlans.slice(currentIndex, currentIndex + 3));
   const isTabletOrGreater = useMediaQuery({ query: tabletQuery });
 
   useEffect(() => {

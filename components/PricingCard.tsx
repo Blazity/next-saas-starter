@@ -1,9 +1,9 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 import Button from './Button';
 import RichText from './RichText';
+import NewFreeUserModal from './NewFreeUserModal';
 
 interface PricingCardProps {
   title: string;
@@ -22,7 +22,7 @@ export default function PricingCard({
   checkoutLink,
 }: PropsWithChildren<PricingCardProps>) {
   const isAnyBenefitPresent = benefits?.length;
-  const { setIsModalOpened } = useNewsletterModalContext();
+  const [isModalOpened, setIsModalOpened] = useState(false);
   const handleClick = () => {
     if (!checkoutLink) {
       setIsModalOpened(true);
@@ -33,25 +33,28 @@ export default function PricingCard({
   };
 
   return (
-    <Card>
-      <Wrapper isOutlined={isOutlined}>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <PriceContainer>
-          <Price>{children}</Price>
-          {isAnyBenefitPresent && (
-            <CustomRichText>
-              <ul>
-                {benefits.map((singleBenefit, idx) => (
-                  <li key={idx}>{singleBenefit}</li>
-                ))}
-              </ul>
-            </CustomRichText>
-          )}
-        </PriceContainer>
-        <CustomButton onClick={handleClick}>Get started</CustomButton>
-      </Wrapper>
-    </Card>
+    <>
+      <Card>
+        <Wrapper isOutlined={isOutlined}>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <PriceContainer>
+            <Price>{children}</Price>
+            {isAnyBenefitPresent && (
+              <CustomRichText>
+                <ul>
+                  {benefits.map((singleBenefit, idx) => (
+                    <li key={idx}>{singleBenefit}</li>
+                  ))}
+                </ul>
+              </CustomRichText>
+            )}
+          </PriceContainer>
+          <CustomButton onClick={handleClick}>Get started</CustomButton>
+        </Wrapper>
+      </Card>
+      {isModalOpened && <NewFreeUserModal onClose={() => setIsModalOpened(false)} />}
+    </>
   );
 }
 
