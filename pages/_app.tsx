@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         {/* <!-- Google Tag Manager --> */}
-        <script>
+        {/* <script>
           (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
           })(window, document, 'script', 'dataLayer', 'GTM-WNZW6JN');
-        </script>
+        </script> */}
         {/* <!-- End Google Tag Manager --> */}
         {/* <link rel="alternate" type="application/rss+xml" href={EnvVars.URL + 'rss'} title="RSS 2.0" /> */}
         {/* <script
@@ -69,8 +69,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Providers>
         {/* <!-- Google Tag Manager (noscript) --> */}
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNZW6JN"
-        height="0" width="0" style={{"display":"none", "visibility":"hidden"}}></iframe></noscript>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WNZW6JN"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
 
         <Modals />
