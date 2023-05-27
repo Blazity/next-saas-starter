@@ -17,8 +17,27 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
   return (
     <>
       <Head>
-        <title>{EnvVars.SITE_NAME}</title>
-        <meta name="Never lose a customer again by finding out when they list their home for sale" content="Is My Customer Moving." />
+        <title>Is My Customer Moving</title>
+        <meta
+          name="description"
+          content="We help membership-focused home service companies retain customers who are moving to new homes. Get accurate ROI numbers and generate ready-to-buy leads for your business."
+        />
+        <meta name="keywords" content="customer retention, home service companies, moving, real-time data, ROI, ready-to-buy leads" />
+        <meta property="og:title" content="Is My Customer Moving - Retain Your Customers During Relocation" />
+        <meta
+          property="og:description"
+          content="We provide a unique service that helps home service companies retain customers who are moving to new homes. Generate high ROI and ready-to-buy leads for your business."
+        />
+        <meta property="og:image" content="/logo-black.png" />
+        <meta property="og:url" content="https://www.ismycustomermoving.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Is My Customer Moving - Retain Your Customers During Relocation" />
+        <meta
+          name="twitter:description"
+          content="We provide a unique service that helps home service companies retain customers who are moving to new homes. Generate high ROI and ready-to-buy leads for your business."
+        />
+        <meta name="twitter:image" content="/logo-black.png" />
+        {/* Additional meta tags for other marketing tools */}
       </Head>
       <HomepageWrapper>
         <WhiteBackgroundContainer>
