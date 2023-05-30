@@ -171,6 +171,7 @@ const CustomButton = styled(Button)`
 
 const CustomInput = styled(Input)`
   width: 60%;
+  color: rgb(var(--text));
 
   ${media('<=tablet')} {
     width: 100%;

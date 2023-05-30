@@ -91,11 +91,13 @@ export default function PricingTablesSection() {
 
   useEffect(() => {
     if (!isTabletOrGreater) {
+      // Set plansToRender to all pricing plans
       setPlansToRender(pricingPlans);
     } else {
+      // Set plansToRender to a slice of pricing plans based on currentIndex
       setPlansToRender(pricingPlans.slice(currentIndex, currentIndex + 3));
     }
-  }, [currentIndex, isTabletOrGreater, pricingPlans]);
+  }, [isTabletOrGreater, currentIndex]); // Trigger the effect when either isTabletOrGreater or currentIndex changes
 
   const clickLeftArrow = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
