@@ -1,5 +1,3 @@
-## Checkout our new boilerplate for Enterprise projects with Next.js: [next-enterprise](https://github.com/blazity/next-enterprise)
-
 <br/>
 <p align="center">
 
@@ -122,6 +120,10 @@ Big thanks to authors of these libraries:
 - https://github.com/neg4n/next-api-og-image - generating open graph images
 - https://github.com/blazity/nextjs-color-mode - non-flickering dark mode
 - https://github.com/Brew-Brew/css-in-js-media - a convenient way of creating media queries
+
+## Support
+
+If you're looking for help or simply want to share your thoughts about the project, we encourage you to join our Discord community. Here's the link: [https://blazity.com/discord](https://blazity.com/discord). It's a space where we exchange ideas and help one another. Everyone's input is appreciated, and we look forward to welcoming you.
 
 ## ✨ Contributors
 
