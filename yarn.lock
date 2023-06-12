@@ -3353,10 +3353,10 @@
     ws "^7.3.1"
     yup "^0.32.9"
 
-"@tinacms/schema-tools@1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-1.4.2.tgz#505d390e60d5b4770d76e177ba1c27d5fe5820ef"
-  integrity sha512-bvrcBpohgk9C1MlsnwkWv+sr1z742yMO8xFTIRHeByqCciJWfZys2MQp/PnJ1CjphWRkhQb8TCsZsCnOU3NJNg==
+"@tinacms/schema-tools@1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/schema-tools/-/schema-tools-1.4.4.tgz#632d679dc27431777e9dfd8e7b4880edc220ddba"
+  integrity sha512-tk8t6ThUDdnAWU02ibVLIGJ/pm9N6W05LIU5+Bhj5P+Ey6FFkn+cYdTJiHk30LnaYC0WXpla+HmPMcgaHB98pQ==
   dependencies:
     micromatch "4.0.5"
     url-pattern "^1.0.3"
@@ -3367,10 +3367,10 @@
   resolved "https://registry.yarnpkg.com/@tinacms/sharedctx/-/sharedctx-1.0.1.tgz#ccd6ace6c7ede477fc94aa4704faac13e39cff31"
   integrity sha512-DXxTKupAMg+gO6zRJOxKlvaZGpWcyJXi1d+At/Ev5C6/jRN//BqUgVMRC2y5hcHhfWK2bkNQ4ZfVvWWrA3//qw==
 
-"@tinacms/toolkit@1.6.4":
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-1.6.4.tgz#fff4d0389309d358f6dfc66dc8100a59248e7d6f"
-  integrity sha512-GuRcFKyKWHR9t+7ydVqbWr90EL6v9K8WJTq3a+hx5mrMBj/Ku5mIb+gvjYaO+iE0cBfC+Fsib1HMc0IGwXS0Yw==
+"@tinacms/toolkit@1.7.4":
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/@tinacms/toolkit/-/toolkit-1.7.4.tgz#048597de100b6e91dcd57419b9ab6a2f7f254eff"
+  integrity sha512-kxOSV2PfvCtUXdqv61XV+EToTD2Y6ryRq24GjTWISFw76L2AB/8/sgxTKem1IKA5hHfQq+lLrgCVWZUfflCIVQ==
   dependencies:
     "@floating-ui/dom" "^0.1.7"
     "@floating-ui/react-dom" "^0.3.3"
@@ -10857,18 +10857,18 @@ react-redux@^7.2.0:
     prop-types "^15.7.2"
     react-is "^17.0.2"
 
-react-router-dom@6:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.2.1.tgz#32ec81829152fbb8a7b045bf593a22eadf019bec"
-  integrity sha512-I6Zax+/TH/cZMDpj3/4Fl2eaNdcvoxxHoH1tYOREsQ22OKDYofGebrNm6CTPUcvLvZm63NL/vzCYdjf9CUhqmA==
+react-router-dom@6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.3.0.tgz#a0216da813454e521905b5fa55e0e5176123f43d"
+  integrity sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==
   dependencies:
     history "^5.2.0"
-    react-router "6.2.1"
+    react-router "6.3.0"
 
-react-router@6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.2.1.tgz#be2a97a6006ce1d9123c28934e604faef51448a3"
-  integrity sha512-2fG0udBtxou9lXtK97eJeET2ki5//UWfQSl1rlJ7quwe6jrktK9FCCc8dQb5QY6jAv3jua8bBQRhhDOM/kVRsg==
+react-router@6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.3.0.tgz#3970cc64b4cb4eae0c1ea5203a80334fdd175557"
+  integrity sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==
   dependencies:
     history "^5.2.0"
 
@@ -12152,19 +12152,19 @@ through@^2.3.6:
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==
 
-tinacms@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-1.4.6.tgz#327318146f233eebd21c7cc9001fd7fe8fa8475e"
-  integrity sha512-PgCCkHDhmKTtUZEiHO50alPAc5k7/AuyBZDzlmAE64cWJQXlw5+kb/Tni4cvgmn15z/GVwjg7GQQNTwkVRtRKQ==
+tinacms@^1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/tinacms/-/tinacms-1.5.8.tgz#c629a2cf2df5220f937d8ac204f4c9b1aa4664ea"
+  integrity sha512-wSQGN6qpbR+SNDeE9R9adDUBLiuLQ6ozkBIwYaQOc0QIw1BAmfMx73X2clVN8/BapntVQSyEsdkqkApq7z4ivw==
   dependencies:
     "@graphql-inspector/core" "^4.0.0"
     "@graphql-tools/relay-operation-optimizer" "^6.4.1"
     "@headlessui/react" "^1.5.0"
     "@heroicons/react" "^1.0.4"
     "@react-hook/window-size" "^3.0.7"
-    "@tinacms/schema-tools" "1.4.2"
+    "@tinacms/schema-tools" "1.4.4"
     "@tinacms/sharedctx" "1.0.1"
-    "@tinacms/toolkit" "1.6.4"
+    "@tinacms/toolkit" "1.7.4"
     crypto-js "^4.0.0"
     encoding "0.1.13"
     fetch-ponyfill "^7.1.0"
@@ -12174,7 +12174,7 @@ tinacms@^1.4.6:
     lodash.set "^4.3.2"
     prism-react-renderer "^1.3.5"
     react-icons "^4.3.1"
-    react-router-dom "6"
+    react-router-dom "6.3.0"
     yup "^0.32.0"
     zod "^3.14.3"
 
