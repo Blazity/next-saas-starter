@@ -31,11 +31,16 @@
 <p align="center"><b>Created with :heart: at Blazity </b></p>
 <p align="center"><a href="https://blazity.com/">Blazity</a> is a group of Next.js/Jamstack/Headless experts. Contact us at <a href="mailto:contact@blazity.com">contact@blazity.com</a> if you’d like to talk about your project or just to have a chat with us</p>
 
+<a href="https://discord.gg/fyWtyNKmfX" style="width: 100%; display: flex; justify-content: center;">
+  <img src="https://discordapp.com/api/guilds/1111676875782234175/widget.png?style=banner2" alt="Blazity Discord Banner"/>
+</a>
+<br />
+
 ## Table Of Contents
 
 - [Features](#-features)
-- [Getting Started](#-getting-started)  
-- [One click deploy](#one-click-deploy)  
+- [Getting Started](#-getting-started)
+- [One click deploy](#one-click-deploy)
 - [Built With](#-built-with)
 - [Contributing](#-contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
