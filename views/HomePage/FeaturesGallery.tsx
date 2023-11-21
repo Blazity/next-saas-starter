@@ -10,28 +10,28 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
+    title: 'Scan plus de 15 sources et 30 types de données sensibles',
     description:
       '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-3.png',
-    baseColor: '249,82,120',
-    secondColor: '221,9,57',
+    imageUrl: '/nexxo/data-types.png',
+    baseColor: '92,0,210',
+    secondColor: '92,0,210',
   },
   {
-    title: 'Another amazing feature',
+    title: 'Identifie rapidement les niveaux de risque et les vulnérabilités',
     description:
       '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-4.png',
-    baseColor: '57,148,224',
-    secondColor: '99,172,232',
+    imageUrl: '/nexxo/risk-levels.png',
+    baseColor: '162,0,224',
+    secondColor: '162,0,224',
   },
   {
-    title: 'And yet... another truly fascinating feature',
+    title: "Permet l'archivage automatique des fichiers sensibles",
     description:
       '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-5.png',
-    baseColor: '88,193,132',
-    secondColor: '124,207,158',
+    imageUrl: '/nexxo/detailed-results.png',
+    baseColor: '205,0,234',
+    secondColor: '205,0,234',
   },
 ];
 
@@ -74,10 +74,10 @@ export default function FeaturesGallery() {
   }
 
   return (
-    <FeaturesGalleryWrapper>
+    <FeaturesGalleryWrapper id="features">
       <Content>
-        <OverTitle>features</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        <OverTitle>Fonctionnalités</OverTitle>
+        <SectionTitle>Conçus pour répondre aux défis des PMEs</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

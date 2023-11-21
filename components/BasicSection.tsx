@@ -11,13 +11,14 @@ export interface BasicSectionProps {
   title: string;
   overTitle: string;
   reversed?: boolean;
+  id?: string;
 }
 
-export default function BasicSection({ imageUrl, title, overTitle, reversed, children }: PropsWithChildren<BasicSectionProps>) {
+export default function BasicSection({ imageUrl, title, overTitle, id, reversed, children }: PropsWithChildren<BasicSectionProps>) {
   return (
-    <BasicSectionWrapper reversed={reversed}>
+    <BasicSectionWrapper reversed={reversed} id={id}>
       <ImageContainer>
-        <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" />
+        <NextImage src={imageUrl} alt={title} layout="fill" />
       </ImageContainer>
       <ContentContainer>
         <CustomOverTitle>{overTitle}</CustomOverTitle>

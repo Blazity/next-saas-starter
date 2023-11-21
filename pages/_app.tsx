@@ -6,7 +6,6 @@ import 'swiper/css/autoplay';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { ColorModeScript } from 'nextjs-color-mode';
 import React, { PropsWithChildren } from 'react';
 import { TinaEditProvider } from 'tinacms/dist/edit-state';
 
@@ -20,10 +19,9 @@ import { NewsletterModalContextProvider, useNewsletterModalContext } from 'conte
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  { title: 'Awesome SaaS Features', href: '/features' },
-  { title: 'Pricing', href: '/pricing' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  { title: 'Sortify', href: '#hero' },
+  { title: 'Fonctionnalités', href: '#features' },
+  { title: 'Contact', href: '#contact' },
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
@@ -45,7 +43,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         /> */}
         {/* <script async src="https://www.google-analytics.com/analytics.js"></script> */}
       </Head>
-      <ColorModeScript />
       <GlobalStyle />
 
       <Providers>

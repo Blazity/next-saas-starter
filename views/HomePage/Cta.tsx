@@ -1,8 +1,6 @@
-import NextLink from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/Button';
-import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
@@ -13,24 +11,13 @@ export default function Cta() {
     <CtaWrapper>
       <Container>
         <Stack>
-          <OverTitle>Lorem ipsum dolor sit amet</OverTitle>
-          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
-            culpa.
-          </Description>
-          <ButtonGroup>
-            <NextLink href="#early-access" passHref>
-              <Button>
-                Subscribe to the newsletter <span>&rarr;</span>
-              </Button>
-            </NextLink>
-            <NextLink href="#whitepaper" passHref>
-              <OutlinedButton transparent>
-                Features <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
-          </ButtonGroup>
+          <OverTitle>Témoignage</OverTitle>
+          <SectionTitle>
+            <i>
+              La solution Sortify de Nexxo nous a permis de mieux gérer nos données personelles en quelques jours au lieu de quelques mois
+            </i>
+          </SectionTitle>
+          <Description>Mathieu Raymond - YUL</Description>
         </Stack>
       </Container>
     </CtaWrapper>

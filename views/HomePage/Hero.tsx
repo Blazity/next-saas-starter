@@ -1,38 +1,32 @@
+import NextImage from 'next/image';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
-import HeroIllustration from 'components/HeroIllustation';
 import OverTitle from 'components/OverTitle';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 
 export default function Hero() {
-  const { setIsModalOpened } = useNewsletterModalContext();
-
   return (
-    <HeroWrapper>
+    <HeroWrapper id="hero">
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <CustomOverTitle>Conformité 360</CustomOverTitle>
+        <Heading>Améliorez la compréhension des vos données sensible</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+          Sortify facilite la conformité avec les régulation en matière de vie privée, tel le PL 25, le RGPD et la CCPA grâce au scan des
+          documents de votre organisation. Notre solution vous permet d&apos;atteindre la conformité plus rapidement et de la maintenir.
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
-          </Button>
-          <NextLink href="#whitepaper" passHref>
-            <Button transparent>
-              Features <span>&rarr;</span>
+          <NextLink href="#why" passHref>
+            <Button>
+              Voir plus <span>&rarr;</span>
             </Button>
           </NextLink>
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
-        <HeroIllustration />
+        <NextImage src={'/nexxo/sortify-dashboard-en.png'} alt={'Nexxo Sortify'} layout="responsive" width="100" height="50" />
       </ImageContainer>
     </HeroWrapper>
   );
@@ -63,21 +57,26 @@ const CustomButtonGroup = styled(ButtonGroup)`
 `;
 
 const ImageContainer = styled.div`
-  display: flex;
   flex: 1;
-  justify-content: flex-end;
-  align-items: flex-start;
 
-  svg {
-    max-width: 45rem;
+  position: relative;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: calc((9 / 16) * 30%);
+  }
+
+  & > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   ${media('<=desktop')} {
-    margin-top: 2rem;
-    justify-content: center;
-    svg {
-      max-width: 80%;
-    }
+    width: 100%;
   }
 `;
 

@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondBackground: 255,255,255;
   --text: 10,18,30;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255; 
+  --primary: 162,0,224; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 255,255,255;
@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondBackground: 45,55,72;
   --text: 237,237,238;
   --textSecondary: 255,255,255;
-  --primary: 22,115,255; 
+  --primary: 162,0,224; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
