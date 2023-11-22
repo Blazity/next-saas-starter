@@ -7,7 +7,6 @@ import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Cta';
 import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import Hero from 'views/HomePage/Hero';
-import Partners from 'views/HomePage/Partners';
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -25,26 +24,27 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <BasicSection imageUrl="/nexxo/compliance.svg" title="Accélère la conformité de votre organisation" overTitle="Simple" id="why">
             <p>
               La Loi 25 du Québec apporte des défis de conformité uniques. Sortify est spécialement construit pour s&apos;aligner avec ces
-              exigences, fournissant aux PME un chemin rapide vers la conformité.
+              exigences, fournissant aux PME un chemin rapide vers la conformité en leur permettant de facilement repérer les données
+              personelles qu&apos;elles possède et de prendre action.
             </p>
           </BasicSection>
-          <BasicSection imageUrl="/nexxo/connected.svg" title="S'intègre à Microsoft 365 et Google Workspace" overTitle="Intégré" reversed>
+          <BasicSection imageUrl="/nexxo/connected.svg" title="S'intègre à Microsoft 365" overTitle="Intégré" reversed>
             <p>
-              Conçu en pensant aux PME, Sortify est polyvalent, s&apos;intégration nativement aux plateformes Microsoft 365 et Google
-              Workspace, vous permettant d&apos;avoir une compréhension fine des données personelles de votre organisation.
+              Conçu en pensant aux gestionnaires d&apos;entreprise, Sortify est polyvalent en s&apos;intégrant nativement aux plateformes
+              Microsoft 365, vous permettant d&apos;obtenir automatiquement une compréhension fine des données personelles de votre
+              organisation.
             </p>
           </BasicSection>
           <BasicSection imageUrl="/nexxo/chronometer.svg" title="Résultats en quelques minutes" overTitle="Rapide">
             <p>
-              Sortify s&apos;installe en quelques minutes et vous permet de rapidement comprendre et prendre action sur les données
-              personnelles de votre organisation.
+              Sortify s&apos;installe en quelques minutes et vous permet de rapidement d&apos;obtenir un inventaire de données personnelles
+              en un délais considérablement réduit
             </p>
           </BasicSection>
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>
           <Cta />
           <FeaturesGallery />
-          <Partners />
         </DarkerBackgroundContainer>
       </HomepageWrapper>
     </>

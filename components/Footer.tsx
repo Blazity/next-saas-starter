@@ -28,7 +28,12 @@ export default function Footer() {
               </NextLink>
             </ListItemWrapper>
           </ShareBar>
-          <Copyright>&copy; Copyright 2023 Nexxo</Copyright>
+          <Copyright>
+            &copy; Copyright 2023{' '}
+            <NextLink href="https://nexxo.tech" passHref>
+              Nexxo.tech
+            </NextLink>
+          </Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
@@ -115,6 +120,9 @@ const ShareBar = styled.div`
 const Copyright = styled.p`
   font-size: 1.5rem;
   margin-top: 0.5rem;
+  a {
+    color: rgba(var(--textSecondary), 0.75);
+  }
 `;
 
 const BottomBar = styled.div`

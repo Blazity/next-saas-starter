@@ -12,10 +12,11 @@ export default function Hero() {
     <HeroWrapper id="hero">
       <Contents>
         <CustomOverTitle>Conformité 360</CustomOverTitle>
-        <Heading>Améliorez la compréhension des vos données sensible</Heading>
+        <Heading>Facilitez la gestion des vos données sensible</Heading>
         <Description>
-          Sortify facilite la conformité avec les régulation en matière de vie privée, tel le PL 25, le RGPD et la CCPA grâce au scan des
-          documents de votre organisation. Notre solution vous permet d&apos;atteindre la conformité plus rapidement et de la maintenir.
+          Sortify accélère la conformité avec les régulation en matière de vie privée, tel la loi 25 du Québec, le RGPD et la CCPA grâce au
+          scan des documents de votre organisation. Notre solution vous permet d&apos;atteindre et de maintenir la conformité plus
+          rapidement.
         </Description>
         <CustomButtonGroup>
           <NextLink href="#why" passHref>

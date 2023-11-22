@@ -10,28 +10,36 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Scan plus de 15 sources et 30 types de données sensibles',
+    title: 'Identifie plus de 30 types de données sensibles',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+      "<p>Sortify vous permet de rapidement inventariser vos données personelles, incluant les numéros d'identification (NAS, NAM, permis de conduire), les informations financières (Compte bancaire, cartes de crédit) ainsi que les addresses et coordonnées personelles</p>",
     imageUrl: '/nexxo/data-types.png',
     baseColor: '92,0,210',
     secondColor: '92,0,210',
   },
   {
-    title: 'Identifie rapidement les niveaux de risque et les vulnérabilités',
+    title: 'Balaye 5 sources de documents',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/nexxo/risk-levels.png',
+      "<p>Sortify s'intègre directement à M365 afin de balayer automatiquement les dossier Sharepoint, OneDrive, les courriels et pièces jointes ainsi que les conversation Teams.</p>",
+    imageUrl: '/nexxo/scan-types.png',
     baseColor: '162,0,224',
     secondColor: '162,0,224',
   },
   {
-    title: "Permet l'archivage automatique des fichiers sensibles",
+    title: 'Identifie rapidement les niveaux de risque et les vulnérabilités',
     description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/nexxo/detailed-results.png',
+      '<p>Sortify permet la classification et la priorisation automatique des actions de rémédiation selon la sensibilité des données.</p>',
+    imageUrl: '/nexxo/risk-levels.png',
     baseColor: '205,0,234',
     secondColor: '205,0,234',
+  },
+  {
+    title: "Permet l'archivage automatique des fichiers sensibles",
+    description:
+      "<p>Sortify permet, grâce à la mise en place de politiques organisationnelles, de signaler, d'archiver ou de supprimer automatiquement les documents contenant des informations sensibles.</p>",
+    imageUrl: '/nexxo/detailed-results.png',
+    baseColor: '223,85,242',
+    secondColor: '223,85,242',
   },
 ];
 
@@ -77,7 +85,7 @@ export default function FeaturesGallery() {
     <FeaturesGalleryWrapper id="features">
       <Content>
         <OverTitle>Fonctionnalités</OverTitle>
-        <SectionTitle>Conçus pour répondre aux défis des PMEs</SectionTitle>
+        <SectionTitle>Conçus pour répondre aux défis des PMEs d&apos;aujourd&apos;hui</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

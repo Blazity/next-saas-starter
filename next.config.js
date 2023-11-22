@@ -5,10 +5,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  poweredByHeader: false,
+  output: 'standalone',
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
-    domains: ['github.blog'],
+    domains: ['sortifyapp.tech'],
     deviceSizes: [320, 640, 1080, 1200],
     imageSizes: [64, 128],
   },
