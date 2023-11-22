@@ -5070,7 +5070,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17.0.20":
+"@types/react@npm:*":
   version: 17.0.20
   resolution: "@types/react@npm:17.0.20"
   dependencies:
@@ -5089,6 +5089,17 @@ __metadata:
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 20f50b187fedfb2b71f698fe58699db06c15bc10326772e5bfcd1f8dc6df2d8920eb1d4cc6cf007bf390b65b5d0f76daa532e618c8afa6ac5394adb8c5005218
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.2.38":
+  version: 18.2.38
+  resolution: "@types/react@npm:18.2.38"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    "@types/scheduler": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 9f9b9925c979e848d572dce6fff34951708127ba6b1fd4306c93fbcab74f5c6cff2b2e47d4222339eeb6c19d264e93450cb2ad6b255c73c536d0a1e2093cc98a
   languageName: node
   linkType: hard
 
@@ -13781,7 +13792,7 @@ __metadata:
     "@sendgrid/mail": "npm:^7.7.0"
     "@svgr/webpack": "npm:^8.0.0"
     "@tinacms/cli": "npm:^0.60.0"
-    "@types/react": "npm:^17.0.20"
+    "@types/react": "npm:^18.2.38"
     "@types/react-mailchimp-subscribe": "npm:^2.1.1"
     "@types/styled-components": "npm:^5.1.25"
     "@types/swiper": "npm:^6.0.0"
