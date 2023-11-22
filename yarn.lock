@@ -357,7 +357,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-parser@npm:^7.11.0, @babel/eslint-parser@npm:^7.16.3":
+"@babel/eslint-parser@npm:^7.16.3":
   version: 7.22.9
   resolution: "@babel/eslint-parser@npm:7.22.9"
   dependencies:
@@ -368,6 +368,20 @@ __metadata:
     "@babel/core": ">=7.11.0"
     eslint: ^7.5.0 || ^8.0.0
   checksum: 3660ce8c7e56a2d342a491ea549bf61d13df9bbd60e46d58ea528ab1b357ec5e08c646575d98c08566daea45068d9d84a9b3b0868af98707b98c03709ddd5481
+  languageName: node
+  linkType: hard
+
+"@babel/eslint-parser@npm:^7.21.3":
+  version: 7.23.3
+  resolution: "@babel/eslint-parser@npm:7.23.3"
+  dependencies:
+    "@nicolo-ribaudo/eslint-scope-5-internals": "npm:5.1.1-v1"
+    eslint-visitor-keys: "npm:^2.1.0"
+    semver: "npm:^6.3.1"
+  peerDependencies:
+    "@babel/core": ^7.11.0
+    eslint: ^7.5.0 || ^8.0.0
+  checksum: bc487f67aac64f1f8b351b8ec5e83bd1de5770e2e39c648d4df486e4079110f8594ef5b60b6e8379a9bb944dbbe5d96295f04fa47ef17901186568875b804b99
   languageName: node
   linkType: hard
 
@@ -5092,14 +5106,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.38":
-  version: 18.2.38
-  resolution: "@types/react@npm:18.2.38"
+"@types/react@npm:^17.0.20":
+  version: 17.0.71
+  resolution: "@types/react@npm:17.0.71"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 9f9b9925c979e848d572dce6fff34951708127ba6b1fd4306c93fbcab74f5c6cff2b2e47d4222339eeb6c19d264e93450cb2ad6b255c73c536d0a1e2093cc98a
+  checksum: 1ef5be0260c455a878db2beb40d44333f731064462edd4ef356b40e50e40afba89e700b66f336d2a6640215c9144c5634ac76ef04046f2b55d0af1655428d903
   languageName: node
   linkType: hard
 
@@ -13785,14 +13799,14 @@ __metadata:
   resolution: "next-saas-starter@workspace:."
   dependencies:
     "@accessible/drawer": "npm:^3.0.2"
-    "@babel/eslint-parser": "npm:^7.11.0"
+    "@babel/eslint-parser": "npm:^7.21.3"
     "@fec/remark-a11y-emoji": "npm:^3.1.0"
     "@n8tb1t/use-scroll-position": "npm:^2.0.3"
     "@next/bundle-analyzer": "npm:^13.3.1"
     "@sendgrid/mail": "npm:^7.7.0"
     "@svgr/webpack": "npm:^8.0.0"
     "@tinacms/cli": "npm:^0.60.0"
-    "@types/react": "npm:^18.2.38"
+    "@types/react": "npm:^17.0.20"
     "@types/react-mailchimp-subscribe": "npm:^2.1.1"
     "@types/styled-components": "npm:^5.1.25"
     "@types/swiper": "npm:^6.0.0"
