@@ -3,36 +3,36 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
-import HeroIllustration from 'components/HeroIllustation';
+import LandscapingIllustration from 'components/LandscapingIllustration'; // Assuming you have a relevant illustration
 import OverTitle from 'components/OverTitle';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 
 export default function Hero() {
-  const { setIsModalOpened } = useNewsletterModalContext();
 
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <CustomOverTitle>Premium Landscaping Services</CustomOverTitle>
+        <Heading>Transform Your Outdoors with Purplewood Landscaping</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+          Elevate your home with our full-range landscaping services. From custom concrete work to pristine planting, 
+          we create the outdoor oasis you've always dreamed of. Expert craftsmanship and sustainable practices are at the heart of what we do.
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
-          </Button>
-          <NextLink href="#whitepaper" passHref>
+          <NextLink href="#request-quote" passHref>
+            <Button>
+              Schedule Your Landscape Transformation <span>&rarr;</span>
+            </Button>
+          </NextLink>
+          <NextLink href="#services" passHref>
             <Button transparent>
-              Features <span>&rarr;</span>
+              Our Services <span>&rarr;</span>
             </Button>
           </NextLink>
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
-        <HeroIllustration />
+        <LandscapingIllustration /> {/* This should be an SVG illustration relevant to landscaping */}
       </ImageContainer>
     </HeroWrapper>
   );
