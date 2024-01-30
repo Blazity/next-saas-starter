@@ -6,7 +6,7 @@
   </a>
    <a href="https://github.com/Blazity/next-saas-starter">
     <img src="https://i.imgur.com/CxkjHhi.png" alt="Logo" width="49%">
-  </a>
+  </a> 
 
   <h3 align="center">✨ Free Next.js marketing website template for SaaS startups ✨</h3>
 
