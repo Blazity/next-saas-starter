@@ -31,7 +31,7 @@
     "reading-time": "^1.5.0",
     "schema-dts": "^1.1.2",
     "styled-components": "^5.3.5",
-    "swiper": "9.3.2",
+    "swiper": "11.0.7",
     "tinacms": "^1.5.8",
     "url-loader": "^4.1.1",
     "use-clipboard-copy": "^0.2.0",
