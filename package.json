@@ -14,7 +14,7 @@
     "@sendgrid/mail": "^7.7.0",
     "@svgr/webpack": "^8.0.0",
     "css-in-js-media": "^2.0.1",
-    "date-fns": "^2.29.3",
+    "date-fns": "^3.0.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "12.1.0",
