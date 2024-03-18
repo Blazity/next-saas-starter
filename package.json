@@ -19,7 +19,7 @@
     "lodash": "^4.17.21",
     "next": "12.1.0",
     "nextjs-color-mode": "^1.0.5",
-    "polished": "^4.1.3",
+    "polished": "^4.3.1",
     "prism-react-renderer": "^1.3.5",
     "react": "17.0.2",
     "react-animate-height": "^2.0.23",
