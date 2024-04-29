@@ -40,7 +40,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
     "@fec/remark-a11y-emoji": "^3.1.0",
-    "@next/bundle-analyzer": "^13.3.1",
+    "@next/bundle-analyzer": "^14.2.3",
     "@tinacms/cli": "^0.60.0",
     "@types/react": "^17.0.20",
     "@types/react-mailchimp-subscribe": "^2.1.1",
