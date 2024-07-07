@@ -10,29 +10,41 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-3.png',
-    baseColor: '249,82,120',
-    secondColor: '221,9,57',
+    title: 'TertuliaTalks Nedir?',
+
+    imageUrl: '/tt_information_1.jpeg',
+    baseColor: '255,165,0',
+    secondColor: '255,140,0',
   },
   {
-    title: 'Another amazing feature',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-4.png',
-    baseColor: '57,148,224',
-    secondColor: '99,172,232',
+    title: 'TertuliaTalks nasıl çalışır?',
+
+    imageUrl: '/tt_information_2.jpeg',
+    baseColor: '255,165,0',
+    secondColor: '255,140,0',
   },
   {
-    title: 'And yet... another truly fascinating feature',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
-    imageUrl: '/demo-illustration-5.png',
-    baseColor: '88,193,132',
-    secondColor: '124,207,158',
+    title: 'TertuliaTalks kimler faydalanabilir?',
+
+    imageUrl: '/tt_information_3.jpeg',
+    baseColor: '255,165,0',
+    secondColor: '255,140,0',
   },
+  {
+    title: 'TertuliaTalks oturumlarında hangi konular ele alınıyor?',
+
+    imageUrl: '/tt_information_4.jpeg',
+    baseColor: '255,165,0',
+    secondColor: '255,140,0',
+  },
+  {
+    title: 'TertuliaTalks ile dil becerilerimi nasıl geliştirebilirim?',
+
+    imageUrl: '/tt_information_5.jpeg',
+    baseColor: '255,165,0',
+    secondColor: '255,140,0',
+  },
+  
 ];
 
 export default function FeaturesGallery() {
@@ -61,9 +73,11 @@ export default function FeaturesGallery() {
           <h4>{singleTab.title}</h4>
         </TabTitleContainer>
         <Collapse isOpen={isActive} duration={300}>
+        {/*}
           <TabContent>
             <div dangerouslySetInnerHTML={{ __html: singleTab.description }}></div>
           </TabContent>
+          */}
         </Collapse>
       </Tab>
     );
@@ -98,6 +112,7 @@ const GalleryWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 4rem;
+  width: 130rem;
 
   ${media('<=desktop')} {
     flex-direction: column;
@@ -156,7 +171,7 @@ const ImageContainer = styled.div<{ isActive: boolean }>`
 const Tab = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.5rem;
+  padding: 1rem 0.5rem;
   background: rgb(var(--cardBackground));
   box-shadow: var(--shadow-md);
   opacity: ${(p) => (p.isActive ? 1 : 0.6)};
