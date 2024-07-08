@@ -51,28 +51,34 @@ export default function FormSection() {
     <Wrapper>
       <Form onSubmit={handleSubmit(onSubmit)}>
         {hasErrored && <ErrorMessage>Couldn&apos;t send email. Please try again.</ErrorMessage>}
+
         <InputGroup>
           <InputStack>
-            {errors.name && <ErrorMessage>Name is required</ErrorMessage>}
-            <Input placeholder="Your Name" id="name" disabled={isDisabled} {...register('name', { required: true })} />
+            {errors.name && <ErrorMessage>Adınızı giriniz</ErrorMessage>}
+            <Input placeholder="Adınız" id="name" disabled={isDisabled} {...register('name', { required: true })} />
           </InputStack>
           <InputStack>
-            {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
-            <Input placeholder="Your Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            {errors.email && <ErrorMessage>Email adresinizi giriniz</ErrorMessage>}
+            <Input placeholder="Email adresiniz" id="email" disabled={isDisabled} {...register('email', { required: true })} />
           </InputStack>
         </InputGroup>
+          <InputStack>
+            {errors.email && <ErrorMessage>Bir konu giriniz</ErrorMessage>}
+            <Input placeholder="Konu" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+          </InputStack>
+
         <InputStack>
-          {errors.description && <ErrorMessage>Description is required</ErrorMessage>}
+          {errors.description && <ErrorMessage>Mesaj gereklidir</ErrorMessage>}
           <Textarea
             as="textarea"
-            placeholder="Enter Your Message..."
+            placeholder="Mesajınızı giriniz"
             id="description"
             disabled={isDisabled}
             {...register('description', { required: true })}
           />
         </InputStack>
         <Button as="button" type="submit" disabled={isSubmitDisabled}>
-          Send Message
+          Mesajı gönder
         </Button>
       </Form>
     </Wrapper>

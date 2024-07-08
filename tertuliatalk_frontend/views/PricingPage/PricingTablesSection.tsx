@@ -7,37 +7,49 @@ import SectionTitle from 'components/SectionTitle';
 export default function PricingTablesSection() {
   return (
     <Wrapper>
-      <SectionTitle>Flexible pricing for agile teams</SectionTitle>
+      <SectionTitle>Esnek ödeme</SectionTitle>
       <AutofitGrid>
-        <PricingCard
-          title="free"
-          description="Give us a try for free"
-          benefits={['1 seat', '1 active project', 'Ulimited viewers', '10 blocks']}
-        >
-          $0<span>/month</span>
-        </PricingCard>
-        <PricingCard
-          title="Starter"
-          description="Best for individual desginers"
-          benefits={['1 seat', '3 active project', 'Ulimited viewers', '100 blocks', 'CSV Downloader', 'Password protection']}
+      <PricingCard
+          title="Deneme"
+          description="TertuliaTalks'un sunduğu imkanları tek bir oturum ile deneyin."
+          benefits={[
+            'null', 
+          ]}
           isOutlined
         >
-          $29<span>/month</span>
+          200TL<span>/oturum</span>
         </PricingCard>
+
         <PricingCard
-          title="Premium"
-          description="Get your team together"
+          title="Temel Plan"
+          description="Her hafta bir oturum ile 
+          dil becerilerinizi düzenli olarak 
+          geliştirin."
           benefits={[
-            '10 seat',
-            '10 active project',
-            'Ulimited viewers',
-            'Unlimited blocks',
-            'CSV Downloader',
-            'Password protection',
-            'Customization',
+            'null', 
+          ]}        >
+          680TL<span>/oturum</span>
+        </PricingCard>
+
+        <PricingCard
+          title="Standart Plan"
+          description="Daha yoğun bir programla her hafta iki oturum yaparak hızla ilerleyin."
+          benefits={[
+            'null', 
           ]}
         >
-          $79<span>/month</span>
+          1280TL<span>/oturum</span>
+        </PricingCard>
+
+        <PricingCard
+          title="Bireysel oturumlar"
+          description="Kişiselleştirilmiş derslerle ihtiyaçlarınıza özel çalışın.
+Özel Programlar: Talep ve oturum sıklığına göre fiyatlandırılır - Kişisel veya Sektörel ihtiyaçlarınıza özel programlar oluşturun."
+          benefits={[
+            'null', 
+          ]}
+        >
+          420TL<span>/oturum</span>
         </PricingCard>
       </AutofitGrid>
     </Wrapper>

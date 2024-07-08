@@ -20,10 +20,14 @@ import { NewsletterModalContextProvider, useNewsletterModalContext } from 'conte
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  { title: 'Awesome SaaS Features', href: '/features' },
-  { title: 'Pricing', href: '/pricing' },
-  { title: 'Contact', href: '/contact' },
+  { title: 'Hizmet bilgilendirme', href: '/service-information' },
+  { title: 'Haftalık Oturum Programı', href: '/weekly-session-schedule' },
+
+  { title: 'Paketler', href: '/packages' },
+  { title: 'İletişim', href: '/contact' },
   { title: 'Sign up', href: '/sign-up', outlined: true },
+  { title: 'Sign up', href: '/sign-up', outlined: true },
+
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
@@ -74,6 +78,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
 
 function Providers<T>({ children }: PropsWithChildren<T>) {
   return (

@@ -111,6 +111,8 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
 const CustomButton = styled(Button)`
   padding: 0.75rem 1.5rem;
   line-height: 1.8;
+  margin-right: 10px;
+
 `;
 
 const NavItemList = styled.div`

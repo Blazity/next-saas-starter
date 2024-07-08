@@ -10,6 +10,7 @@ import Container from './Container';
 import Input from './Input';
 import MailSentState from './MailSentState';
 import Overlay from './Overlay';
+import NextLink from 'next/link';
 
 export interface NewsletterModalProps {
   onClose: () => void;
@@ -28,6 +29,10 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
     }
   }
 
+  function handleLinkClick() {
+    onClose(); // Close the modal
+  }
+
   return (
     <MailchimpSubscribe
       url={EnvVars.MAILCHIMP_SUBSCRIBE_URL}
@@ -43,7 +48,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
                   <>
-                    <Title>Are you ready to enroll to the best newsletter ever?</Title>
+                    <Title>Sign in </Title>
                     <Row>
                       <CustomInput
                         value={email}
@@ -51,9 +56,27 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                         placeholder="Enter your email..."
                         required
                       />
+                    </Row>
+                    <Row>
+                      <CustomInput
+                        value={email}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                        placeholder="Enter your email..."
+                        required
+                      />
+                    </Row>
+                    <Row>
                       <CustomButton as="button" type="submit" disabled={hasSignedUp}>
                         Submit
                       </CustomButton>
+                    </Row>
+                    <Row>
+                      <a onClick={handleLinkClick}>
+                        You can Sign up from{' '}
+                        <NextLink href="/signup">
+                          <a>here.</a>
+                        </NextLink>
+                      </a>
                     </Row>
                     {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message as string }} />}
                   </>

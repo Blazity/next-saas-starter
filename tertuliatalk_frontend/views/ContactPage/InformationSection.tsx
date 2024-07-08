@@ -3,9 +3,14 @@ import styled from 'styled-components';
 export default function InformationSection() {
   return (
     <Wrapper>
-      <h3>Contact Info</h3>
+      <h3>Bize Ulaşın</h3>
       <p>
-        <span>Email:</span> support@myawesomesaas.com
+        <span>Email:</span> tertuliatalks@gmail.com
+      </p>
+
+      <h3>Sosyal medya </h3>
+      <p>
+        <span>null:</span> null
       </p>
     </Wrapper>
   );
