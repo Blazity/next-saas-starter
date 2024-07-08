@@ -18,18 +18,30 @@ export interface NewsletterModalProps {
 
 export default function NewsletterModal({ onClose }: NewsletterModalProps) {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEscClose({ onClose });
 
   function onSubmit(event: React.FormEvent<HTMLFormElement>, enrollNewsletter: (props: DefaultFormFields) => void) {
     event.preventDefault();
-    console.log({ email });
+    
     if (email) {
       enrollNewsletter({ EMAIL: email });
     }
   }
 
+  function handleButtonClick(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+
+    console.log(`Email: ${email}, Password: ${password}`);
+    const form = event.currentTarget.closest('form');
+    if (form) {
+      form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+    }
+  }
+
   function handleLinkClick() {
+    
     onClose(); // Close the modal
   }
 
@@ -48,25 +60,26 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
                   <>
-                    <Title>Sign in </Title>
+                    <Title>Sign in</Title>
                     <Row>
                       <CustomInput
                         value={email}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                        placeholder="Enter your email..."
+                        placeholder="Email adresinizi giriniz..."
                         required
                       />
                     </Row>
                     <Row>
                       <CustomInput
-                        value={email}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                        placeholder="Enter your email..."
+                        type="password"
+                        value={password}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                        placeholder="Şifrenizi giriniz..."
                         required
                       />
                     </Row>
                     <Row>
-                      <CustomButton as="button" type="submit" disabled={hasSignedUp}>
+                      <CustomButton as="button" type="submit" disabled={hasSignedUp} onClick={handleButtonClick}>
                         Submit
                       </CustomButton>
                     </Row>

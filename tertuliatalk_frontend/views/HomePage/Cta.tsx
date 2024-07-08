@@ -13,6 +13,7 @@ export default function Cta() {
 <CtaWrapper>
       <Container>
         <Stack>
+          
           <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
 
           <ButtonGroup>

@@ -1,43 +1,49 @@
 import styled from 'styled-components';
-import Accordion from 'components/Accordion';
-import SectionTitle from 'components/SectionTitle';
 import React, { useState } from 'react';
-import MailchimpSubscribe, { DefaultFormFields } from 'react-mailchimp-subscribe';
-import { EnvVars } from 'env';
-import useEscClose from 'hooks/useEscKey';
 import { media } from 'utils/media';
 import Button from 'components/Button';
-import CloseIcon from 'components/CloseIcon';
 import Container from 'components/Container';
 import Input from 'components/Input';
-import MailSentState from 'components/MailSentState';
-import Overlay from 'components/Overlay';
-import NextLink from 'next/link';
 
-export default function SignpSection() {
+export default function SignupSection() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    console.log(`Email: ${email}\nPassword: ${password}`);
+  };
+
   return (
-        <Container>
-            <Card>
-                    <Row>
-                    <CustomInput
-                        placeholder="Enter your email..."
-                        required
-                    />
-                    </Row>
-                    <Row>
-                    <CustomInput
-                        placeholder="Enter your email..."
-                        required
-                    />
-                    </Row>
-                    <Row>
-                    <CustomButton as="button" type="submit" >
-                        Submit
-                    </CustomButton>
-                    </Row>
-            </Card>
-        </Container>
-
+    <Container>
+      <Card>
+        <Row>
+          <a>Google Icon (google ile kayıt ol)</a>
+        </Row>
+        <Row>
+          <CustomInput
+            value={email}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            placeholder="Email adresinizi giriniz..."
+            required
+          />
+        </Row>
+        <Row>
+          <CustomInput
+            type="password"
+            value={password}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+            placeholder="Şifrenizi giriniz..."
+            required
+          />
+        </Row>
+        <Row>
+          <CustomButton as="button" type="submit" onClick={handleButtonClick}>
+            Submit
+          </CustomButton>
+        </Row>
+      </Card>
+    </Container>
   );
 }
 
@@ -56,37 +62,6 @@ const Card = styled.form`
   ${media('<=tablet')} {
     padding: 7.5rem 2.5rem;
   }
-`;
-
-const CloseIconContainer = styled.div`
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-
-  svg {
-    cursor: pointer;
-    width: 2rem;
-  }
-`;
-
-const Title = styled.div`
-  font-size: 3.2rem;
-  font-weight: bold;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  text-align: center;
-  color: rgb(var(--text));
-
-  ${media('<=tablet')} {
-    font-size: 2.6rem;
-  }
-`;
-
-const ErrorMessage = styled.p`
-  color: rgb(var(--errorColor));
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  text-align: center;
 `;
 
 const Row = styled.div`

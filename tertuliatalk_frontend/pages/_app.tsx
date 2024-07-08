@@ -25,8 +25,9 @@ const navItems: NavItems = [
 
   { title: 'Paketler', href: '/packages' },
   { title: 'İletişim', href: '/contact' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  
+  { title: 'Kayıt ol', href: '/signup' },
+  { title: 'Sign up', href: '/', outlined: true},
 
 ];
 

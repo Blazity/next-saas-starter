@@ -1,79 +1,44 @@
 import styled from 'styled-components';
-import AutofitGrid from 'components/AutofitGrid';
-import BasicCard from 'components/BasicCard';
 import Page from 'components/Page';
-import SectionTitle from 'components/SectionTitle';
-import YoutubeVideo from 'components/YoutubeVideo';
 import { media } from 'utils/media';
+import FeaturesGallery from 'views/HomePage/FeaturesGallery';
+import AutofitGrid from 'components/AutofitGrid';
 
-const FEATURES = [
-  {
-    imageUrl: '/grid-icons/asset-1.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-2.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-3.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-4.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-5.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-6.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-7.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-8.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-  {
-    imageUrl: '/grid-icons/asset-9.svg',
-    title: 'Lorem ipsum dolor sit amet.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis error dolorem ipsa dolore facere est consequuntur aut, eos doloribus voluptate?',
-  },
-];
 
 export default function FeaturesPage() {
   return (
-    <Page title="Features" description="Elit aute do nisi Lorem id ea culpa sint duis eu tempor dolore elit.">
+    <Page title="Hizmetler">
       <Wrapper>
-        <SectionTitle>Check out this quick introduction</SectionTitle>
-        <YoutubeVideo url="https://www.youtube.com/watch?v=BggrpKfqh1c" />
         <CustomAutofitGrid>
-          {FEATURES.map((singleFeature, idx) => (
-            <BasicCard key={singleFeature.title} {...singleFeature} />
-          ))}
-        </CustomAutofitGrid>
+          <Card>
+            <h2>İnteraktif Oturumlar</h2>
+            <p>
+              50 dakikalık oturumlarımız, dil becerilerinizi adım adım geliştirmek için özenle tasarlanmıştır. Oturumlarımız
+              karşılıklı etkileşimler, tartışmalar ve diyalog fırsatlarıyla donatılmıştır.
+            </p>
+            </Card>
+            <Card>
+
+            <h2>Kişiselleştirilmiş Geri Bildirim</h2>
+            <p>Her oturumdan sonra size özel öneriler ve yapıcı geri bildirimler alacaksınız.</p>
+            </Card>
+            <Card>
+
+            <h2>Esnek Konular</h2>
+            <p>
+              TertuliaTalks, psikoloji, çevre sorunları, teknoloji trendleri, kültürel çeşitlilik, genel sağlık, iş ve inovasyon,
+              sanat ve yaratıcılık, bilim ve keşif, sosyal konular ve siyaset dahil ancak bunlarla sınırlı olmamak üzere çeşitli
+              konuları kapsamaktadır.
+            </p>
+            <p>
+              Tercih ettiğiniz konuları paylaşmanızı teşvik ediyoruz ve oturumlarımızı arzu ettiğiniz konularla uyumlu olacak
+              şekilde özelleştiriyoruz.
+            </p>
+            </Card>
+
+          </CustomAutofitGrid>
+        <FeaturesGallery />
+
       </Wrapper>
     </Page>
   );
@@ -94,5 +59,24 @@ const CustomAutofitGrid = styled(AutofitGrid)`
 
   ${media('<=phone')} {
     --autofit-grid-item-size: 100%;
+  }
+`;
+
+const Card = styled.div`
+  display: flex;
+  padding: 2.5rem;
+  background: rgb(var(--cardBackground));
+  box-shadow: var(--shadow-md);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  border-radius: 0.6rem;
+  color: rgb(var(--text));
+  font-size: 1.6rem;
+
+  & > *:not(:first-child) {
+    margin-top: 1rem;
   }
 `;

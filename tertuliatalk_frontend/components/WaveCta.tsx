@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
@@ -21,6 +20,7 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
+{/*}
           <Title>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</Title>
           <CustomButtonGroup>
             <Button onClick={() => setIsModalOpened(true)}>
@@ -32,6 +32,7 @@ export default function WaveCta() {
               </OutlinedButton>
             </NextLink>
           </CustomButtonGroup>
+*/}
         </Container>
       </CtaWrapper>
     </>
