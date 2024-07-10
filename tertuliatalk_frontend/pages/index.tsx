@@ -24,12 +24,14 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <Hero />
 
         </WhiteBackgroundContainer>
+        {/*
         <DarkerBackgroundContainer>
           <Cta />
           <Features />
           <Testimonials />
           <ScrollableBlogPosts posts={posts} />
         </DarkerBackgroundContainer>
+        */}
       </HomepageWrapper>
     </>
   );

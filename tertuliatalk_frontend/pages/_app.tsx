@@ -27,7 +27,7 @@ const navItems: NavItems = [
   { title: 'İletişim', href: '/contact' },
   
   { title: 'Kayıt ol', href: '/signup' },
-  { title: 'Sign up', href: '/', outlined: true},
+  { title: 'Giriş yap', href: '/', outlined: true},
 
 ];
 

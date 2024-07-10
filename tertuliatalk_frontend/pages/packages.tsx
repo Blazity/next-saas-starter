@@ -8,7 +8,7 @@ export default function PricingPage() {
     <Page title="Paketler">
       <Wrapper>
         <PricingTablesSection />
-        {/*<FaqSection />*/}
+        <FaqSection />
       </Wrapper>
     </Page>
   );

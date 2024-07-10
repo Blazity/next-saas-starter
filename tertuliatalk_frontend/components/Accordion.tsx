@@ -13,8 +13,8 @@ export default function Accordion({ title, isOpen, children }: PropsWithChildren
   const [hasCollapsed, setHasCollapsed] = useState(!isOpen);
   const isActive = !hasCollapsed;
   return (
-    <AccordionWrapper onClick={() => setHasCollapsed((prev) => !prev)}>
-      <TitleWrapper>
+    <AccordionWrapper>
+      <TitleWrapper onClick={() => setHasCollapsed((prev) => !prev)}>
         <Title>{title}</Title>
         <Icon isActive={isActive}>
           <svg
@@ -51,6 +51,7 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Icon = styled.div<{ isActive: boolean }>`
@@ -71,7 +72,6 @@ const AccordionWrapper = styled.div`
   padding: 2rem 1.5rem;
   background: rgb(var(--cardBackground));
   box-shadow: var(--shadow-md);
-  cursor: pointer;
   border-radius: 0.6rem;
   transition: opacity 0.2s;
 

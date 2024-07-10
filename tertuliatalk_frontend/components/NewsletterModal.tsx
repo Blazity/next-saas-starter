@@ -60,7 +60,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
                   <>
-                    <Title>Sign in</Title>
+                    <Title>Giriş yap</Title>
                     <Row>
                       <CustomInput
                         value={email}

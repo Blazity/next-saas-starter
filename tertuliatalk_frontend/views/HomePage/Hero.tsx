@@ -14,17 +14,23 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <Heading>İngilizce Konuşma Becerilerinizi Geliştirin
+        <Heading>TertuliaTalks'a Hoş Geldiniz!
         </Heading>
         <Description>
-        TertuliaTalks'ta, İngilizce konuşma yeterliliğinizi daha ileri bir seviyeye taşımaya kendimizi adadık. Titizlikle hazırlanmış ders planlarını kapsayıcı sohbetlerle birleştiren benzersiz yaklaşımımız, size pratik imkanı sunmasının yanında kapsamlı bir dil öğrenme deneyimi sunuyor. Kuruluş hikayemiz, dil öğrenme tutkusu olan bir grup eğitimci tarafından başlatıldı ve ekibimiz, alanında deneyimli ve yetkin profesyonellerden oluşmaktadır.
+        Anlamlı konuşmalara katılın ve İngilizce konuşma becerilerinizi geliştirin.
         </Description>
+
+        <Description>
+
+        TertuliaTalks size rahat ve interaktif bir ortamda İngilizce iletişim becerilerinizi geliştirmek için eşsiz bir fırsat sunuyor.
+        </Description>
+        {/*
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>
             Formu doldur<span>&rarr;</span>
           </Button>
-          
         </CustomButtonGroup>
+        */}
       </Contents>
       <ImageContainer>
       </ImageContainer>
