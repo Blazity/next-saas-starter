@@ -1,0 +1,6 @@
+@TertuliatalkAPI_HostAddress = http://localhost:5199
+
+GET {{TertuliatalkAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
