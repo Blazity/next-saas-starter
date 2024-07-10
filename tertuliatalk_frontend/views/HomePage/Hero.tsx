@@ -17,7 +17,7 @@ export default function Hero() {
         <Heading>TertuliaTalks'a Hoş Geldiniz!
         </Heading>
         <Description>
-        Anlamlı konuşmalara katılın ve İngilizce konuşma becerilerinizi geliştirin.
+        Anlamlı konuşmalara katılın ve  İngilizce konuşma becerilerinizi geliştirin.
         </Description>
 
         <Description>
