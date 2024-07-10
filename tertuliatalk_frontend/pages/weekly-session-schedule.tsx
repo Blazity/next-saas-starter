@@ -22,8 +22,6 @@ export default function FeaturesPage() {
       {/*<FormSection/>*/}
 
       <WholeFrame>
-
-
       <Wrapper>
         <Header>
           <Session>
@@ -36,10 +34,7 @@ export default function FeaturesPage() {
             <Button>önceki hafta</Button>
             <RichText>Tarih</RichText>
             <Button>sonraki hafta</Button>
-
-
           </PassWeek>
-
         </Header>
 
         <Days>
