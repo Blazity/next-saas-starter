@@ -17,7 +17,8 @@ const Button = styled.a<ButtonProps>`
   font-family: var(--font);
   font-weight: bold;
   border-radius: 0.4rem;
-  border: ${(p) => (p.transparent ? 'none' : '2px solid rgb(var(--primary))')};
+  border: none;
+  background-color: #fd5221;
   transition: transform 0.3s;
   backface-visibility: hidden;
   will-change: transform;
