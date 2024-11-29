@@ -1,0 +1,13 @@
+{
+  "region": "eu-central-1",
+  "configuration": "Debug",
+  "framework": "net8.0",
+  "self-contained": false,
+  "application": "TertuliatalkAPI",
+  "environment": "TertuliatalkAPI-dev",
+  "app-path": "/",
+  "iis-website": "Default Web Site",
+  "enable-xray": false,
+  "enhanced-health-type": "enhanced",
+  "additional-options": ""
+}

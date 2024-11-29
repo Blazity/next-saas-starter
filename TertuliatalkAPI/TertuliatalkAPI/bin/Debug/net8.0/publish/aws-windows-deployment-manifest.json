@@ -1,0 +1,17 @@
+
+{
+  "manifestVersion": 1,
+  "deployments": {
+
+    "aspNetCoreWeb": [
+      {
+        "name": "app",
+        "parameters": {
+          "appBundle": ".",
+          "iisPath": "/",
+          "iisWebSite": "Default Web Site"
+        }
+      }
+    ]
+  }
+}

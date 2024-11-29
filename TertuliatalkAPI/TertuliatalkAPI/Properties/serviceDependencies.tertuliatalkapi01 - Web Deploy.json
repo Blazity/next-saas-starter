@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/TertuliatalkAPIapi01/apis/TertuliatalkAPI01",
+      "type": "apis.azure"
+    },
+    "identityapp1": {
+      "connectionInfo": "Uygulama kaydı: Tertuliatalks, Kiracı: Varsayılan Dizin (tertuliatalksgmail.onmicrosoft.com - Microsoft Entra ID)",
+      "type": "identityapp.default"
+    }
+  }
+}

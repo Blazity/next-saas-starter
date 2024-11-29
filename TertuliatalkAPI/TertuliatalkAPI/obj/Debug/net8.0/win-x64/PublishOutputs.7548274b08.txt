@@ -1,0 +1,17 @@
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\TertuliatalkAPI.exe
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\appsettings.Development.json
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\appsettings.json
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\TertuliatalkAPI.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\TertuliatalkAPI.runtimeconfig.json
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\TertuliatalkAPI.pdb
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\linq2db.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Microsoft.EntityFrameworkCore.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Microsoft.OpenApi.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Npgsql.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\berk\Documents\GitHub\tertuliatalk\TertuliatalkAPI\TertuliatalkAPI\bin\Debug\net8.0\publish\TertuliatalkAPI.deps.json
