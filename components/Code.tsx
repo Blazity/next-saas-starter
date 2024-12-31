@@ -1,4 +1,4 @@
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import { Highlight, Language } from 'prism-react-renderer';
 import React from 'react';
 import styled from 'styled-components';
 import ClientOnly from 'components/ClientOnly';
@@ -39,7 +39,7 @@ export default function Code({
 
   return (
     <>
-      <Highlight {...defaultProps} theme={undefined} code={code} language={language}>
+      <Highlight theme={undefined} code={code} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <>
             <CodeWrapper className="code-wrapper" language={language}>
@@ -48,7 +48,7 @@ export default function Code({
                 {tokens.map((line, i) => {
                   const lineNumber = i + 1;
                   const isSelected = selectedLines.includes(lineNumber);
-                  const lineProps = getLineProps({ line, key: i });
+                  const lineProps = getLineProps({ line });
                   const className = lineProps.className + (isSelected ? ' selected-line' : '');
 
                   return (
@@ -56,7 +56,7 @@ export default function Code({
                       {withLineNumbers && <LineNo>{lineNumber}</LineNo>}
                       <LineContent>
                         {line.map((token, key) => (
-                          <span key={key} {...getTokenProps({ token, key })} />
+                          <span key={key} {...getTokenProps({ token })} />
                         ))}
                       </LineContent>
                     </Line>
@@ -90,7 +90,7 @@ const Caption = styled.small`
   font-size: 1.2rem;
 `;
 
-const CopyButton = styled.button<{ copied: boolean }>`
+const CopyButton = styled('button').withConfig({shouldForwardProp: (prop) => !['copied'].includes(prop)})<{ copied: boolean }>`
   position: absolute;
   border: none;
   top: 2.4rem;
@@ -127,7 +127,7 @@ const CopyButton = styled.button<{ copied: boolean }>`
   }
 `;
 
-const CodeWrapper = styled.div<{ language: string }>`
+const CodeWrapper = styled('div').withConfig({shouldForwardProp: (prop) => !['language'].includes(prop)})<{ language: string }>`
   position: relative;
   border-radius: 0.3em;
   margin-top: 4.5rem;

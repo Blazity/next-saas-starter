@@ -25,5 +25,5 @@ export async function getSinglePost(slug: string): Promise<SingleArticle> {
 
 export function getPostsDirectory() {
   let basePath = process.cwd();
-  return path.join(basePath, 'posts');
+  return path.join(basePath, 'content/posts');
 }

@@ -14,7 +14,7 @@ export default function Link({ href, children }: PropsWithChildren<LinkProps>) {
   );
 }
 
-const Anchor = styled.a`
+const Anchor = styled.span`
   display: inline;
   width: fit-content;
   text-decoration: none;

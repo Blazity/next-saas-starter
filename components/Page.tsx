@@ -12,11 +12,12 @@ export interface PageProps {
 }
 
 export default function Page({ title, description, children }: PropsWithChildren<PageProps>) {
+  const title2 = title || EnvVars.SITE_NAME;
   return (
     <>
       <Head>
         <title>
-          {title} | {EnvVars.SITE_NAME}
+          {title2}
         </title>
         <meta name="description" content={description} />
       </Head>

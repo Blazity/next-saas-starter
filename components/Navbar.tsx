@@ -67,7 +67,7 @@ export default function Navbar({ items }: NavbarProps) {
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
-        <NextLink href="/" passHref>
+        <NextLink href="/" passHref style={{ marginRight: "auto" }}>
           <LogoWrapper>
             <Logo />
           </LogoWrapper>
@@ -102,7 +102,7 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   return (
     <NavItemWrapper outlined={outlined}>
       <NextLink href={href} passHref>
-        <a>{title}</a>
+        {title}
       </NextLink>
     </NavItemWrapper>
   );
@@ -128,9 +128,8 @@ const HamburgerMenuWrapper = styled.div`
   }
 `;
 
-const LogoWrapper = styled.a`
+const LogoWrapper = styled.div`
   display: flex;
-  margin-right: auto;
   text-decoration: none;
 
   color: rgb(var(--logoColor));
@@ -162,7 +161,7 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
   }
 `;
 
-const NavbarContainer = styled.div<NavbarContainerProps>`
+const NavbarContainer = styled('div').withConfig({shouldForwardProp: (prop) => !['hidden', 'transparent'].includes(prop)})<NavbarContainerProps>`
   display: flex;
   position: sticky;
   top: 0;

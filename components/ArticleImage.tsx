@@ -7,7 +7,7 @@ interface ArticleImageProps extends ImageProps {
   caption?: string;
 }
 
-export default function ArticleImage({ src, caption, ...rest }: ArticleImageProps) {
+export default function ArticleImage({ src, caption, alt, ...rest }: ArticleImageProps) {
   return (
     <Wrapper>
       <ImageWrapper>
@@ -16,10 +16,12 @@ export default function ArticleImage({ src, caption, ...rest }: ArticleImageProp
           alt={caption || 'Article Image'}
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPkj6+vBwAC4AFuNSmtGAAAAABJRU5ErkJggg=="
-          layout="fill"
-          objectFit="cover"
           {...rest}
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
       </ImageWrapper>
       <Caption>{caption}</Caption>
     </Wrapper>

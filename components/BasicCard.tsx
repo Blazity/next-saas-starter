@@ -9,11 +9,18 @@ interface BasicCardProps {
 
 export default function BasicCard({ title, description, imageUrl }: BasicCardProps) {
   return (
-    <Card>
-      <NextImage src={imageUrl} width={128} height={128} alt={title} />
+    (<Card>
+      <NextImage
+        src={imageUrl}
+        width={128}
+        height={128}
+        alt={title}
+        style={{
+          maxWidth: "100%",
+        }} />
       <Title>{title}</Title>
       <Description>{description}</Description>
-    </Card>
+    </Card>)
   );
 }
 

@@ -14,7 +14,7 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
+import { Posts, Query } from '.tina/__generated__/types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -50,12 +50,12 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
   }, []);
 
   const { slug, data } = props;
-  const content = data.getPostsDocument.data.body;
+  const content = data.posts.body;
 
   if (!data) {
     return null;
   }
-  const { title, description, date, tags, imageUrl } = data.getPostsDocument.data as NonNullableChildrenDeep<Posts>;
+  const { title, description, date, tags, imageUrl } = data.posts as NonNullableChildrenDeep<Posts>;
   const meta = { title, description, date: date, tags, imageUrl, author: '' };
   const formattedDate = formatDate(new Date(date));
   const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
@@ -82,10 +82,10 @@ export async function getStaticPaths() {
   const postsListData = await staticRequest({
     query: `
       query PostsSlugs{
-        getPostsList{
+        postsConnection{
           edges{
             node{
-              sys{
+              _sys{
                 basename
               }
             }
@@ -103,10 +103,10 @@ export async function getStaticPaths() {
     };
   }
 
-  type NullAwarePostsList = { getPostsList: NonNullableChildrenDeep<Query['getPostsList']> };
+  type NullAwarePostsList = { postsConnection: NonNullableChildrenDeep<Query['postsConnection']> };
   return {
-    paths: (postsListData as NullAwarePostsList).getPostsList.edges.map((edge) => ({
-      params: { slug: normalizePostName(edge.node.sys.basename) },
+    paths: (postsListData as NullAwarePostsList).postsConnection.edges.map((edge) => ({
+      params: { slug: normalizePostName(edge.node._sys.basename) },
     })),
     fallback: false,
   };
@@ -121,15 +121,13 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   const variables = { relativePath: `${slug}.mdx` };
   const query = `
     query BlogPostQuery($relativePath: String!) {
-      getPostsDocument(relativePath: $relativePath) {
-        data {
-          title
-          description
-          date
-          tags
-          imageUrl
-          body
-        }
+      posts(relativePath: $relativePath) {
+        title
+        description
+        date
+        tags
+        imageUrl
+        body
       }
     }
   `;
@@ -137,7 +135,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext<{ slug: s
   const data = (await staticRequest({
     query: query,
     variables: variables,
-  })) as { getPostsDocument: PostsDocument };
+  })) as { posts: Posts };
 
   return {
     props: { slug, variables, query, data },

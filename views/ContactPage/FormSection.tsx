@@ -15,7 +15,7 @@ interface EmailPayload {
 export default function FormSection() {
   const [hasSuccessfullySentMail, setHasSuccessfullySentMail] = useState(false);
   const [hasErrored, setHasErrored] = useState(false);
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState } = useForm<EmailPayload>();
   const { isSubmitSuccessful, isSubmitting, isSubmitted, errors } = formState;
 
   async function onSubmit(payload: EmailPayload) {

@@ -6,7 +6,7 @@ export interface ThreeLayersCircleProps {
   secondColor: string;
 }
 
-const ThreeLayersCircle = styled.div<ThreeLayersCircleProps>`
+const ThreeLayersCircle = styled('div').withConfig({shouldForwardProp: (prop) => !['baseColor', 'secondColor'].includes(prop)})<ThreeLayersCircleProps>`
   position: relative;
   display: inline-block;
   opacity: 0.8;

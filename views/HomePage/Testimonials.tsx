@@ -52,11 +52,22 @@ export default function Testimonials() {
                   alt={`${singleTestimonial.author.name}'s company logo`}
                   width={200}
                   height={40}
-                />
+                  style={{
+                    maxWidth: "100%",
+                    // height: "auto"
+                  }} />
                 <Content>“{singleTestimonial.content}”</Content>
                 <AuthorContainer>
                   <AuthorImageContainer>
-                    <NextImage src={singleTestimonial.author.avatarUrl} alt={singleTestimonial.author.name} width={48} height={48} />
+                    <NextImage
+                      src={singleTestimonial.author.avatarUrl}
+                      alt={singleTestimonial.author.name}
+                      width={48}
+                      height={48}
+                      style={{
+                        maxWidth: "100%",
+                        // height: "auto"
+                      }} />
                   </AuthorImageContainer>
                   <AuthorContent>
                     <AuthorName>{singleTestimonial.author.name}</AuthorName>

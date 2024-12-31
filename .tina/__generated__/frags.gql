@@ -1,4 +1,5 @@
 fragment PostsParts on Posts {
+  __typename
   title
   description
   date

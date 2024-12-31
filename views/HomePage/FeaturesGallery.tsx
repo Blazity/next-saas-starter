@@ -44,7 +44,15 @@ export default function FeaturesGallery() {
 
     return (
       <ImageContainer key={singleTab.title} isActive={isActive}>
-        <NextImage src={singleTab.imageUrl} alt={singleTab.title} layout="fill" objectFit="contain" priority={isFirst} />
+        <NextImage
+          src={singleTab.imageUrl}
+          alt={singleTab.title}
+          priority={isFirst}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "contain"
+          }} />
       </ImageContainer>
     );
   });
@@ -126,7 +134,7 @@ const TabsContainer = styled.div`
   }
 `;
 
-const ImageContainer = styled.div<{ isActive: boolean }>`
+const ImageContainer = styled('div').withConfig({shouldForwardProp: (prop) => !['isActive'].includes(prop)})<{ isActive: boolean }>`
   position: relative;
   overflow: hidden;
   border-radius: 0.8rem;
@@ -153,7 +161,7 @@ const ImageContainer = styled.div<{ isActive: boolean }>`
   }
 `;
 
-const Tab = styled.div<{ isActive: boolean }>`
+const Tab = styled('div').withConfig({shouldForwardProp: (prop) => !['isActive'].includes(prop)})<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   padding: 2rem 1.5rem;

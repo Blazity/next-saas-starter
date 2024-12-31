@@ -16,7 +16,14 @@ export default function ArticleCard({ title, slug, imageUrl, description }: Arti
       <ArticleCardWrapper className="article-card-wrapper">
         <HoverEffectContainer>
           <ImageContainer>
-            <NextImage src={imageUrl} layout="fill" objectFit="cover" alt={title} />
+            <NextImage
+              src={imageUrl}
+              alt={title}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </ImageContainer>
           <Content>
             <Title>{title}</Title>
@@ -28,7 +35,7 @@ export default function ArticleCard({ title, slug, imageUrl, description }: Arti
   );
 }
 
-const ArticleCardWrapper = styled.a`
+const ArticleCardWrapper = styled.span`
   display: flex;
   flex-direction: column;
   height: 45rem;

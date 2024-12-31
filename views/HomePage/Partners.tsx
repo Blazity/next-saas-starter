@@ -36,7 +36,14 @@ export default function Partners() {
       >
         {PARTNER_LOGOS.map((logo) => (
           <SwiperSlide key={logo}>
-            <NextImage src={'/partners/' + logo} alt={normalizePartnerLogoName(logo)} width={128} height={128} />
+            <NextImage
+              src={'/partners/' + logo}
+              alt={normalizePartnerLogoName(logo)}
+              width={128}
+              height={128}
+              style={{
+                maxWidth: "100%",
+              }} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import MailchimpSubscribe, { DefaultFormFields } from 'react-mailchimp-subscribe';
 import styled from 'styled-components';
 import { EnvVars } from 'env';
 import useEscClose from 'hooks/useEscKey';
@@ -10,60 +9,69 @@ import Container from './Container';
 import Input from './Input';
 import MailSentState from './MailSentState';
 import Overlay from './Overlay';
+import { useForm } from 'react-hook-form';
 
 export interface NewsletterModalProps {
   onClose: () => void;
 }
 
 export default function NewsletterModal({ onClose }: NewsletterModalProps) {
-  const [email, setEmail] = useState('');
+  const [hasSuccessfullySentMail, setHasSuccessfullySentMail] = useState(false);
+  const [hasErrored, setHasErrored] = useState(false);
+  const { register, handleSubmit, formState } = useForm<{email: string}>();
+  const { isSubmitSuccessful, isSubmitting, isSubmitted, errors } = formState;
 
   useEscClose({ onClose });
+  const baseUrl = EnvVars.MAILCHIMP_SUBSCRIBE_URL.replace("/post?", "/post-json?")
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>, enrollNewsletter: (props: DefaultFormFields) => void) {
-    event.preventDefault();
-    console.log({ email });
-    if (email) {
-      enrollNewsletter({ EMAIL: email });
+  async function onSubmit({ email }: {email: string}) {
+    const params = new URLSearchParams({ email });
+    const url = baseUrl + "&" + params.toString();
+    try {
+      const res = await fetch(url);
+
+      if (!res.ok) {
+        setHasErrored(true);
+      }
+    } catch {
+      setHasErrored(true);
+      return;
     }
+
+    setHasSuccessfullySentMail(true);
   }
 
+  const isSent = isSubmitSuccessful && isSubmitted;
+  const isDisabled = isSubmitting || isSent;
+  const isSubmitDisabled = Object.keys(errors).length > 0 || isDisabled;
+
   return (
-    <MailchimpSubscribe
-      url={EnvVars.MAILCHIMP_SUBSCRIBE_URL}
-      render={({ subscribe, status, message }) => {
-        const hasSignedUp = status === 'success';
-        return (
-          <Overlay>
-            <Container>
-              <Card onSubmit={(event: React.FormEvent<HTMLFormElement>) => onSubmit(event, subscribe)}>
-                <CloseIconContainer>
-                  <CloseIcon onClick={onClose} />
-                </CloseIconContainer>
-                {hasSignedUp && <MailSentState />}
-                {!hasSignedUp && (
-                  <>
-                    <Title>Are you ready to enroll to the best newsletter ever?</Title>
-                    <Row>
-                      <CustomInput
-                        value={email}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                        placeholder="Enter your email..."
-                        required
-                      />
-                      <CustomButton as="button" type="submit" disabled={hasSignedUp}>
-                        Submit
-                      </CustomButton>
-                    </Row>
-                    {message && <ErrorMessage dangerouslySetInnerHTML={{ __html: message as string }} />}
-                  </>
-                )}
-              </Card>
-            </Container>
-          </Overlay>
-        );
-      }}
-    />
+    <Overlay>
+      <Container>
+        <Card onSubmit={handleSubmit(onSubmit)}>
+          <CloseIconContainer>
+            <CloseIcon onClick={onClose} />
+          </CloseIconContainer>
+          {hasSuccessfullySentMail && <MailSentState />}
+          {!hasSuccessfullySentMail && (
+            <>
+              <Title>Are you ready to enroll to the best newsletter ever?</Title>
+              <Row>
+                <CustomInput
+                  autoComplete="email"
+                  placeholder="Enter your email..."
+                  {...register('email', { required: true })}
+                />
+                <CustomButton as="button" type="submit" disabled={isSubmitDisabled}>
+                  Submit
+                </CustomButton>
+              </Row>
+              {hasErrored && <ErrorMessage dangerouslySetInnerHTML={{ __html: JSON.stringify(errors) }} />}
+            </>
+          )}
+        </Card>
+      </Container>
+    </Overlay>
   );
 }
 
@@ -108,7 +116,7 @@ const Title = styled.div`
   }
 `;
 
-const ErrorMessage = styled.p`
+const ErrorMessage = styled.pre`
   color: rgb(var(--errorColor));
   font-size: 1.5rem;
   margin: 1rem 0;
