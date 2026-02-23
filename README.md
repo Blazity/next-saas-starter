@@ -156,3 +156,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## 📝 License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/Blazity/next-saas-starter/blob/main/LICENSE.md) for more information.
+
+## Deployment
+
+[![Deploy on Hostinger](https://assets.hostinger.com/vps/deploy.svg)](https://www.hostinger.com/web-apps-hosting)
