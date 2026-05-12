@@ -91,6 +91,7 @@ yarn build
 Clone the repository and one-click deploy to Vercel for free!
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-saas-starter)
+[![Deploy to PandaStack](https://dashboard.pandastack.io/deploy-button.svg)](https://dashboard.pandastack.io/deploy?repo=Blazity/next-saas-starter&type=static&buildCmd=npm+run+build&outputDir=dist)
 
 Clone the repository and one-click deploy to Netlify for free!
 
