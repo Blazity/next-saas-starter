@@ -27,9 +27,15 @@ const navItems: NavItems = [
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
+let hasLoggedWorkflowEditorTest = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
+    if (hasLoggedWorkflowEditorTest) {
+      return;
+    }
+
+    hasLoggedWorkflowEditorTest = true;
     console.log('workflow editor test');
   }, []);
 
