@@ -17,7 +17,7 @@ export default function BasicSection({ imageUrl, title, overTitle, reversed, chi
   return (
     <BasicSectionWrapper reversed={reversed}>
       <ImageContainer>
-        <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" />
+        <NextImage src={imageUrl} alt={`Illustration for ${title}`} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ContentContainer>
         <CustomOverTitle>{overTitle}</CustomOverTitle>
@@ -28,7 +28,7 @@ export default function BasicSection({ imageUrl, title, overTitle, reversed, chi
   );
 }
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-size: 5.2rem;
   font-weight: bold;
   line-height: 1.1;

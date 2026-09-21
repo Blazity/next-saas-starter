@@ -47,7 +47,7 @@ const HeaderContainer = styled.div`
   min-height: 40rem;
 `;
 
-const Title = styled(SectionTitle)`
+const Title = styled(SectionTitle).attrs({ as: 'h1' })`
   color: rgb(var(--textSecondary));
   margin-bottom: 2rem;
 `;

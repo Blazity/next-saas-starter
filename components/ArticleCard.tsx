@@ -85,7 +85,7 @@ const Content = styled.div`
   }
 `;
 
-const Title = styled.h4`
+const Title = styled.h3`
   font-size: 1.8rem;
 
   overflow: hidden;

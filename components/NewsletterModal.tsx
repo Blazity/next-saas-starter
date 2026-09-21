@@ -38,7 +38,7 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
             <Container>
               <Card onSubmit={(event: React.FormEvent<HTMLFormElement>) => onSubmit(event, subscribe)}>
                 <CloseIconContainer>
-                  <CloseIcon onClick={onClose} />
+                  <CloseIcon onClick={onClose} aria-label="Close newsletter signup" />
                 </CloseIconContainer>
                 {hasSignedUp && <MailSentState />}
                 {!hasSignedUp && (
@@ -50,6 +50,9 @@ export default function NewsletterModal({ onClose }: NewsletterModalProps) {
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                         placeholder="Enter your email..."
                         required
+                        aria-label="Email address"
+                        id="newsletter-email"
+                        type="email"
                       />
                       <CustomButton as="button" type="submit" disabled={hasSignedUp}>
                         Submit

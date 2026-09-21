@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { media } from 'utils/media';
 
-const SectionTitle = styled.div`
+const SectionTitle = styled.h2`
   font-size: 5.2rem;
   font-weight: bold;
   line-height: 1.1;

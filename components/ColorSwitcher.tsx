@@ -29,7 +29,11 @@ export default function ColorSwitcher() {
     </svg>
   );
 
-  return <CustomButton onClick={toggleTheme}>{colorMode === 'light' ? moonIcon : sunIcon}</CustomButton>;
+  return (
+    <CustomButton onClick={toggleTheme} aria-label={colorMode === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}>
+      {colorMode === 'light' ? moonIcon : sunIcon}
+    </CustomButton>
+  );
 }
 
 const CustomButton = styled.button`

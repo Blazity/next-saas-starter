@@ -10,7 +10,7 @@ interface BasicCardProps {
 export default function BasicCard({ title, description, imageUrl }: BasicCardProps) {
   return (
     <Card>
-      <NextImage src={imageUrl} width={128} height={128} alt={title} />
+      <NextImage src={imageUrl} width={128} height={128} alt={`Feature icon for ${title}`} />
       <Title>{title}</Title>
       <Description>{description}</Description>
     </Card>
@@ -36,7 +36,7 @@ const Card = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.h3`
   font-weight: bold;
 `;
 

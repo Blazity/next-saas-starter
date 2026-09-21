@@ -45,10 +45,10 @@ export default function Partners() {
 }
 
 function normalizePartnerLogoName(logo: string) {
-  return logo.replace('.svg', '');
+  return `Logo of partner ${logo.replace('.svg', '').replace(/-/g, ' ')}`;
 }
 
-const Title = styled.h3`
+const Title = styled.h2`
   font-size: 1.3rem;
   letter-spacing: 0.02em;
   line-height: 0;
