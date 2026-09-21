@@ -58,19 +58,19 @@ export default function Footer() {
         <BottomBar>
           <ShareBar>
             <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
-              <a>
+              <a aria-label="Twitter">
                 <TwitterIcon size={50} round={true} />
               </a>
             </NextLink>
 
             <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
-              <a>
+              <a aria-label="Facebook">
                 <FacebookIcon size={50} round={true} />
               </a>
             </NextLink>
 
             <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
-              <a>
+              <a aria-label="LinkedIn">
                 <LinkedinIcon size={50} round={true} />
               </a>
             </NextLink>

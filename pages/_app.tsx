@@ -15,6 +15,7 @@ import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
 import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
+import SkipNavLink from 'components/SkipNavLink';
 import WaveCta from 'components/WaveCta';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { NavItems } from 'types';
@@ -50,24 +51,27 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Providers>
         <Modals />
+        <SkipNavLink />
         <Navbar items={navItems} />
-        <TinaEditProvider
-          editMode={
-            <TinaCMS
-              query={pageProps.query}
-              variables={pageProps.variables}
-              data={pageProps.data}
-              isLocalClient={!process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
-              branch={process.env.NEXT_PUBLIC_EDIT_BRANCH}
-              clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
-              {...pageProps}
-            >
-              {(livePageProps: any) => <Component {...livePageProps} />}
-            </TinaCMS>
-          }
-        >
-          <Component {...pageProps} />
-        </TinaEditProvider>
+        <main id="main-content">
+          <TinaEditProvider
+            editMode={
+              <TinaCMS
+                query={pageProps.query}
+                variables={pageProps.variables}
+                data={pageProps.data}
+                isLocalClient={!process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+                branch={process.env.NEXT_PUBLIC_EDIT_BRANCH}
+                clientId={process.env.NEXT_PUBLIC_TINA_CLIENT_ID}
+                {...pageProps}
+              >
+                {(livePageProps: any) => <Component {...livePageProps} />}
+              </TinaCMS>
+            }
+          >
+            <Component {...pageProps} />
+          </TinaEditProvider>
+        </main>
         <WaveCta />
         <Footer />
       </Providers>
