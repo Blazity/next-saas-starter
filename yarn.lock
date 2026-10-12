@@ -10852,9 +10852,9 @@ react-router@6.3.0:
     history "^5.2.0"
 
 react-schemaorg@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-schemaorg/-/react-schemaorg-2.0.0.tgz#9d168816e3630382d366fbc5fc4c337617467dbb"
-  integrity sha512-UqciFKA203ewNjn0zC09uYKuJSvMD8L75L1s/cW4rc7cS64w8l7vaI3SYkuoI/nwCBkJRmOkSJedWDUZBlYZwg==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-schemaorg/-/react-schemaorg-2.0.1.tgz#1ccbd6d4344c5aaf304e960254f9853f2499fdbe"
+  integrity sha512-3mS63dmMFYgKmmaBB2TWtQ9MHCzy/YJfDKxyCMUmJ2V3VzFMwVqCCagazsRA93BnOAkXfX0t29GTJx+2CoaL+Q==
 
 react-share@^4.4.1:
   version "4.4.1"
