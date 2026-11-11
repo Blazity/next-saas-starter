@@ -10778,9 +10778,9 @@ react-final-form@^6.3.0:
     "@babel/runtime" "^7.15.4"
 
 react-hook-form@^7.17.4:
-  version "7.17.4"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.17.4.tgz#232b6aaccddb91eb4a228ac20b154abd90866fdb"
-  integrity sha512-7XhbCr7d9fDC1TgcK/BUbt7D3q0VJMu7jPErfsa0JrxVjv/nni41xWdJcy0Zb7R+Np8OsCkQ2lMyloAtE3DLiQ==
+  version "7.92.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.92.0.tgz#6d4ef30192906d7f2318ff57eef17e83e35b09f1"
+  integrity sha512-O5ILyY5fYHN7N13Pfxpe55KboyNFsJdM03BHpshQkClJd8raugiAUGY7VjifITrfhVxyx81ko25azXCoayhf1w==
 
 react-icons@^4.3.1:
   version "4.3.1"
